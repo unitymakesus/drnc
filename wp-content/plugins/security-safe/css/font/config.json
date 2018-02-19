@@ -1,0 +1,46 @@
+{
+  "name": "secure-safe",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "078fec38562c3f83a1201a908040c141",
+      "css": "privacy",
+      "code": 59401,
+      "src": "fontelico"
+    },
+    {
+      "uid": "f4f0e849b805be1f6d76b65581cb3b8b",
+      "css": "content",
+      "code": 59392,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "x8m4z7b33cv1h2s784tjlam56uq40wtd",
+      "css": "users",
+      "code": 59393,
+      "src": "typicons"
+    },
+    {
+      "uid": "c8585e1e5b0467f28b70bce765d5840c",
+      "css": "files",
+      "code": 61637,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "dc73bee1d58539abe8c96b958bf4c931",
+      "css": "firewall",
+      "code": 59394,
+      "src": "elusive"
+    },
+    {
+      "uid": "d4816c0845aa43767213d45574b3b145",
+      "css": "backups",
+      "code": 61914,
+      "src": "fontawesome"
+    }
+  ]
+}

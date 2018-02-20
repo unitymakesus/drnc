@@ -1,5 +1,26 @@
+/** Fonts */
+$font-serif: "Playfair Display", serif;
+$font-sans: "Noto Sans", sans-serif;
+
 /** Colors */
-$brand-primary:         #27ae60;
+$color-purple:                #4C1844;
+$color-purple-dark:           #31102C;
+$color-green:                 #6E773D;
+$color-green-dark:            #343C09;
+$color-teal:                  #3D6E77;
+$color-teal-dark:             #09343C;
+$color-black:                 #000;
+$color-gray-dark:             #4A4A4A;
+$color-gray-medium:           #858585;
+$color-gray-light:            #EFEFEF;
+$color-white:                 #FFF;
+
+$primary-color:               $color-purple-dark;
+$secondary-color:             $color-teal-dark;
+
+$success-color:               #366107;
+$error-color:                 #7A0707;
+$link-color:                  $color-teal;
 
 /** Box Model  */
 $spacer:                2rem;

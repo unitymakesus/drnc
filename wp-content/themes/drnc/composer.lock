@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b58fbe0c86d06990c1c7ef7414df19e6",
+    "content-hash": "b5336d5427498a3a3c4623ac05225204",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -633,6 +633,94 @@
             "time": "2017-06-07T13:32:57+00:00"
         },
         {
+            "name": "log1x/blade-svg-sage",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Log1x/blade-svg-sage.git",
+                "reference": "c41f1180d1eab3ea1040eb8bb2d02082bccc9c20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Log1x/blade-svg-sage/zipball/c41f1180d1eab3ea1040eb8bb2d02082bccc9c20",
+                "reference": "c41f1180d1eab3ea1040eb8bb2d02082bccc9c20",
+                "shasum": ""
+            },
+            "require": {
+                "nothingworks/blade-svg": "^0.2.1",
+                "wikimedia/relpath": "^2.1"
+            },
+            "type": "package",
+            "autoload": {
+                "files": [
+                    "src/helpers.php",
+                    "src/blade-svg-sage.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me"
+                }
+            ],
+            "homepage": "https://github.com/log1x/blade-svg-sage",
+            "time": "2018-02-06T19:18:31+00:00"
+        },
+        {
+            "name": "nothingworks/blade-svg",
+            "version": "v0.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamwathan/blade-svg.git",
+                "reference": "fad56a6e5fb970e55b9745e547106ca09273fe24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamwathan/blade-svg/zipball/fad56a6e5fb970e55b9745e547106ca09273fe24",
+                "reference": "fad56a6e5fb970e55b9745e547106ca09273fe24",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "^5.3",
+                "illuminate/support": "^5.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BladeSvg\\BladeSvgServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BladeSvg\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                }
+            ],
+            "time": "2017-08-13T20:55:40+00:00"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v2.0.10",
             "source": {
@@ -990,6 +1078,49 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2017-07-23T12:43:26+00:00"
+        },
+        {
+            "name": "wikimedia/relpath",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wikimedia/RelPath.git",
+                "reference": "35e701ff16abf461bb8676a9d9177f86fa0b2c94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wikimedia/RelPath/zipball/35e701ff16abf461bb8676a9d9177f86fa0b2c94",
+                "reference": "35e701ff16abf461bb8676a9d9177f86fa0b2c94",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "jakub-onderka/php-parallel-lint": "^0.9.0.0",
+                "mediawiki/mediawiki-codesniffer": "15.0.0",
+                "phpunit/phpunit": "^4.8.9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/RelPath/RelPath.php",
+                    "src/Wikimedia/RelPath.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ori Livneh",
+                    "email": "ori@wikimedia.org"
+                }
+            ],
+            "description": "Compute a relative filepath between two paths.",
+            "homepage": "https://www.mediawiki.org/wiki/RelPath",
+            "time": "2018-01-18T21:23:40+00:00"
         }
     ],
     "packages-dev": [

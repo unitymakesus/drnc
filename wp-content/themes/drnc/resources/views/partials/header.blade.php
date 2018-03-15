@@ -45,8 +45,8 @@
       </a>
 
       <div class="utility right">
-        @if (has_nav_menu('header_social'))
-          {!! wp_nav_menu(['theme_location' => 'header_social', 'menu_class' => 'social-icons right-align', 'menu_id' => 'header-social']) !!}
+        @if (has_nav_menu('social_links'))
+          {!! wp_nav_menu(['theme_location' => 'social_links', 'menu_class' => 'social-icons right-align', 'menu_id' => 'header-social']) !!}
         @endif
         <div class="right-align"><a href="#" class="btn btn-blue">Support Our Work</a></div>
       </div>

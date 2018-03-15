@@ -3,7 +3,7 @@ Contributors: sovstack, cfullsteam
 Tags: security, wp security, privacy, security audit, file permissions, brute force login
 Requires at least: 4
 Requires PHP: 5.3
-Tested up to: 4.9.2
+Tested up to: 4.9.4
 Stable tag: trunk
 
 A plugin to quickly implement WordPress hardening and security techniques.
@@ -15,17 +15,16 @@ Security Safe is a free wp security plugin.
 Features:
 
 * Hide WordPress CMS Version
+* Hide Script Versions
+* Make Website Anonymous During Updates
 * Enable Automatic Core, Plugin, and Theme Updates
 * Disable Editing Theme Files
-* Audit WordPress File Permissions
-* Audit All Plugins' File Permissions
-* Audit Theme File Permissions
+* Audit & Fix File Permission
 * Audit Hosting Software Versions
-* Disable Remote Script Execution
-* Make Login Errors Generic
-* Force Local Logins
-* Turn Off Login Remember Me Option
-* Disable Password Reset
+* Login Security
+* Disable XML-RPC.php
+* Brute Force Protection
+* Content Copyright Protection
 * Turn On/Off All Security Policies Easily
 
 == Installation ==
@@ -38,34 +37,60 @@ Features:
 
 == Screenshots ==
 
-1. General Settings - Turn off all security settings temporarily and reset settings.
-2. Privacy Settings - Hide WordPress version in the source code.
-3. File Settings - Enable Automatic Updates and disable theme file editing from the admin panel.
-4. WordPress Base Directory - Validate file permissions and quickly see if there are any suspicious looking files in the base directory.
-5. Theme Audit - Quickly verify your theme files have secure file permissions.
-6. Plugins Audit - Verify that all of your plugins have proper file permissions.
-7. Server Information - Audit PHP version and all modules installed on the server.
-8. User Access - Make login errors generic, disable password reset, disable the 'remember me' checkbox, disable xml-rpc.php, force local logins to deter brute-force logins.
+1. Privacy Settings
+2. File Settings
+3. File Permissions
+4. Server Software
+5. User Access Settings
+6. Content Settings
 
 == Changelog ==
 
+= 1.1.3 =
+*Release Date - 25 February 2018*
+* Added Feature: Hide WordPress Version from the RSS feed.
+* Added Feature: Hide Script Versions from enqueued CSS and JS files
+* BUG FIX: Hide WordPress stays on despite the settings value
+* BUG FIX: An error is displayed when saving settings if the settings are the same in the database.
+
+= 1.1.2 =
+*Release Date - 20 February 2018*
+* BUG FIX: Icon CSS conflict with other icon plugins
+
+= 1.1.1 =
+*Release Date - 20 February 2018*
+* Added Feature: Disable text highlighting to deter copying content
+* Added Feature: Disable right clicking to deter copying content
+* Added Feature: Fix file permissions
+* Added Feature: Make website anonymous when checking for updates
+* Added Feature: Plugin information tab for debugging purposes
+* Bug Fix: Database was including nonce and referrer when saving settings
+* Improvement: Update UI styling
+* Thank you @epohs and @isabisa for file permissions UI testing and feedback
+* Tested up to: 4.9.4
+
 = 1.0.3 =
-* Added Feature: Server software version auditing.
-* Added Feature: Theme file permissions auditing.
-* Added Feature: Plugins files permissions auditing.
-* Bug Fix: Plugin version history was not logging properly.
-* Bug Fix: Automatic Updates were not running when the settings were selected.
-* Security: Added Nonce to admin forms.
-* Security: Removed the absolute path from file permissions auditing.
-* Improvement: File permissions were expaned to include all files and folders of WordPress base directory.
-* Improvement: Minor code standardization.
-* Improvement: Updated all screenshots.
+*Release Date - 24 January 2018*
+* Added Feature: Server software version auditing
+* Added Feature: Theme file permissions auditing
+* Added Feature: Plugins files permissions auditing
+* Bug Fix: Plugin version history was not logging properly
+* Bug Fix: Automatic Updates were not running when the settings were selected
+* Security: Added Nonce to admin forms
+* Security: Removed the absolute path from file permissions auditing
+* Improvement: File permissions were expanded to include all files and folders of WordPress base directory
+* Improvement: Minor code standardization
+* Improvement: Updated all screenshots
 * Tested up to: 4.9.2
 
 = 1.0.2 =
-* Bug Fix: File permissions would display files and directories even if they did not exist.
-* Bug Fix: File permissions status would display Bad if the 'world' had no permissions to read, write, or execute. 
-* Bug Fix: Directory structure references relied on constants that could potentially conflict with custom site directory structures.
+*Release Date - 10 January 2018*
+* Bug Fix: File permissions would display files and directories even if they did not exist
+* Bug Fix: File permissions status would display Bad if the 'world' had no permissions to read, write, or execute
+* Bug Fix: Directory structure references relied on constants that could potentially conflict with custom site directory structures
 
 = 1.0.1 =
+*Release Date - 9 January 2018*
 * Initial Release
+* Thank you @daggerhart for plugin development feedback
+* Thank you @cfullsteam for PHP structure feedback

@@ -57,7 +57,14 @@ class Security extends Plugin {
 
         if ( $settings['on'] == "1" ) {
 
-            $this->add_hook_policy( 'PolicyHideWPVersion', 'wp_generator', 'remove', 'action', 'wp_head' );
+            // Hide WordPress Verison
+            $this->add_policy( $settings, 'PolicyHideWPVersion', 'wp_generator' );
+
+            // Hide Script Versions
+            $this->add_policy( $settings, 'PolicyHideScriptVersions', 'hide_script_versions' );
+
+            // Make Website Anonymous
+            $this->add_policy( $settings, 'PolicyAnonymousWebsite', 'http_headers_useragent' );
 
         } else {
 
@@ -154,13 +161,15 @@ class Security extends Plugin {
      */ 
     private function content() {
 
-        return; //disable functionality
-
         $settings = $this->settings['content'];
 
         if ( $settings['on'] == "1" ) {
 
-            // Security Policies Go Here
+            // Disable Text Highlighting
+            $this->add_policy( $settings, 'PolicyDisableTextHighlight', 'disable_text_highlight' );
+
+            // Disable Right Click
+            $this->add_policy( $settings, 'PolicyDisableRightClick', 'disable_right_click' );
 
         } else {
 

@@ -22,7 +22,7 @@ class Admin extends Security {
         parent::__construct( $plugin );
 
         // Display Admin Notices
-        add_action( 'admin_notices', array( $this, 'display_messages' ) );
+        add_action( 'admin_notices', array( $this, 'display_notices' ) );
 
         // Load CSS / JS
         add_action( 'admin_init', array( $this, 'scripts' ) );
@@ -66,7 +66,7 @@ class Admin extends Security {
                 wp_enqueue_script( 'common' );
                 wp_enqueue_script( 'wp-lists' );
                 wp_enqueue_script( 'postbox' );
-                //wp_enqueue_script( $plugin['slug'] . '-admin', $plugin['url'] . 'js/admin.js', array( 'jquery' ), $plugin['version'], true );
+                wp_enqueue_script( $plugin['slug'] . '-admin', $plugin['url'] . 'js/admin.js', array( 'jquery' ), $plugin['version'], true );
 
             } // $local_page
 
@@ -132,7 +132,6 @@ class Admin extends Security {
         // All Admin Pages
         $pages = array();
         $pages = $this->get_category_pages();
-        //$pages[] = 'General Settings';
 
         return $pages;
 
@@ -148,15 +147,21 @@ class Admin extends Security {
 
         // All Category Pages
         $pages = array();
+
+        // Return Plugin Landing Page
+        if ( $disabled ) {
+            $pages[] = 'Plugin';
+        }
+
         $pages[] = 'Privacy';
         $pages[] = 'Files';
         $pages[] = 'User Access';
+        $pages[] = 'Content';
 
         // Return Disabled Menus Also
         // Disabled values are arrays for each of checking
         if ( $disabled ) {
 
-            $pages[] = array( 'Content' );
             $pages[] = array( 'Firewall' );
             $pages[] = array( 'Backups' );
 
@@ -375,10 +380,24 @@ class Admin extends Security {
                 <div class="all-tab-content">
 
                     <?php $page->display_tabs_content(); ?>
+                    
+                    <?php if ( ! isset( $_GET['tab'] ) || ( isset( $_GET['tab'] ) && $_GET['tab'] == 'settings' ) ) { ?>
+                        <div id="sidebar" class="sidebar">
+
+                            <div class="rate-us widget">
+                                <h5>Like This Plugin?</h5>
+                                <p>Share your positive experience!</p>
+                                <p><a href="https://wordpress.org/plugins/security-safe/#reviews" target="_blank" class="rate-stars"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></a></p>
+                            </div>
+
+                            <div class="security-safe-pro widget">
+                                <img src="<?php echo $plugin['url']; ?>img/security-safe-pro.png" alt="Security Safe Pro is Coming Soon!" />
+                            </div>
+                            
+                        </div>
+                    <?php } ?>
 
                     <div id="tab-content-footer" class="footer tab-content"></div>
-
-                    <div id="sidebar" class="sidebar"></div>
 
                 </div><!-- .all-tab-content -->
 
@@ -387,7 +406,10 @@ class Admin extends Security {
             <div class="wrap-footer full clear">
 
                 <hr />
-                <p><?php echo $plugin['name'] . ' v.' . $plugin['version']; ?>: Need help? Visit the <a href="https://wordpress.org/support/plugin/security-safe" target="_blank">support forum</a>.</p>
+
+                <p>If you like <?php echo $plugin['name']; ?>, please <a href="https://wordpress.org/support/plugin/security-safe/reviews/#new-post" target="_blank">post a review</a>.</p>
+            
+                <p>Need help? Visit the <a href="https://wordpress.org/support/plugin/security-safe/" target="_blank">support forum</a>.</p>
             
             </div>
         </div><!-- .wrap -->
@@ -422,11 +444,32 @@ class Admin extends Security {
             } // is_array()
 
             $class = strtolower( str_replace( ' ', '-', $m ) );
-            $href = ( $disabled ) ? '' : 'href="admin.php?page=' . $this->plugin['slug'] . '-' . $class . '"';
+
+            if ( $m == 'Plugin' ) {
+
+                $href = 'href="admin.php?page=' . $this->plugin['slug'] . '"';
+
+            } else {
+
+                $href = ( $disabled ) ? '' : 'href="admin.php?page=' . $this->plugin['slug'] . '-' . $class . '"';
+
+            }
             
             // Highlight Active Menu
-            $active = ( strpos( $_GET['page'], $class ) !== false ) ? ' active' : '';
+            if ( $_GET['page'] == 'security-safe' && $m == 'Plugin' ) {
+
+                $active = ' active';
+
+            } else {
+
+                $active = ( strpos( $_GET['page'], $class ) !== false ) ? ' active' : '';
+
+            }
+
             $class .= $active . $disabled;
+
+            // Convert All Menus to A Single Line
+            $m = ( $m == 'User Access' ) ? 'Access' : $m;
 
             $html .= '<li><a ' . $href . 'class="icon-' . $class . '"><span>' . $m . '</span></a></li>';
 
@@ -445,9 +488,9 @@ class Admin extends Security {
      * Displays all messages
      * @since  0.2.0
      */
-    public function display_messages() {
+    public function display_notices() {
 
-        $this->log( 'display_messages()' );
+        $this->log( 'display_notices()' );
 
         if ( is_array( $this->messages ) ) {
             
@@ -471,7 +514,7 @@ class Admin extends Security {
 
         } // is_array()
 
-    } // display_messages()
+    } // display_notices()
 
 
     /**

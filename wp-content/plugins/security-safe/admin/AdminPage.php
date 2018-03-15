@@ -18,6 +18,12 @@ class AdminPage {
     public $tabs = array();
 
     /**
+     * Contains all the admin message values for the page.
+     * @var array
+     */
+    public $messages = array();
+
+    /**
      * AdminPage constructor.
      * @param $settings
      */
@@ -146,6 +152,9 @@ class AdminPage {
                     if ( isset( $t['intro'] ) && $t['intro'] ) {
                         $html .= '<p>' . $t['intro'] . '</p>';
                     }
+
+                    // Display Page Messages As A Log
+                    $html .= $this->display_messages();
 
                     // Run Callback Method To Display Content
                     if ( isset( $t['content_callback'] ) && $t['content_callback'] ) {
@@ -400,6 +409,37 @@ class AdminPage {
         return $html;
     
     } // button()
+
+    /**
+     * Displays this page's messages in a log format.
+     * @since 1.1.0
+     */ 
+    private function display_messages() {
+
+        if ( ! empty( $this->messages ) ) {
+
+            $html = '<h3>Process Log</h3>
+            <p><textarea style="width: 100%; height: 120px;">';
+
+            foreach ( $this->messages as $m ) {
+
+                // Display Messages
+                $html .= ( $m[1] == 3 ) ? "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \n" : '';
+                $html .= '- ' . $m[0] . "\n";
+                $html .= ( $m[1] == 3 ) ? "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \n\n" : '';
+
+            } // foreach()
+
+            $html .= '</textarea></p>';
+
+            // Memory Cleanup
+            unset ( $m, $this->messages );
+
+            return $html;
+
+        } // ! empty()
+
+    } // display_messages()
 
 
 } // Admin()

@@ -24,12 +24,21 @@ class AdminPageGeneral extends AdminPage {
         $this->description = 'Thank you for choosing Security Safe to help protect your website.';
 
         $this->tabs[] = array(
-            'id' => 'general',
-            'label' => 'General Settings',
-            'title' => 'General Settings',
+            'id' => 'settings',
+            'label' => 'Settings',
+            'title' => 'Plugin Settings',
             'heading' => 'These are the general plugin settings.',
             'intro' => '',
             'content_callback' => 'tab_general',
+        );
+
+        $this->tabs[] = array(
+            'id' => 'info',
+            'label' => 'Information',
+            'title' => 'Plugin Information',
+            'heading' => 'This information may be useful when troubleshooting compatibility issues or bugs.',
+            'intro' => '',
+            'content_callback' => 'tab_info',
         );
 
     } // set_page()
@@ -59,6 +68,45 @@ class AdminPageGeneral extends AdminPage {
         return $html;
 
     } // tab_general()
+
+
+    /**
+     * All General Tab Content
+     * @since  1.1.0
+     * @return $html html
+     */ 
+    public function tab_info() {
+
+        $html = '';
+
+        $html .= '<h3>Current Settings</h3>';
+        $settings = get_option('securitysafe_options');
+
+        // Get Plugin Settings
+        ob_start();
+        
+        echo '<pre style="width: 100%;">';
+        var_dump( $settings );
+        echo '</pre>';
+
+        $html .= ob_get_clean();
+
+        $html .= '<p></p>';
+        $html .= '<h3>Installed Plugin Version History</h3>';
+
+        $history = $settings['plugin']['version_history'];
+
+        $html .= '<ul>';
+
+        foreach ( $history as $past ) {
+            $html .= '<li>' . $past . '</li>';
+        }
+
+        $html .= '</ul>';
+
+        return $html;
+
+    } // tab_info()
 
 
 } // AdminPageGeneral()

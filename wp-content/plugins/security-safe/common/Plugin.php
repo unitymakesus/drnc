@@ -15,7 +15,7 @@ class Plugin {
      * Information about the plugin.
      * @var array
      */
-    protected $plugin = array();
+    public $plugin = array();
 
 
     /**
@@ -36,7 +36,7 @@ class Plugin {
      * Contains all the admin message values.
      * @var array
      */
-    protected $messages = array();
+    public $messages = array();
 
 
     /**
@@ -172,7 +172,7 @@ class Plugin {
         // Initially Get Settings
         $this->settings = $this->get_settings();
 
-        if ( isset( $_POST ) && ! empty( $_POST ) && isset( $_GET['page'] ) && strpos( $_GET['page'], 'security-safe' ) !== false ){
+        if ( isset( $_POST ) && ! empty( $_POST ) && isset( $_GET['page'] ) && strpos( $_GET['page'], 'security-safe' ) !== false && ( ! isset( $_GET['tab'] ) || $_GET['tab'] == 'settings' ) ){
 
             // Remove Reset Variable
             if ( isset( $_GET['reset'] ) ) { 
@@ -246,6 +246,8 @@ class Plugin {
         $privacy = array();
         $privacy['on'] = '1';
         $privacy['wp_generator'] = '1';
+        $privacy['hide_script_versions'] = '0';
+        $privacy['http_headers_useragent'] = '0';
 
         // Files -----------------------------------|
         $files = array();
@@ -260,6 +262,8 @@ class Plugin {
         // Content ---------------------------------|
         $content = array();
         $content['on'] = '1';
+        $content['disable_text_highlight'] = '0';
+        $content['disable_right_click'] = '0'; 
 
         // Access ----------------------------------|
         $access = array();
@@ -420,9 +424,6 @@ class Plugin {
 
             $options = $settings[ $settings_page ]; // Get page specific settings
 
-            // Use flag to determine if settings are changed
-            $same = true;
-
             // Set Settings Array With New Values
             foreach ( $options as $label => $value ) {
 
@@ -440,9 +441,7 @@ class Plugin {
                 } elseif ( !isset( $new_settings[ $label ] ) && $options[ $label ] != '0' ) {
                     
                     // Set Value To Default
-                    //echo "default " . $label . "<br>";
                     $options[ $label ] = '0';
-                    $same = false;
 
                 } // isset()
 
@@ -454,21 +453,23 @@ class Plugin {
                 foreach ( $new_settings as $label => $value ) {
 
                     $options[ $label ] = $new_settings[ $label ];
-                    $same = false;
 
                 } // foreach()
 
             } // ! empty()
 
+            // Cleanup Settings
+            unset( $options['_wpnonce'], $options['_wp_http_referer'] );
+            $settings[ $settings_page ] = $options; // Update page settings
+
             // Compare New / Old Settings
-            if ( $same ) {
+            if ( $settings == $this->settings ) {
 
                 $this->messages[] = array( 'Settings saved.', 0, 1 );
 
             } else {
 
                 // Update Settings
-                $settings[ $settings_page ] = $options; // Update page settings
                 $success = $this->set_settings( $settings ); // Update DB
 
                 if ( $success ) {

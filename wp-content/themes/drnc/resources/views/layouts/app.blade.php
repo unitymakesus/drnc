@@ -1,7 +1,11 @@
 <!doctype html>
 <html @php(language_attributes())>
   @include('partials.head')
-  <body @php(body_class())>
+  @php
+    $text_size = $_COOKIE['data_text_size'];
+    $contrast = $_COOKIE['data_contrast'];
+  @endphp
+  <body @php(body_class()) data-text-size="{{ $text_size }}" data-contrast="{{ $contrast }}">
     <!--[if IE]>
       <div class="alert alert-warning">
         {!! __('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage') !!}

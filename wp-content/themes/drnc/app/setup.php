@@ -11,7 +11,7 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    // wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
+    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 }, 100);
 
@@ -61,6 +61,15 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
      */
     add_theme_support('customize-selective-refresh-widgets');
+
+    /**
+     * Enable logo uploader in customizer
+     */
+     add_image_size('drnc-logo', 481, 133, false);
+     add_image_size('drnc-logo-2x', 962, 266, false);
+     add_theme_support('custom-logo', array(
+       'size' => 'drnc-logo-2x'
+     ));
 
     /**
      * Use main stylesheet for visual editor

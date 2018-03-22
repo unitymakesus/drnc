@@ -10,26 +10,28 @@
  * @see https://github.com/webpack-contrib/sass-loader#imports
  */
 // Materialize
-// @import "~materialize-css/sass/components/color-variables";
-// @import "~materialize-css/sass/components/color-classes";
-// @import "~materialize-css/sass/components/variables";
-// @import "~materialize-css/sass/components/normalize";
-// @import "~materialize-css/sass/components/global";
-// @import "~materialize-css/sass/components/grid";
-// @import "~materialize-css/sass/components/navbar";
-// @import "~materialize-css/sass/components/typography";
-// @import "~materialize-css/sass/components/buttons";
-// @import "~materialize-css/sass/components/dropdown";
-// @import "~materialize-css/sass/components/collapsible";
-// @import "~materialize-css/sass/components/sidenav";
-// @import "~materialize-css/sass/components/forms/forms";
+@import "~materialize-css/sass/components/color-variables";
+@import "~materialize-css/sass/components/color-classes";
+@import "~materialize-css/sass/components/variables";
+@import "~materialize-css/sass/components/normalize";
+@import "~materialize-css/sass/components/global";
+@import "~materialize-css/sass/components/grid";
+@import "~materialize-css/sass/components/navbar";
+@import "~materialize-css/sass/components/typography";
+@import "~materialize-css/sass/components/buttons";
+@import "~materialize-css/sass/components/dropdown";
+@import "~materialize-css/sass/components/collapsible";
+@import "~materialize-css/sass/components/sidenav";
+@import "~materialize-css/sass/components/forms/forms";
 
 /** Import theme styles */
 @import "common/a11y";
 @import "common/global";
+@import "components/a11y-tools";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
+@import "components/icons";
 @import "components/wp-classes";
 @import "layouts/header";
 @import "layouts/sidebar";

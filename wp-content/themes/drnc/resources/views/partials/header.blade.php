@@ -1,25 +1,37 @@
 <a href="#content" class="screen-reader-text">Skip to content</a>
 <header class="banner" role="banner">
-  <div class="a11y-tools" role="toolbar" aria-label="Accessibility Tools">
+  <div class="a11y-tools z-depth-2" role="toolbar" aria-label="Accessibility Tools">
     <fieldset id="text-size" class="text-size" tabindex="-1">
       <legend>Change Text Size:</legend>
-      <div>
-        <input type="radio" name="text-size" id="default-size" value="default" checked>
-        <label for="default-size">Default</label>
-      </div>
-      <div>
-        <input type="radio" name="text-size" id="medium-size" value="medium">
-        <label for="medium-size">Medium</label>
-      </div>
-      <div>
-        <input type="radio" name="text-size" id="large-size" value="large">
-        <label for="large-size">Large</label>
-      </div>
+      @php
+        $cookie_size = $_COOKIE['data_text_size'];
+        $text_sizes = [
+          [
+            'name' => 'default',
+            'label' => 'Default'
+          ],[
+            'name' => 'medium',
+            'label' => 'Medium'
+          ],[
+            'name' => 'large',
+            'label' => 'Large'
+          ]
+        ];
+      @endphp
+      @foreach ($text_sizes as $size)
+        <div class="{{ $size['name'] }}-size">
+          <input type="radio" name="text-size" id="{{ $size['name'] }}-size" value="{{ $size['name'] }}" <?php if($cookie_size == $size['name']) {echo 'checked';} ?>>
+          <label for="{{ $size['name'] }}-size">{{ $size['label'] }}</label>
+        </div>
+      @endforeach
     </fieldset>
     <fieldset id="toggle-contrast" class="toggle-contrast" tabindex="-1">
       <legend>Toggle Contrast:</legend>
+      @php
+        $cookie_contrast = $_COOKIE['data_contrast'];
+      @endphp
       <div>
-        <input type="checkbox" name="contrast" id="contrast" value="true" />
+        <input type="checkbox" name="contrast" id="contrast" value="true" <?php if($cookie_contrast == 'true') {echo 'checked';} ?> />
         <label for="contrast">High Contrast Mode</label>
       </div>
     </fieldset>
@@ -27,7 +39,7 @@
   </div>
 
   <nav role="navigation">
-    <div class="container">
+    <div class="row">
       <a class="logo left" href="{{ home_url('/') }}" rel="home">
         @if (has_custom_logo())
           @php

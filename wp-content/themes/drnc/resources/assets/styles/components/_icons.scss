@@ -1,0 +1,41 @@
+.social-icons {
+  li {
+    padding: 0 3px;
+
+    a {
+      display: block;
+      position: relative;
+      height: 50px;
+      width: 50px;
+      padding: 0;
+      overflow: hidden;
+      text-align: left;
+      text-indent: -100em;
+      background: $color-teal;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        width: 26px;
+        height: 26px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+
+    &.icon-facebook a::before {
+      background-image: url('../images/icon-facebook.svg');
+    }
+
+    &.icon-linkedin a::before {
+      background-image: url('../images/icon-linkedin.svg');
+    }
+
+    &.icon-twitter a::before {
+      background-image: url('../images/icon-twitter.svg');
+    }
+  }
+}

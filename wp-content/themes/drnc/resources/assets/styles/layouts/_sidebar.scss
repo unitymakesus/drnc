@@ -1,0 +1,84 @@
+.sidebar {
+  .widget_nav_menu h3 {
+    display: none;
+  }
+
+  .menu {
+    margin-top: 2.8rem;
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        display: block;
+        position: relative;
+        font-family: $font-serif;
+        font-size: rem-calc(20px);
+        background: $color-purple;
+        transition: all 0.3s;
+        color: $color-white;
+        letter-spacing: 0.5px;
+        padding: 20px;
+
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          right: 0;
+          width: 20px;
+          height: 50%;
+        }
+
+        &::before {
+          top: 0;
+        }
+
+        &::after {
+          bottom: 0;
+        }
+
+        &:hover, &:active, &:focus {
+          background: $color-purple-dark;
+          text-decoration: underline;
+        }
+      }
+
+      &.current-menu-item {
+        a {
+          background: $color-purple-dark;
+
+          &::before {
+            @include triangle('bottom right', $color-green);
+          }
+
+          &::after {
+            @include triangle('top right', $color-green);
+          }
+        }
+      }
+    }
+  }
+}
+
+.sidebar-primary {
+  .wrap {
+    @extend .row;
+
+    .main {
+      @extend .col;
+      @extend .l6;
+      @extend .m8;
+      @extend .s12;
+    }
+
+    .sidebar {
+      @extend .col;
+      @extend .l3;
+      @extend .m4;
+      @extend .s12;
+
+      position: relative;
+      padding-left: 0;
+    }
+  }
+}

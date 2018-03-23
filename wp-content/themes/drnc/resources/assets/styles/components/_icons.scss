@@ -12,6 +12,7 @@
       text-align: left;
       text-indent: -100em;
       background: $color-teal;
+      border: 2px solid $color-teal;
 
       &::before {
         content: '';
@@ -23,6 +24,14 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
+        transition: all 0.3s;
+      }
+
+      &:hover, &:active, &:focus {
+        background: lighten($color-teal, 10%);
+        border-color: $color-teal;
+
+        @extend .z-depth-2;
       }
     }
 

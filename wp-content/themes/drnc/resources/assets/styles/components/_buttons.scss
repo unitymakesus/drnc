@@ -3,6 +3,12 @@
   font-family: $font-serif;
   text-transform: none;
   line-height: 1.8em;
+
+  &:hover, &:focus, &:active {
+    background: lighten($color-purple, 10%);
+
+    @extend .z-depth-4;
+  }
 }
 
 .btn-lg {
@@ -16,7 +22,7 @@
   border-color: $color-teal-dark;
 
   &:hover, &:focus, &:active {
-    background: lighten($color-teal, 4);
+    background: lighten($color-teal, 10%);
   }
 }
 
@@ -25,6 +31,6 @@
   border-color: $color-green-dark;
 
   &:hover, &:focus, &:active {
-    background: lighten($color-green, 4);
+    background: lighten($color-green, 10%);
   }
 }

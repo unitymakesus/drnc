@@ -10,9 +10,22 @@
     }
   }
 
+  .footer-menu {
+    a {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+
   a:not(.btn) {
     color: $color-white;
     text-decoration: underline;
+    transition: all 0.3s;
+
+    &:hover, &:active {
+      text-decoration-style: double;
+      color: lighten($color-teal, 50%);
+    }
   }
 
   h3 {
@@ -26,10 +39,12 @@
       float: left;
 
       a {
+        border-color: $color-green-dark;
         background: $color-green-dark;
         transition: background-color 0.3s;
 
         &:hover, &:active, &:focus {
+          border-color: $color-green-dark;
           background: $color-green;
         }
       }

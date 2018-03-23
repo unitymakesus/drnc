@@ -14,14 +14,16 @@
     @php(do_action('get_header'))
     @include('partials.header')
     <div id="content" class="content" role="document">
-      <main class="main" role="main">
-        @yield('content')
-      </main>
-      @if (App\display_sidebar())
-        <aside class="sidebar" role="complementary">
-          @include('partials.sidebar')
-        </aside>
-      @endif
+      <div class="wrap">
+        @if (App\display_sidebar())
+          <aside class="sidebar" role="complementary">
+            @include('partials.sidebar')
+          </aside>
+        @endif
+        <main class="main" role="main">
+          @yield('content')
+        </main>
+      </div>
     </div>
     @php(do_action('get_footer'))
     @include('partials.footer')

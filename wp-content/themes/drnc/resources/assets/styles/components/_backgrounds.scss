@@ -74,6 +74,10 @@ $cdark: $color-purple-dark, $color-green-dark, $color-teal-dark;
     color: $color-white;
     position: relative;
 
+    h1, h2, h3 {
+      color: $color-white;
+    }
+
     &.background-point-left {
       & > .row > .col:nth-child(1)::before {
         @include triangle('bottom right', nth($cdark, $i));

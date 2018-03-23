@@ -41,7 +41,7 @@
 
 .navbar-menu {
   li {
-    &.active {
+    &.current-page-ancestor, &.current-menu-item {
       background: $color-teal;
     }
 

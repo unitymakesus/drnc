@@ -1,14 +1,68 @@
 h1 {
   font-family: $font-serif;
-  font-size: rem-calc(65px);
+  font-size: rem-calc(45px);
+  color: $color-teal-dark;
+
+  .home & {
+    font-size: rem-calc(65px);
+  }
 }
 
 h2 {
   font-family: $font-serif;
-  font-size: rem-calc(45px);
+  font-size: rem-calc(36px);
+  color: $color-purple;
+
+  .home & {
+    font-size: rem-calc(45px);
+  }
 }
 
 h3 {
   font-family: $font-serif;
   font-size: rem-calc(24px);
+}
+
+.main {
+  p, li, dt, dd {
+    line-height: 1.8em;
+  }
+
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+    transition: all 0.3s;
+
+    &:hover, &:active {
+      text-decoration-style: double;
+      color: $color-green;
+    }
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-bottom: 1em;
+  }
+
+  ul {
+    li {
+      list-style: none;
+      position: relative;
+      padding-left: 30px;
+
+      &::before {
+        content: '\2022';
+        color: $color-purple;
+        position: absolute;
+        left: 10px;
+      }
+    }
+  }
+}
+
+strong {
+  font-weight: 700;
 }

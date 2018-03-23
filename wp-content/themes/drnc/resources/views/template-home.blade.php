@@ -7,6 +7,10 @@
 @section('content')
   @while(have_posts()) @php(the_post())
     <section class="background-purple background-point-left" role="region" aria-label="Overview">
+      <div class="line left-1 vertical purple-light length-60"></div>
+      <div class="line left-2 vertical purple-light length-50"></div>
+      <div class="line top-1 horizontal purple-light length-60"></div>
+      <div class="line bottom-3 horizontal purple-light length-30"></div>
       <div class="row">
         <div class="col m8 s12">
           <h1>{{ get_field('main_text') }}</h1>
@@ -31,6 +35,8 @@
     </section>
 
     <section class="background-green background-point-right" role="region" aria-labelled-by="work-title">
+      <div class="line left-1 vertical green-light length-80"></div>
+      <div class="line top-1 horizontal green-light length-20"></div>
       <div class="row">
         <div class="col m4 s12">
           <h2 id="work-title">Our Work</h2>

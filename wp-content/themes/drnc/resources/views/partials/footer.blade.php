@@ -1,5 +1,7 @@
 <footer class="content-info page-footer" role="contentinfo">
   <div class="background-teal background-point-left">
+    <div class="line left-1 bottom vertical teal-light length-90"></div>
+    <div class="line bottom-1 horizontal teal-light length-30"></div>
     <div class="row">
       <div class="col m7 s12">
         <div class="row">

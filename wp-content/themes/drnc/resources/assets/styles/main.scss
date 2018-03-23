@@ -26,14 +26,15 @@
 
 /** Import theme styles */
 @import "common/a11y";
-@import "common/backgrounds";
 @import "common/global";
 @import "common/typography";
 @import "components/a11y-tools";
+@import "components/backgrounds";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
 @import "components/icons";
+@import "components/lines";
 @import "components/unity";
 @import "components/wp-classes";
 @import "layouts/header";

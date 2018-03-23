@@ -1,0 +1,65 @@
+.line {
+  position: absolute;
+  transition: all 0.5s;
+
+  &.purple-light {
+    background: lighten($color-purple, 20%);
+  }
+
+  &.green-light {
+    background: $color-green;
+  }
+
+  &.teal-light {
+    background: lighten($color-teal, 20%);
+  }
+
+  &.vertical {
+    width: 2px;
+    height: 0;
+    top: 0;
+
+    &.bottom {
+      bottom: 0;
+      top: auto;
+    }
+  }
+
+  &.horizontal {
+    height: 2px;
+    width: 0;
+    left: 0;
+  }
+
+  $distances: 1, 2, 3;
+
+  @each $d in $distances {
+    &.left-#{$d} {
+      left: $d*1.5em;
+    }
+
+    &.top-#{$d} {
+      top: $d*1.5em;
+    }
+
+    &.bottom-#{$d} {
+      bottom: $d*1.5em;
+    }
+  }
+
+  $lengths: 10, 20, 30, 40, 50, 60, 70, 80, 90;
+
+  @each $l in $lengths {
+    &.vertical {
+      &.length-#{$l} {
+        height: percentage($l/100);
+      }
+    }
+
+    &.horizontal {
+      &.length-#{$l} {
+        width: percentage($l/100);
+      }
+    }
+  }
+}

@@ -72,6 +72,7 @@ $cdark: $color-purple-dark, $color-green-dark, $color-teal-dark;
   .background-#{$c} {
     background: nth($creg, $i);
     color: $color-white;
+    position: relative;
 
     &.background-point-left {
       & > .row > .col:nth-child(1)::before {

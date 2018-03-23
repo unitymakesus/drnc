@@ -22,5 +22,70 @@ $success-color:               #366107;
 $error-color:                 #7A0707;
 $link-color:                  $color-teal;
 
+$color-black-trans-50:           rgba($color-black, 0.5);
+$color-black-trans-70:           rgba($color-black, 0.7);
+
+/** Buttons */
+// Shared styles
+$button-background-focus: lighten($color-purple, 4%);
+$button-font-size: 1.2rem;
+$button-height: 50px;
+$button-padding: 0 1rem;
+$button-radius: 0;
+
+// Raised buttons
+$button-raised-background: $color-purple;
+
+/** Navigation */
+$navbar-height: auto;
+$navbar-line-height: 60px;
+$navbar-height-mobile: auto;
+$navbar-line-height-mobile: $navbar-line-height;
+
+/** Footer */
+$footer-font-color: $color-white;
+$footer-bg-color: $color-teal;
+$footer-copyright-font-color: $color-white;
+$footer-copyright-bg-color: $color-purple-dark;
+
 /** Box Model  */
 $spacer:                2rem;
+
+/** Gradients */
+// Utility mixin from Compass
+@mixin filter-gradient($start-color, $end-color, $orientation: vertical) {
+  $gradient-type: if($orientation == vertical, 0, 1);
+
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$gradient-type}, startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}');
+}
+@mixin triangle($direction, $color) {
+  background-image: -o-linear-gradient(to #{$direction}, transparent 0%, transparent 50%, #{$color} 50%);
+  background-image: -moz-linear-gradient(to #{$direction}, transparent 0%, transparent 50%, #{$color} 50%);
+  background-image: -ms-linear-gradient(to #{$direction}, transparent 0%, transparent 50%, #{$color} 50%);
+  background-image: linear-gradient(to #{$direction}, transparent 0%, transparent 50%, #{$color} 50%);
+}
+
+// Rem-calc function from Zurb
+$rem-base: 18px;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+@function convert-to-rem($value, $base-value: $rem-base) {
+  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+
+  @return $value;
+}
+@function rem-calc($values, $base-value: $rem-base) {
+  $max: length($values);
+
+  @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
+
+  $remValues: ();
+
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+  }
+
+  @return $remValues;
+}

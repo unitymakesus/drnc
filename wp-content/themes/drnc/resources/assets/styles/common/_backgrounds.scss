@@ -1,0 +1,104 @@
+.background-point-left {
+  & > .row {
+    display: flex;
+
+    & > .col:nth-child(1) {
+      padding: 100px 150px 100px 7.5%;
+      position: relative;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        right: 0;
+        width: 100px;
+        height: 50%;
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+    }
+
+    & > .col:nth-child(2) {
+      padding: 100px 7.5% 100px 0;
+    }
+  }
+}
+
+.background-point-right {
+  & > .row {
+    display: flex;
+
+    & > .col:nth-child(1) {
+      padding: 100px 0 100px 7.5%;
+    }
+
+    & > .col:nth-child(2) {
+      padding: 100px 7.5% 100px 150px;
+      position: relative;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100px;
+        height: 50%;
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+    }
+  }
+}
+
+$colors: purple, green, teal;
+$creg: $color-purple, $color-green, $color-teal;
+$cdark: $color-purple-dark, $color-green-dark, $color-teal-dark;
+
+@each $c in $colors {
+  $i: index($colors, $c);
+
+  .background-#{$c} {
+    background: nth($creg, $i);
+    color: $color-white;
+
+    &.background-point-left {
+      & > .row > .col:nth-child(1)::before {
+        @include triangle('bottom right', nth($cdark, $i));
+      }
+
+      & > .row > .col:nth-child(1)::after {
+        @include triangle('top right', nth($cdark, $i));
+      }
+
+      & > .row > .col:nth-child(2) {
+        background: nth($cdark, $i);
+      }
+    }
+
+    &.background-point-right {
+      & > .row > .col:nth-child(2)::before {
+        @include triangle('bottom left', nth($cdark, $i));
+      }
+
+      & > .row > .col:nth-child(2)::after {
+        @include triangle('top left', nth($cdark, $i));
+      }
+
+      & > .row > .col:nth-child(1) {
+        background: nth($cdark, $i);
+      }
+    }
+  }
+}

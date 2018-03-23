@@ -1,0 +1,38 @@
+.page-footer {
+  padding: 0;
+
+  .background-point-left > .row {
+    margin-bottom: 0;
+
+    & > .col {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
+  a:not(.btn) {
+    color: $color-white;
+    text-decoration: underline;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  .widget_nav_menu .menu {
+    @extend .social-icons;
+
+    li {
+      float: left;
+
+      a {
+        background: $color-green-dark;
+        transition: background-color 0.3s;
+
+        &:hover, &:active, &:focus {
+          background: $color-green;
+        }
+      }
+    }
+  }
+}

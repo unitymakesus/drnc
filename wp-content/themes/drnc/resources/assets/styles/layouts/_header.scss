@@ -1,9 +1,9 @@
-// TODO: .banner .nav li {}
-// TODO: .banner .nav a {}
-.banner nav {
-  background: none;
-  color: $color-black;
-  height: auto;
+.banner {
+  nav {
+    background: none;
+    color: $color-black;
+    height: auto;
+  }
 
   .logo {
     max-width: 481px;
@@ -12,10 +12,45 @@
     img {
       width: 100%;
       height: auto;
+      display: block;
     }
   }
 
   .utility {
     padding: 10px 20px;
+  }
+
+  .navbar {
+    background: $color-teal-dark;
+    margin-bottom: 0;
+  }
+
+  .menu-trigger {
+    text-decoration: none;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    margin-right: 20px;
+    display: none;
+
+    i {
+      font-size: 2em;
+    }
+  }
+}
+
+.navbar-menu {
+  li {
+    &.active {
+      background: $color-teal;
+    }
+
+    &:hover, &:focus, &.hover {
+      background: $color-teal;
+
+      & > a {
+        text-decoration: underline;
+      }
+    }
   }
 }

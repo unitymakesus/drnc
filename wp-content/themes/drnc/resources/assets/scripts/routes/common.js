@@ -1,6 +1,26 @@
 export default {
   init() {
-    // JavaScript to be fired on all pages
+    /**
+     * Set aria labels for current navigation items
+     */
+    // Main navigation in header and footer
+    $('.menu-primary-menu-container .menu-item').each(function() {
+      if ($(this).hasClass('current-page-ancestor')) {
+        $(this).children('a').attr('aria-current', 'true');
+      }
+      if ($(this).hasClass('current-menu-item')) {
+        $(this).children('a').attr('aria-current', 'page');
+      }
+    });
+    // Sidebar navigation
+    $('.widget_nav_menu .menu-item').each(function() {
+      if ($(this).hasClass('current-page-ancestor')) {
+        $(this).children('a').attr('aria-current', 'true');
+      }
+      if ($(this).hasClass('current-menu-item')) {
+        $(this).children('a').attr('aria-current', 'page');
+      }
+    });
   },
   finalize() {
     // Controls for changing text size

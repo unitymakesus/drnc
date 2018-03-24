@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FacetWP\n"
 "POT-Creation-Date: 2018-03-08 04:25-0500\n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2018-03-08 04:25-0500\n"
 "Last-Translator: Matt Gibbs <hello@facetwp.com>\n"
-"Language-Team: Johan Falk <johan@wpkonsulterna.se>\n"
-"Language: sv\n"
+"Language-Team: Matt Gibbs <hello@facetwp.com>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,174 +13,170 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 
 #: includes/class-ajax.php:222
-#, fuzzy
 msgid "FacetWP was unable to auto-detect the post listing"
-msgstr "FacetWP gick inte att automatiskt identifiera post katalogiseringen"
+msgstr "FacetWP no ha pogut detectar automàticament el llistat d'entrades"
 
 #: includes/class-ajax.php:251
 msgid "Settings saved"
-msgstr "Inställningarna uppdaterade"
+msgstr "Paràmetres desats"
 
 #: includes/class-ajax.php:258
 msgid "Error: invalid JSON"
-msgstr "Fel: Ogiltig JSON"
+msgstr "Error: JSON no vàlid"
 
 #: includes/class-ajax.php:378
 msgid "Nothing to import"
-msgstr "Inget att importera"
+msgstr "No hi ha res per importar"
 
 #: includes/class-ajax.php:414
 msgid "Imported"
-msgstr "Importerade"
+msgstr "Importat"
 
 #: includes/class-ajax.php:417
 msgid "Skipped"
-msgstr "Hoppade över"
+msgstr "Omès"
 
 #: includes/class-ajax.php:448
 msgid "Error"
-msgstr "Fel"
+msgstr "Error"
 
 #: includes/class-display.php:136
 msgid "No results found"
-msgstr "Inga resultat hittades"
+msgstr "No s'ha trobat cap resultat"
 
 #: includes/class-helper.php:434
 msgid "Posts"
-msgstr "Inlägg"
+msgstr "Entrades"
 
 #: includes/class-helper.php:436
 msgid "Post Type"
-msgstr "Inläggstyp"
+msgstr "Tipus d'entrada"
 
 #: includes/class-helper.php:437
 msgid "Post Date"
-msgstr "Inläggsdatum"
+msgstr "Data de publicació"
 
 #: includes/class-helper.php:438
 msgid "Post Modified"
-msgstr "Inlägg ändrat"
+msgstr "Data de modificació"
 
 #: includes/class-helper.php:439
 msgid "Post Title"
-msgstr "Inläggstitel"
+msgstr "Títol de l'entrada"
 
 #: includes/class-helper.php:440
 msgid "Post Author"
-msgstr "Inläggsförfattare"
+msgstr "Autor de l'entrada"
 
 #: includes/class-helper.php:445
 msgid "Taxonomies"
-msgstr "Taxonomier"
+msgstr "Taxonomia"
 
 #: includes/class-helper.php:450
 msgid "Custom Fields"
-msgstr "Egna fält"
+msgstr "Camps personalitzats"
 
 #: includes/class-init.php:139 templates/page-settings.php:63
 msgid "Settings"
-msgstr "Inställningar"
+msgstr "Paràmetres"
 
 #: includes/class-init.php:171
-#, fuzzy
 msgid "integration add-on"
-msgstr "integration add-on"
+msgstr "extensió d'integració"
 
 #: includes/class-init.php:172
-#, fuzzy, php-format
+#, php-format
 msgid "To use FacetWP with %s, please install the %s, then re-index."
-msgstr "Använd FacetWP med %s, vänligen installera %s, sedan indexera."
+msgstr "Per fer servir FacetWP amb %s, instal·la %s, i re-indexa."
 
 #: includes/class-renderer.php:497 includes/class-renderer.php:614
 msgid "of"
-msgstr "av"
+msgstr "de"
 
 #: includes/class-renderer.php:531 includes/facets/checkboxes.php:331
 #: includes/facets/dropdown.php:191 includes/facets/fselect.php:322
 #: includes/facets/hierarchy.php:212 includes/facets/radio.php:210
 msgid "Sort by"
-msgstr "Sortera efter"
+msgstr "Ordenar per"
 
 #: includes/class-renderer.php:535
 msgid "Title (A-Z)"
-msgstr "Titel (A-Ö)"
+msgstr "Títol (A-Z)"
 
 #: includes/class-renderer.php:542
 msgid "Title (Z-A)"
-msgstr "Titel (Ö-A)"
+msgstr "Títol (Z-A)"
 
 #: includes/class-renderer.php:549
 msgid "Date (Newest)"
-msgstr "Datum (senaste)"
+msgstr "Data (Més recent)"
 
 #: includes/class-renderer.php:556
 msgid "Date (Oldest)"
-msgstr "Datum (äldsta)"
+msgstr "Data (Més antic)"
 
 #: includes/class-renderer.php:613
 msgid "Page"
-msgstr "Sida"
+msgstr "Pàgina"
 
 #: includes/class-renderer.php:664
 msgid "Per page"
-msgstr "Per sida"
+msgstr "Per pàgina"
 
 #: includes/class-settings-admin.php:14
 msgid "General"
-msgstr "Allmänt"
+msgstr "General"
 
 #: includes/class-settings-admin.php:17
 msgid "License Key"
-msgstr "Licensnyckel"
+msgstr "Clau de llicència"
 
 #: includes/class-settings-admin.php:21
 msgid "Google Maps API Key"
-msgstr "Google Maps API-nyckel"
+msgstr "Clau de la API Google Maps"
 
 #: includes/class-settings-admin.php:25
 msgid "Separators"
-msgstr "separatorer"
+msgstr "Separators"
 
 #: includes/class-settings-admin.php:29
-#, fuzzy
 msgid "Loading Animation"
-msgstr "Laddar animation"
+msgstr "Animació de carrega"
 
 #: includes/class-settings-admin.php:31
 msgid "Fade"
-msgstr "Tona"
+msgstr "Esvaïment"
 
 #: includes/class-settings-admin.php:31
 msgid "Spin"
-msgstr "Snurra"
+msgstr "Girador"
 
 #: includes/class-settings-admin.php:31 includes/facets/date_range.php:181
 #: includes/facets/number_range.php:116 includes/facets/proximity.php:247
 #: includes/facets/proximity.php:277 includes/facets/slider.php:176
 msgid "None"
-msgstr "Inget"
+msgstr "Cap"
 
 #: includes/class-settings-admin.php:35
-#, fuzzy
-#| msgid "Prefix"
 msgid "URL Prefix"
-msgstr "Prefix"
+msgstr "Prefix de les URL"
 
 #: includes/class-settings-admin.php:41
 msgid "Debug Mode"
-msgstr "Felsökningsläge"
+msgstr "Mode de depuració"
 
 #: includes/class-settings-admin.php:43
 msgid "Off"
-msgstr "Av"
+msgstr "Desactivat"
 
 #: includes/class-settings-admin.php:43
 msgid "On"
-msgstr "På"
+msgstr "Activat"
 
 #: includes/class-settings-admin.php:49
 #: includes/integrations/woocommerce/woocommerce.php:48
@@ -188,14 +184,12 @@ msgid "WooCommerce"
 msgstr "WooCommerce"
 
 #: includes/class-settings-admin.php:52
-#, fuzzy
 msgid "Support product variations?"
-msgstr "Stöder produkten varianter?"
+msgstr "Suportar variacions de productes?"
 
 #: includes/class-settings-admin.php:53
-#, fuzzy
 msgid "Enable if your store uses variable products."
-msgstr "Aktivera om din store använder varierande produkter."
+msgstr "Activa si la teva botiga fa servir productes amb variacions."
 
 #: includes/class-settings-admin.php:55 includes/class-settings-admin.php:62
 #: includes/facets/checkboxes.php:366 includes/facets/checkboxes.php:381
@@ -206,7 +200,7 @@ msgstr "Aktivera om din store använder varierande produkter."
 #: includes/facets/radio.php:245 includes/facets/search.php:117
 #: includes/integrations/acf/acf.php:247
 msgid "No"
-msgstr "Nej"
+msgstr "No"
 
 #: includes/class-settings-admin.php:55 includes/class-settings-admin.php:62
 #: includes/facets/checkboxes.php:367 includes/facets/checkboxes.php:382
@@ -217,275 +211,271 @@ msgstr "Nej"
 #: includes/facets/radio.php:246 includes/facets/search.php:118
 #: includes/integrations/acf/acf.php:247
 msgid "Yes"
-msgstr "Ja"
+msgstr "Sí"
 
 #: includes/class-settings-admin.php:59
-#, fuzzy
 msgid "Include all products?"
-msgstr "Inkludera alla produkter?"
+msgstr "Incloure tots els productes?"
 
 #: includes/class-settings-admin.php:60
-#, fuzzy
 msgid "Show facet choices for out-of-stock products?"
-msgstr "Visa fasett val för out-of-stock produkter?"
+msgstr "Mostrar les opcions de la facet pels productes no disponibles?"
 
 #: includes/class-settings-admin.php:68
 msgid "Backup"
-msgstr "Säkerhetskopiering"
+msgstr "Copia de seguretat"
 
 #: includes/class-settings-admin.php:71 includes/class-settings-admin.php:123
 msgid "Export"
-msgstr "Export"
+msgstr "Exportar"
 
 #: includes/class-settings-admin.php:75 includes/class-settings-admin.php:129
 msgid "Import"
-msgstr "Import"
+msgstr "Importar"
 
 #: includes/class-settings-admin.php:100
 msgid "Activate"
-msgstr "Aktivera"
+msgstr "Activa"
 
 #: includes/class-settings-admin.php:127
 msgid "Paste the import code here"
-msgstr "Klistra importkoden här"
+msgstr "Copia el codi d'importació aquí"
 
 #: includes/class-settings-admin.php:128
 msgid "Overwrite existing items?"
-msgstr "Skriv över befintliga objekt?"
+msgstr "Sobreescriure els ítems que ja existeixen?"
 
 #: includes/class-settings-admin.php:197
 msgid "Not yet activated"
-msgstr "Ännu inte aktiverad"
+msgstr "No s'ha activat encara"
 
 #: includes/class-settings-admin.php:203
 msgid "License active"
-msgstr "Licensen är aktiv"
+msgstr "Llicència activa"
 
 #: includes/class-settings-admin.php:204
 msgid "expires"
-msgstr "går ut"
+msgstr "caduca"
 
 #: includes/class-updater.php:105
 msgid "Please activate or renew your license for automatic updates."
 msgstr ""
-"Vänligen aktivera eller förnya din licens för automatiska uppdateringar."
+"Activa o renova la teva llicència per aconseguir actualitzacions "
+"automàtiques."
 
 #: includes/facets/autocomplete.php:7
 msgid "Autocomplete"
-msgstr "Automatisk komplettering"
+msgstr "Compleció automàtica"
 
 #: includes/facets/autocomplete.php:40
 msgid "Start typing..."
-msgstr "Börja skriva..."
+msgstr "Comença a teclejar..."
 
 #: includes/facets/autocomplete.php:43
 msgid "Update"
-msgstr "Uppdatera"
+msgstr "Actualitzar"
 
 #: includes/facets/autocomplete.php:99
 msgid "No results"
-msgstr "Inga resultat"
+msgstr "Cap resultat"
 
 #: includes/facets/autocomplete.php:159 includes/facets/search.php:104
 msgid "Placeholder text"
-msgstr "Platshållartext"
+msgstr "Text per defecte"
 
 #: includes/facets/checkboxes.php:7
 msgid "Checkboxes"
-msgstr "Kryssrutor"
+msgstr "Caixa de selecció"
 
 #: includes/facets/checkboxes.php:152
 msgid "See {num} more"
-msgstr "Se {num} mer"
+msgstr "Mostrar {num} més"
 
 #: includes/facets/checkboxes.php:153 includes/facets/hierarchy.php:152
 msgid "See less"
-msgstr "Visa färre"
+msgstr "Mostrar menys"
 
 #: includes/facets/checkboxes.php:317 includes/facets/dropdown.php:177
 #: includes/facets/fselect.php:308 includes/facets/radio.php:196
 msgid "Parent term"
-msgstr "Föräldrabenämning"
+msgstr "Terme pare"
 
 #: includes/facets/checkboxes.php:334 includes/facets/dropdown.php:194
 #: includes/facets/fselect.php:325 includes/facets/hierarchy.php:215
 #: includes/facets/radio.php:213
 msgid "Highest Count"
-msgstr "Högsta antal"
+msgstr "Recompte més alt"
 
 #: includes/facets/checkboxes.php:335 includes/facets/dropdown.php:195
 #: includes/facets/fselect.php:326 includes/facets/hierarchy.php:216
 #: includes/facets/radio.php:214
 msgid "Display Value"
-msgstr "Visningsvärde"
+msgstr "Valor mostrat"
 
 #: includes/facets/checkboxes.php:336 includes/facets/dropdown.php:196
 #: includes/facets/fselect.php:327 includes/facets/hierarchy.php:217
 #: includes/facets/radio.php:215
 msgid "Raw Value"
-msgstr "Obearbetat värde"
+msgstr "Valor brut"
 
 #: includes/facets/checkboxes.php:337 includes/facets/dropdown.php:197
 #: includes/facets/fselect.php:328 includes/facets/hierarchy.php:218
 #: includes/facets/radio.php:216
 msgid "Term Order"
-msgstr "Ordning"
+msgstr "Ordre de terme"
 
 #: includes/facets/checkboxes.php:343 includes/facets/fselect.php:349
 msgid "Behavior"
-msgstr "Beteende"
+msgstr "Comportament"
 
 #: includes/facets/checkboxes.php:346 includes/facets/fselect.php:352
 msgid "How should multiple selections affect the results?"
-msgstr "Hur ska flera val påverkar resultatet?"
+msgstr "Com hauria d'afectar el resultat la selecció de diversos ítems?"
 
 #: includes/facets/checkboxes.php:351 includes/facets/fselect.php:357
 msgid "Narrow the result set"
-msgstr "Begränsa sökresultatet"
+msgstr "Redueix el conjunt de resultat"
 
 #: includes/facets/checkboxes.php:352 includes/facets/fselect.php:358
 msgid "Widen the result set"
-msgstr "Bredda sökresultatet"
+msgstr "Amplia el conjunt de resultat"
 
 #: includes/facets/checkboxes.php:358 includes/facets/dropdown.php:203
 #: includes/facets/fselect.php:334
 msgid "Hierarchical"
-msgstr "Hierarkisk"
+msgstr "Jeràrquic"
 
 #: includes/facets/checkboxes.php:361 includes/facets/dropdown.php:206
 #: includes/facets/fselect.php:337
 msgid "Is this a hierarchical taxonomy?"
-msgstr "Är detta en hierarkisk taxonomi?"
+msgstr "Es tracta d'una taxonomia jeràrquica?"
 
 #: includes/facets/checkboxes.php:373
-#, fuzzy
 msgid "Show expanded"
-msgstr "Visa utökad"
+msgstr "Mostrar desplegat"
 
 #: includes/facets/checkboxes.php:376
-#, fuzzy
 msgid "Should child terms be visible by default?"
-msgstr "Bör barn vara synlig som standard?"
+msgstr "Els termes fills han de ser visible per defecte?"
 
 #: includes/facets/checkboxes.php:388 includes/facets/fselect.php:364
 #: includes/facets/radio.php:222
 msgid "Show ghosts"
-msgstr "Visa spöken"
+msgstr "Mostrar opcions fantasmes"
 
 #: includes/facets/checkboxes.php:391 includes/facets/fselect.php:367
 #: includes/facets/radio.php:225
 msgid "Show choices that would return zero results?"
-msgstr "Visa val som skulle inte skulle ge några sökresultat?"
+msgstr "Mostrar opcions que no retornarien cap resultat?"
 
 #: includes/facets/checkboxes.php:403 includes/facets/fselect.php:379
 #: includes/facets/radio.php:237
 msgid "Preserve ghost order"
-msgstr "Bevara spökordning"
+msgstr "Preservar l'ordre de les opcions fantasmes"
 
 #: includes/facets/checkboxes.php:406 includes/facets/fselect.php:382
 #: includes/facets/radio.php:240
 msgid "Keep ghost choices in the same order?"
-msgstr "Håll spökval i samma ordning?"
+msgstr "Mantenir les opcions fantasmes en el mateix ordre?"
 
 #: includes/facets/checkboxes.php:418 includes/facets/dropdown.php:218
 #: includes/facets/fselect.php:394 includes/facets/hierarchy.php:224
 #: includes/facets/radio.php:252
 msgid "Count"
-msgstr "Antal"
+msgstr "Recompte"
 
 #: includes/facets/checkboxes.php:421 includes/facets/dropdown.php:221
 #: includes/facets/fselect.php:397 includes/facets/hierarchy.php:227
 #: includes/facets/radio.php:255
 msgid "The maximum number of facet choices to show"
-msgstr "Det maximala antalet fasettval att visa"
+msgstr "El nombre màxim d'opcions de la facet per mostrar"
 
 #: includes/facets/checkboxes.php:428
 msgid "Soft Limit"
-msgstr "Mjuk gräns"
+msgstr "Límit suau"
 
 #: includes/facets/checkboxes.php:431
 msgid "Show a toggle link after this many choices"
-msgstr "Visa en växla link after delta manga val"
+msgstr "Mostrar un enllaç per veure més opcions després de X opcions"
 
 #: includes/facets/date_range.php:7
 msgid "Date Range"
-msgstr "Datumintervall"
+msgstr "Rang de dates"
 
 #: includes/facets/date_range.php:22
 msgid "Date"
-msgstr "Datum"
+msgstr "Data"
 
 #: includes/facets/date_range.php:25 includes/facets/date_range.php:208
 msgid "Start Date"
-msgstr "Startdatum"
+msgstr "Data d'inici"
 
 #: includes/facets/date_range.php:28 includes/facets/date_range.php:209
 msgid "End Date"
-msgstr "Slutdatum"
+msgstr "Data de fi"
 
 #: includes/facets/date_range.php:154
 msgid "Clear"
-msgstr "Rensa"
+msgstr "Netejar"
 
 #: includes/facets/date_range.php:173 includes/facets/number_range.php:108
 #: includes/facets/slider.php:168
 msgid "Other data source"
-msgstr "Annan datakälla"
+msgstr "Altra font de dades"
 
 #: includes/facets/date_range.php:176 includes/facets/number_range.php:111
 #: includes/facets/slider.php:171
 msgid "Use a separate value for the upper limit?"
-msgstr "Använd en separat värde för den övre gränsen?"
+msgstr "Fer servir un valor distint pel límit superior?"
 
 #: includes/facets/date_range.php:193 includes/facets/number_range.php:128
 #: includes/facets/slider.php:188
 msgid "Compare type"
-msgstr "Jämför typ"
+msgstr "Comparar tipus"
 
 #: includes/facets/date_range.php:196 includes/facets/number_range.php:131
 #: includes/facets/slider.php:191
 msgid "Basic"
-msgstr "Grundläggande"
+msgstr "Bàsic"
 
 #: includes/facets/date_range.php:197
-#, fuzzy
 msgid "Enclose"
-msgstr "Bifoga"
+msgstr "Delimita"
 
 #: includes/facets/date_range.php:198 includes/facets/number_range.php:132
 #: includes/facets/slider.php:192
 msgid "Intersect"
-msgstr "Skär av"
+msgstr "Intersecciona"
 
 #: includes/facets/date_range.php:203
 msgid "Fields to show"
-msgstr "Fält att visa"
+msgstr "Camps per mostrar"
 
 #: includes/facets/date_range.php:206
 msgid "Start + End Dates"
-msgstr "Start + slutdatum"
+msgstr "Data d'inici + data de fi"
 
 #: includes/facets/date_range.php:207
 msgid "Exact Date"
-msgstr "Exakt datum"
+msgstr "Data exacta"
 
 #: includes/facets/date_range.php:215
 msgid "Display format"
-msgstr "visningsformat"
+msgstr "Format per mostrar"
 
 #: includes/facets/dropdown.php:7 includes/facets/proximity.php:275
 msgid "Dropdown"
-msgstr "Rullgardin"
+msgstr "Desplegable"
 
 #: includes/facets/dropdown.php:78 includes/facets/dropdown.php:172
 #: includes/facets/fselect.php:140 includes/facets/fselect.php:214
 #: includes/facets/fselect.php:303 includes/facets/hierarchy.php:67
 msgid "Any"
-msgstr "Alla"
+msgstr "Qualsevol"
 
 #: includes/facets/dropdown.php:163 includes/facets/fselect.php:301
 msgid "Default label"
-msgstr "Standardetikett"
+msgstr "Etiqueta per defecte"
 
 #: includes/facets/fselect.php:7
 msgid "fSelect"
@@ -493,27 +483,27 @@ msgstr "fSelect"
 
 #: includes/facets/fselect.php:219
 msgid "{n} selected"
-msgstr "{n} valt"
+msgstr "{n} seleccionats"
 
 #: includes/facets/fselect.php:220 includes/facets/search.php:7
 msgid "Search"
-msgstr "Sök"
+msgstr "Cerca"
 
 #: includes/facets/fselect.php:291
 msgid "Multi-select?"
-msgstr "Multi välj"
+msgstr "Selecció múltiple?"
 
 #: includes/facets/hierarchy.php:7
 msgid "Hierarchy"
-msgstr "Hierarki"
+msgstr "Jeràrquia"
 
 #: includes/facets/hierarchy.php:151
 msgid "See more"
-msgstr "Se mer"
+msgstr "Veure més"
 
 #: includes/facets/number_range.php:7
 msgid "Number Range"
-msgstr "Sifferintervall"
+msgstr "Rang de nombre"
 
 #: includes/facets/number_range.php:19
 msgid "Min"
@@ -529,93 +519,87 @@ msgstr "OK"
 
 #: includes/facets/proximity.php:14
 msgid "Proximity"
-msgstr "Avstånd"
+msgstr "Proximitat"
 
 #: includes/facets/proximity.php:63
 msgid "Enter location"
-msgstr "Ange Plats"
+msgstr "Introdueix una localització"
 
 #: includes/facets/proximity.php:227
 msgid "Clear location"
-msgstr "Rensa plats"
+msgstr "Esborra la localització"
 
 #: includes/facets/proximity.php:239
-#, fuzzy
 msgid "Longitude"
 msgstr "Longitud"
 
 #: includes/facets/proximity.php:242
 msgid "(Optional) use a separate longitude field"
-msgstr ""
+msgstr "(Opcional) fer servir un camp distint per a la longitud"
 
 #: includes/facets/proximity.php:260
 msgid "Unit of measurement"
-msgstr "Måttenhet"
+msgstr "Unitat de mesura"
 
 #: includes/facets/proximity.php:264
 msgid "Miles"
-msgstr "Engelska mil"
+msgstr "Milles"
 
 #: includes/facets/proximity.php:265
 msgid "Kilometers"
-msgstr "Kilometer"
+msgstr "Quilòmetres"
 
 #: includes/facets/proximity.php:271
 msgid "Radius UI"
-msgstr ""
+msgstr "Interfície per controlar el radi"
 
 #: includes/facets/proximity.php:276 includes/facets/slider.php:7
 msgid "Slider"
-msgstr "Reglage"
+msgstr "Control lliscant"
 
 #: includes/facets/proximity.php:283
 msgid "Radius options"
-msgstr ""
+msgstr "Radis disponibles"
 
 #: includes/facets/proximity.php:297
-#, fuzzy
-#| msgid "Slider"
 msgid "Slider range"
-msgstr "Reglage"
+msgstr "Control de rang lliscant"
 
 #: includes/facets/proximity.php:312
-#, fuzzy
-#| msgid "Default label"
 msgid "Default radius"
-msgstr "Standardetikett"
+msgstr "Radi per defecte"
 
 #: includes/facets/proximity.php:368
 msgid "Distance"
-msgstr "Distans"
+msgstr "Distància"
 
 #: includes/facets/radio.php:7
 msgid "Radio"
-msgstr "Radio"
+msgstr "Botó d'opció"
 
 #: includes/facets/search.php:19
 msgid "Enter keywords"
-msgstr "Ange sökord"
+msgstr "Introdueix paraules claus"
 
 #: includes/facets/search.php:93
 msgid "Search engine"
-msgstr "Sökmotor"
+msgstr "Motor de cerca"
 
 #: includes/facets/search.php:96
 msgid "WP Default"
-msgstr "WP Standard"
+msgstr "Motor de cerca per defecte del WP"
 
 #: includes/facets/search.php:109
-#, fuzzy
 msgid "Auto refresh"
-msgstr "Auto uppdatering"
+msgstr "Refresca automàticament"
 
 #: includes/facets/search.php:112
 msgid "Automatically refresh the results while typing?"
-msgstr ""
+msgstr "Refrescar automàticament els resultats a mesura que es tecleja?"
 
 #: includes/facets/slider.php:20
 msgid "Reset"
-msgstr "Återställ"
+msgstr "Restableix"
 
 #: includes/facets/slider.php:198
 msgid "Prefix"
@@ -623,15 +607,15 @@ msgstr "Prefix"
 
 #: includes/facets/slider.php:201
 msgid "Text that appears before each slider value"
-msgstr "Text som visas innan varje reglagevärde"
+msgstr "Text que es mostra davant de cada valor del control lliscant"
 
 #: includes/facets/slider.php:208
 msgid "Suffix"
-msgstr "Suffix"
+msgstr "Sufix"
 
 #: includes/facets/slider.php:211
 msgid "Text that appears after each slider value"
-msgstr "Text som visas efter varje reglage värde"
+msgstr "Text que es mostra després de cada valor del control lliscant"
 
 #: includes/facets/slider.php:218
 msgid "Format"
@@ -639,188 +623,166 @@ msgstr "Format"
 
 #: includes/facets/slider.php:221
 msgid "The number format"
-msgstr "Nummerformat"
+msgstr "Format dels nombres"
 
 #: includes/facets/slider.php:242
 msgid "Step"
-msgstr "Steg"
+msgstr "Increment"
 
 #: includes/facets/slider.php:245
 msgid "The amount of increase between intervals"
-msgstr "Mängden ökningen mellan intervaller"
+msgstr "El increment entre cada interval"
 
 #: includes/integrations/searchwp/searchwp.php:105
 msgid "Default"
-msgstr "Standard"
+msgstr "Per defecte"
 
 #: includes/integrations/woocommerce/woocommerce.php:50
 msgid "Price"
-msgstr "Pris"
+msgstr "Preu"
 
 #: includes/integrations/woocommerce/woocommerce.php:51
 msgid "Sale Price"
-msgstr "Kampanjpris"
+msgstr "Preu de venta"
 
 #: includes/integrations/woocommerce/woocommerce.php:52
 msgid "Regular Price"
-msgstr "Ordinarie pris"
+msgstr "Preu regular"
 
 #: includes/integrations/woocommerce/woocommerce.php:53
 msgid "Average Rating"
-msgstr "Genomsnittligt betyg"
+msgstr "Valoració mitjana"
 
 #: includes/integrations/woocommerce/woocommerce.php:54
 msgid "Stock Status"
-msgstr "Lagerstatus"
+msgstr "Estat de l'inventari"
 
 #: includes/integrations/woocommerce/woocommerce.php:55
 #: includes/integrations/woocommerce/woocommerce.php:417
 msgid "On Sale"
-msgstr "På rea"
+msgstr "En venta"
 
 #: includes/integrations/woocommerce/woocommerce.php:56
 msgid "Product Type"
-msgstr "Produkttyp"
+msgstr "Tipus de producte"
 
 #: includes/integrations/woocommerce/woocommerce.php:409
 msgid "In Stock"
-msgstr "I lager"
+msgstr "Disponible"
 
 #: includes/integrations/woocommerce/woocommerce.php:409
 msgid "Out of Stock"
-msgstr "Slut i lager"
+msgstr "No disponible"
 
 #: index.php:72
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "FacetWP requires PHP %s or above. Please contact your host and request a PHP "
 "upgrade."
 msgstr ""
-"FacetWP kräver PHP %s eller ovan. Kontakta din värd och begära en "
-"uppgradering av PHP."
+"FacetWP requereix PHP %s o superior. Contacta amb el teu proveïdor i demana "
+"una actualització de PHP."
 
 #: templates/page-settings.php:5
 msgid "All post types"
-msgstr "Alla Inläggstyper"
+msgstr "Tots els tipus d'entrada"
 
 #: templates/page-settings.php:6
 msgid "Indexing complete"
-msgstr "Indexering komplett"
+msgstr "Indexació completada"
 
 #: templates/page-settings.php:7
 msgid "Indexing"
-msgstr "Indexering"
+msgstr "Indexant"
 
 #: templates/page-settings.php:8
 msgid "Saving"
-msgstr "Sparar"
+msgstr "Desant"
 
 #: templates/page-settings.php:9
 msgid "Loading"
-msgstr "Laddar"
+msgstr "Carregant"
 
 #: templates/page-settings.php:10
 msgid "Importing"
-msgstr "Importera"
+msgstr "Important"
 
 #: templates/page-settings.php:11
 msgid "Activating"
-msgstr "Aktivera"
+msgstr "Activant"
 
 #: templates/page-settings.php:12
 msgid "Are you sure?"
-msgstr "Är du säker?"
+msgstr "Estàs segur?"
 
 #: templates/page-settings.php:13
 msgid "Select some items"
-msgstr "Objekt"
+msgstr "Selecciona alguns ítems"
 
 #: templates/page-settings.php:22
 msgid "This facet type has no additional settings."
-msgstr "Denna aspekt typ har ingen ytterligare inställningar."
+msgstr "Aquest tipus de facet no té paràmetres addicionals."
 
 #: templates/page-settings.php:62
 msgid "Basics"
-msgstr "Grundläggande"
+msgstr "Bàsics"
 
 #: templates/page-settings.php:64
 msgid "Support"
-msgstr "Support"
+msgstr "Suport"
 
 #: templates/page-settings.php:69
 msgid "Re-index"
-msgstr "Återindexera"
+msgstr "Re-indexa"
 
 #: templates/page-settings.php:70
 msgid "Save Changes"
-msgstr "Spara ändringar"
+msgstr "Desa els canvis"
 
 #: templates/page-settings.php:86
 msgid "Back"
-msgstr "Tillbaka"
+msgstr "Torna"
 
 #: templates/page-settings.php:159
 msgid "Label"
-msgstr "Etikett"
+msgstr "Etiqueta"
 
 #: templates/page-settings.php:163 templates/page-settings.php:208
 msgid "Name"
-msgstr "Namn"
+msgstr "Nom"
 
 #: templates/page-settings.php:167
 msgid "Facet type"
-msgstr "Fasetttyp"
+msgstr "Tipus de facet"
 
 #: templates/page-settings.php:180
 msgid "Data source"
-msgstr "Datakälla"
+msgstr "Font de dades"
 
 #: templates/page-settings.php:211
 msgid "Open query builder"
-msgstr "Öppna Frågeverktyget"
+msgstr "Obre l'auxiliar de consultes"
 
 #: templates/page-settings.php:212
 msgid "Query Arguments"
-msgstr "Frågeargument"
+msgstr "Paràmetres de la consulta"
 
 #: templates/page-settings.php:216
 msgid "What goes here?"
-msgstr "Vad händer här?"
+msgstr "Què s'ha de posar aquí?"
 
 #: templates/page-settings.php:217
 msgid "Display Code"
-msgstr "Visningskod"
+msgstr "Codi per mostrar els resultats"
 
 #: templates/page-settings.php:235
 msgid "Query Builder"
-msgstr "Query Builder"
+msgstr "Auxiliar de consultes"
 
 #: templates/page-settings.php:239
-#, fuzzy
-#| msgid "Which posts would you like to use for the content listing?"
 msgid "Which posts would you like to use for the listing?"
-msgstr "Vilka inlägg vill du använda den innehåll lista?"
+msgstr "Quines entrades voldries fer servir per aquest llistat?"
 
 #: templates/page-settings.php:248
 msgid "Send to editor"
-msgstr "Skicka till redaktör"
-
-#, fuzzy
-#~| msgid "Use a separate value for the upper limit?"
-#~ msgid "Use a separate value for the longitude?"
-#~ msgstr "Använda ett separat värde för longituden?"
-
-#~ msgid "Welcome"
-#~ msgstr "Välkommen"
-
-#~ msgid "Facets"
-#~ msgstr "Fasetter"
-
-#~ msgid "Templates"
-#~ msgstr "Mallar"
-
-#~ msgid "Welcome to FacetWP"
-#~ msgstr "Välkommen till FacetWP"
-
-#~ msgid "Add New"
-#~ msgstr "Skapa Ny"
+msgstr "Envia a l'editor"

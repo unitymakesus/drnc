@@ -1,4 +1,7 @@
-<a href="#content" class="screen-reader-text">Skip to content</a>
+@if (App\display_sidebar())
+  <a href="#aside" class="screen-reader-text">Skip to section navigation</a>
+@endif
+<a href="#main" class="screen-reader-text">Skip to content</a>
 <header class="banner" role="banner">
   <div class="a11y-tools z-depth-2" role="toolbar" aria-label="Accessibility Tools">
     <div class="container flex flex-end">
@@ -9,13 +12,13 @@
           $text_sizes = [
             [
               'name' => 'default',
-              'label' => 'Default'
+              'label' => 'Default Text Size'
             ],[
               'name' => 'medium',
-              'label' => 'Medium'
+              'label' => 'Medium Text Size'
             ],[
               'name' => 'large',
-              'label' => 'Large'
+              'label' => 'Large Text Size'
             ]
           ];
         @endphp
@@ -52,7 +55,7 @@
             @endphp
             <img src="{{ $logo[0] }}"
                  srcset="{{ $logo[0] }} 1x, {{ $logo_2x[0] }} 2x"
-                 alt="{{ get_bloginfo('name', 'display') }}"
+                 alt="Link to {{ get_bloginfo('name', 'display') }} Homepage"
                  width="{{ $logo[1] }}" height="{{ $logo[2] }}" />
           @else
             {{ get_bloginfo('name', 'display') }}

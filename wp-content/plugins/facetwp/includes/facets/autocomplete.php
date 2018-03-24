@@ -9,9 +9,23 @@ class FacetWP_Facet_Autocomplete extends FacetWP_Facet
         // ajax
         add_action( 'facetwp_autocomplete_load', array( $this, 'ajax_load' ) );
 
+        // css-based template
+        add_action( 'facetwp_found_main_query', array( $this, 'template_handler' ) );
+
         // deprecated
         add_action( 'wp_ajax_facetwp_autocomplete_load', array( $this, 'ajax_load' ) );
         add_action( 'wp_ajax_nopriv_facetwp_autocomplete_load', array( $this, 'ajax_load' ) );
+    }
+
+
+    /**
+     * For CSS-based templates, the "facetwp_autocomplete_load" action isn't fired
+     * so we need to manually check the action
+     */
+    function template_handler() {
+        if ( isset( $_POST['action'] ) && 'facetwp_autocomplete_load' == $_POST['action'] ) {
+            $this->ajax_load();
+        }
     }
 
 
@@ -94,15 +108,31 @@ class FacetWP_Facet_Autocomplete extends FacetWP_Facet
     function ajax_load() {
         global $wpdb;
 
+        // optimizations
+        $_POST['data']['soft_refresh'] = 1;
+        $_POST['data']['extras'] = array();
+
+        // simulate a refresh
+        FWP()->facet->render(
+            FWP()->ajax->process_post_data()
+        );
+
+        // then grab the matching post IDs
+        $post_ids = FWP()->facet->query_args['post__in'];
+        $post_ids = implode( ',', $post_ids );
+
         $query = FWP()->helper->sanitize( $wpdb->esc_like( $_POST['query'] ) );
         $facet_name = FWP()->helper->sanitize( $_POST['facet_name'] );
         $output = array();
 
-        if ( ! empty( $query ) && ! empty( $facet_name ) ) {
+        if ( ! empty( $query ) && ! empty( $facet_name ) && ! empty( $post_ids ) ) {
             $sql = "
             SELECT DISTINCT facet_display_value
             FROM {$wpdb->prefix}facetwp_index
-            WHERE facet_name = '$facet_name' AND facet_display_value LIKE '%$query%'
+            WHERE
+                facet_name = '$facet_name' AND
+                facet_display_value LIKE '%$query%' AND
+                post_id IN ($post_ids)
             ORDER BY facet_display_value ASC
             LIMIT 10";
 
@@ -116,8 +146,7 @@ class FacetWP_Facet_Autocomplete extends FacetWP_Facet
             }
         }
 
-        echo json_encode( array( 'suggestions' => $output ) );
-        exit;
+        wp_send_json( array( 'suggestions' => $output ) );
     }
 
 

@@ -16,11 +16,11 @@
     <div id="content" class="content" role="document">
       <div class="wrap">
         @if (App\display_sidebar())
-          <aside class="sidebar" role="complementary">
+          <aside id="aside" class="sidebar" role="complementary">
             @include('partials.sidebar')
           </aside>
         @endif
-        <main class="main" role="main">
+        <main id="main" class="main" role="main">
           @yield('content')
         </main>
       </div>

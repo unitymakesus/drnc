@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1051a841e943b7ac5ead"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a7017f4b0b4100e8680a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -722,11 +722,22 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(35)(__webpack_require__.s = 35);
+/******/ 	return hotCreateRequire(38)(__webpack_require__.s = 38);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/*!*************************!*\
+  !*** external "jQuery" ***!
+  \*************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports) {
+
+module.exports = jQuery;
+
+/***/ }),
+/* 1 */
 /*!********************************************************************************************************************************!*\
   !*** /Users/unity/Sites/disabilityrightsnc/app/public/wp-content/themes/drnc/node_modules/html-entities/lib/html5-entities.js ***!
   \********************************************************************************************************************************/
@@ -925,17 +936,6 @@ function createIndexes(alphaIndex, charIndex) {
 
 module.exports = Html5Entities;
 
-
-/***/ }),
-/* 1 */
-/*!*************************!*\
-  !*** external "jQuery" ***!
-  \*************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports) {
-
-module.exports = jQuery;
 
 /***/ }),
 /* 2 */
@@ -1829,8 +1829,8 @@ ansiHTML.reset()
 module.exports = {
   XmlEntities: __webpack_require__(/*! ./lib/xml-entities.js */ 13),
   Html4Entities: __webpack_require__(/*! ./lib/html4-entities.js */ 14),
-  Html5Entities: __webpack_require__(/*! ./lib/html5-entities.js */ 0),
-  AllHtmlEntities: __webpack_require__(/*! ./lib/html5-entities.js */ 0)
+  Html5Entities: __webpack_require__(/*! ./lib/html5-entities.js */ 1),
+  AllHtmlEntities: __webpack_require__(/*! ./lib/html5-entities.js */ 1)
 };
 
 
@@ -2335,7 +2335,10 @@ module.exports = function(hash, moduleMap, options) {
 /* 32 */,
 /* 33 */,
 /* 34 */,
-/* 35 */
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */
 /*!***************************************************************************!*\
   !*** multi ./build/util/../helpers/hmr-client.js ./scripts/customizer.js ***!
   \***************************************************************************/
@@ -2344,11 +2347,11 @@ module.exports = function(hash, moduleMap, options) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/unity/Sites/disabilityrightsnc/app/public/wp-content/themes/drnc/resources/assets/build/util/../helpers/hmr-client.js */2);
-module.exports = __webpack_require__(/*! ./scripts/customizer.js */36);
+module.exports = __webpack_require__(/*! ./scripts/customizer.js */39);
 
 
 /***/ }),
-/* 36 */
+/* 39 */
 /*!*******************************!*\
   !*** ./scripts/customizer.js ***!
   \*******************************/
@@ -2358,7 +2361,7 @@ module.exports = __webpack_require__(/*! ./scripts/customizer.js */36);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(/*! jquery */ 1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(/*! jquery */ 0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
 
 

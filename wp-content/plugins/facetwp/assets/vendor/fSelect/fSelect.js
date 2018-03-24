@@ -156,6 +156,11 @@
         var $wrap = $(this).closest('.fs-wrap');
         var do_close = false;
 
+        // prevent selections
+        if ($wrap.hasClass('fs-disabled')) {
+            return;
+        }
+
         if ($wrap.hasClass('multiple')) {
             var selected = [];
 

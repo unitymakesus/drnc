@@ -36,6 +36,10 @@ html {
   justify-content: flex-end;
 }
 
+.flex-bottom {
+  align-items: flex-end;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -77,6 +81,7 @@ html {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 @mixin cover {
@@ -85,4 +90,13 @@ img {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.border-top {
+  border-top: 1px solid $color-gray-light;
+  padding-top: 1em;
+}
+
+.label {
+  font-family: $font-serif;
 }

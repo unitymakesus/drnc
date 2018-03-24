@@ -91,12 +91,13 @@ class FacetWP_Indexer
         global $wpdb;
 
         $term = get_term( $term_id, $taxonomy );
+        $slug = FWP()->helper->safe_value( $term->slug );
 
         $wpdb->query( $wpdb->prepare( "
             UPDATE {$wpdb->prefix}facetwp_index
             SET facet_value = %s, facet_display_value = %s
             WHERE facet_source = %s AND term_id = %d",
-            $term->slug, $term->name, "tax/$taxonomy", $term_id
+            $slug, $term->name, "tax/$taxonomy", $term_id
         ) );
     }
 

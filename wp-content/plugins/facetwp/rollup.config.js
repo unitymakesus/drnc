@@ -9,9 +9,8 @@ export default {
     ],
     output: {
         file: 'assets/js/dist/front.min.js',
-        format: 'iife',
         name: 'FWP_Build',
-        strict: false
+        format: 'iife'
     },
     watch: {
         include: 'assets/js/src/**'

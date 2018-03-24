@@ -33,7 +33,7 @@ class FacetWP_Display
      */
     function add_template_tag( $wp_query ) {
         if ( true === $wp_query->get( 'facetwp' ) && did_action( 'wp_head' ) ) {
-            echo '<!--fwp-loop-->';
+            echo "<!--fwp-loop-->\n";
         }
     }
 
@@ -135,6 +135,7 @@ class FacetWP_Display
             $this->json['prefix'] = FWP()->helper->get_setting( 'prefix' );
             $this->json['no_results_text'] = __( 'No results found', 'fwp' );
             $this->json['ajaxurl'] = $ajaxurl;
+            $this->json['nonce'] = wp_create_nonce( 'wp_rest' );
 
             if ( apply_filters( 'facetwp_use_preloader', true ) ) {
                 $this->json['preload_data'] = $this->prepare_preload_data();

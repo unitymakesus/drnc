@@ -33,9 +33,8 @@ add_action( 'init', function() {
       'author',
       'revisions',
       'page-attributes',
-      'thumbnail'
     ),
-    'has_archive' => 'resources',
+    'has_archive' => false,
     'rewrite' => array(
       'slug' => 'resource'
     )

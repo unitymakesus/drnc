@@ -216,6 +216,10 @@ body.settings_page_facetwp {
     margin-bottom: 15px;
 }
 
+.facetwp-region input.slim {
+    width: 50px;
+}
+
 .facetwp-region input.facet-count,
 .facetwp-region input.facet-soft-limit,
 .facetwp-region input.facet-step,

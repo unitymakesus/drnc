@@ -44,7 +44,7 @@
           @endphp
 
           <div class="resource" itemscope itemtype="http://schema.org/CreativeWork">
-            <h3 itemprop="name"><a href="{{ $link }}" target="_blank" rel="noopener" itemprop="url">{{ the_title() }}</a></h3>
+            <h2 class="h3" itemprop="name"><a href="{{ $link }}" target="_blank" rel="noopener" itemprop="url">{{ the_title() }}</a></h2>
 
             @if (!empty($topic_list))
               @php
@@ -83,7 +83,7 @@
           </div>
         @endwhile
 
-        <nav role="navigation" aria-label="Results Pagination">
+        <nav class="pagination" role="navigation" aria-label="Results Pagination">
           {!! do_shortcode('[facetwp pager="true"]') !!}
         </nav>
       @else

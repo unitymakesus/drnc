@@ -1,4 +1,4 @@
-h1 {
+h1, .h1 {
   font-family: $font-serif;
   font-size: rem-calc(45px);
   color: $color-teal-dark;
@@ -8,7 +8,7 @@ h1 {
   }
 }
 
-h2 {
+h2, .h2 {
   font-family: $font-serif;
   font-size: rem-calc(36px);
   color: $color-purple;
@@ -18,7 +18,7 @@ h2 {
   }
 }
 
-h3 {
+h3, .h3 {
   font-family: $font-serif;
   font-size: rem-calc(24px);
 }

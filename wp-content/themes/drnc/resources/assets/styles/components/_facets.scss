@@ -48,39 +48,3 @@ input[type="text"].facetwp-search {
   font-size: 0.8em;
   width: 100%;
 }
-
-.facetwp-pager ul {
-  li {
-    padding: 0;
-
-    &::before {
-      display: none;
-    }
-
-    a {
-      background: $color-green;
-      border: 2px solid $color-green;
-      display: block;
-      min-width: 40px;
-      padding: 0 15px;
-      height: 40px;
-      line-height: 40px;
-      font-size: 1.2em;
-      text-decoration: none;
-
-      &:hover, &:focus {
-        background: lighten($color-green, 10%);
-        color: $color-white;
-
-        @extend .z-depth-2;
-      }
-
-      &.active {
-        background: $color-green-dark;
-        color: $color-white;
-
-        @extend .z-depth-0;
-      }
-    }
-  }
-}

@@ -1,0 +1,14 @@
+.main {
+  table {
+    th[scope="row"] {
+      white-space: nowrap;
+      vertical-align: top;
+    }
+
+    td {
+      p:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

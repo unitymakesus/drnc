@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="col m5 s12">
-        <p><a href="#" class="btn btn-lg btn-green">Support Our Work</a></p>
+        <p><a href="/donate/" class="btn btn-lg btn-green">Support Our Work</a></p>
         <h3>Stay Informed</h3>
         <p>Sign up for our free email newsletter. We send out monthly emails with news and updates. We will not share your contact information and do not send spam.</p>
         [FORM]

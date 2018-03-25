@@ -59,10 +59,23 @@
     }
   }
 
-  .textwidget {
+  .textwidget, .widget_categories {
     background: $color-green;
     color: $color-white;
     padding: 20px;
+
+    h3 {
+      color: $color-white;
+    }
+
+    a {
+      color: $color-white;
+      text-decoration: underline;
+
+      &:hover, &:focus, &:active {
+        text-decoration-style: double;
+      }
+    }
   }
 }
 

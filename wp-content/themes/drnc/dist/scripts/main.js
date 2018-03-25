@@ -267,15 +267,23 @@ Router.prototype.loadEvents = function loadEvents () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
+/* WEBPACK VAR INJECTION */(function($) {/* harmony default export */ __webpack_exports__["a"] = ({
   init: function init() {
     // JavaScript to be fired on the home page
   },
   finalize: function finalize() {
-    // JavaScript to be fired on the home page, after the init JS
+    // Change style of select box in tools search on home page
+    $('select').on('change', function() {
+      if ($(this).val() !== "") {
+        $(this).removeClass('default');
+      } else {
+        $(this).addClass('default');
+      }
+    });
   },
 });
 
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
 /* 7 */

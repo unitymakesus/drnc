@@ -5,4 +5,29 @@
 // TODO: .search-form .search-submit {}
 select {
   display: block;
+  border: 1px solid lighten($color-gray-medium, 20%);
+  border-radius: 5px;
+
+  &.default, option[value=""] {
+    color: $color-gray-medium;
+  }
+}
+
+input[type="text"] {
+  &.facetwp-search {
+    background: $color-white;
+    border: 1px solid lighten($color-gray-medium, 20%);
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 30px 0 5px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $color-gray-medium;
+    }
+
+    .home & {
+      border-radius: 5px;
+    }
+  }
 }

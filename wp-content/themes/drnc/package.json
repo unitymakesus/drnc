@@ -29,6 +29,7 @@
       "color-hex-case": "upper",
       "selector-list-comma-newline-after": null,
       "at-rule-no-unknown": null,
+      "no-descending-specificity": null,
       "function-linear-gradient-no-nonstandard-direction": null,
       "at-rule-empty-line-before": [
         "always",

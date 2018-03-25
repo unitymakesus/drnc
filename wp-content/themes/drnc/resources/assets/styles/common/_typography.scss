@@ -21,6 +21,7 @@ h2, .h2 {
 h3, .h3 {
   font-family: $font-serif;
   font-size: rem-calc(24px);
+  color: $color-teal-dark;
 }
 
 .main {
@@ -28,7 +29,7 @@ h3, .h3 {
     line-height: 1.8em;
   }
 
-  a {
+  a:not(.btn) {
     text-decoration: underline;
     font-weight: bold;
     transition: all 0.3s;
@@ -62,6 +63,10 @@ h3, .h3 {
       }
     }
   }
+}
+
+.label {
+  font-family: $font-serif;
 }
 
 strong {

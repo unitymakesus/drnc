@@ -41,6 +41,11 @@
           background: $color-purple-dark;
           text-decoration: underline;
         }
+
+        html[data-contrast="true"] & {
+          background: $color-black;
+          border: 1px solid $color-white;
+        }
       }
 
       &.current-menu-item {
@@ -53,6 +58,14 @@
 
           &::after {
             @include triangle('top right', $color-green);
+          }
+
+          html[data-contrast="true"] & {
+            background: $color-gray-dark;
+
+            &::before, &::after {
+              display: none;
+            }
           }
         }
       }
@@ -75,6 +88,11 @@
       &:hover, &:focus, &:active {
         text-decoration-style: double;
       }
+    }
+
+    html[data-contrast="true"] & {
+      background: $color-black;
+      border: 1px solid $color-white;
     }
   }
 }

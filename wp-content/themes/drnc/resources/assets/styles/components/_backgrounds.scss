@@ -105,5 +105,39 @@ $cdark: $color-purple-dark, $color-green-dark, $color-teal-dark;
         background: nth($cdark, $i);
       }
     }
+
+    html[data-contrast="true"] & {
+      background: $color-black;
+      border-bottom: 1px solid $color-white;
+      border-top: 1px solid $color-white;
+
+      &.background-point-left {
+        & > .row > .col:nth-child(1)::before {
+          @include triangle('bottom right', $color-black);
+        }
+
+        & > .row > .col:nth-child(1)::after {
+          @include triangle('top right', $color-black);
+        }
+
+        & > .row > .col:nth-child(2) {
+          background: $color-black;
+        }
+      }
+
+      &.background-point-right {
+        & > .row > .col:nth-child(2)::before {
+          @include triangle('bottom left', $color-black);
+        }
+
+        & > .row > .col:nth-child(2)::after {
+          @include triangle('top left', $color-black);
+        }
+
+        & > .row > .col:nth-child(1) {
+          background: $color-black;
+        }
+      }
+    }
   }
 }

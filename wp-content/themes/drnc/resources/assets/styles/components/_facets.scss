@@ -8,6 +8,15 @@
 
   .facetwp-btn {
     line-height: 3rem;
+    opacity: 1;
+
+    &::before {
+      background-image: url('../images/icon-search.svg');
+
+      html[data-contrast="true"] & {
+        background-image: url('../images/icon-search-white.svg');
+      }
+    }
   }
 }
 
@@ -26,6 +35,10 @@
 
   &.checked {
     background-image: url('../images/checked.png');
+
+    html[data-contrast="true"] & {
+      background-image: url('../images/checked-white.png');
+    }
   }
 }
 

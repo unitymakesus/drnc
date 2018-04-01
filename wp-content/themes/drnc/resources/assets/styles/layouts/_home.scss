@@ -12,6 +12,10 @@
     margin-bottom: 1em;
     margin-top: 0;
   }
+
+  section.col {
+    padding-top: 30px;
+  }
 }
 
 .sa-tools {
@@ -34,6 +38,17 @@
 
   select, input {
     margin: 15px 0;
+  }
+
+  html[data-contrast="true"] & {
+    h2 {
+      color: $color-white;
+    }
+
+    .col {
+      background: $color-black;
+      border-color: $color-white;
+    }
   }
 }
 

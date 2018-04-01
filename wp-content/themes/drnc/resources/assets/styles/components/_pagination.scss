@@ -36,5 +36,20 @@
 
       @extend .z-depth-0;
     }
+
+    html[data-contrast="true"] & {
+      background: $color-black;
+      border-color: $color-white;
+
+      &:hover, &:focus {
+        background: $color-white;
+        color: $color-black !important;
+      }
+
+      &.active, &.current {
+        background: $color-gray-dark;
+        color: $color-white !important;
+      }
+    }
   }
 }

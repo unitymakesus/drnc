@@ -37,6 +37,10 @@ h3, .h3 {
     &:hover, &:active {
       text-decoration-style: double;
       color: $color-green;
+
+      html[data-contrast="true"] & {
+        color: $color-white;
+      }
     }
   }
 
@@ -60,8 +64,18 @@ h3, .h3 {
         position: absolute;
         left: 10px;
         speak: none;
+
+        html[data-contrast="true"] & {
+          color: $color-white;
+        }
       }
     }
+  }
+}
+
+blockquote {
+  html[data-contrast="true"] & {
+    border-color: $color-gray-light;
   }
 }
 

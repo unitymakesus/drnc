@@ -1,0 +1,56 @@
+.able-wrapper {
+  .able-player {
+    background: $color-black;
+
+    html[data-contrast="true"] & {
+      border: 1px solid $color-white;
+    }
+  }
+
+  .able-controller {
+    background: $color-teal-dark;
+    border-color: $color-teal-dark;
+
+    html[data-contrast="true"] & {
+      background: $color-black;
+      border-color: $color-white;
+    }
+  }
+
+  .able-seekbar {
+    height: calc(0.5em + 4px);
+    background: $color-teal-dark;
+  }
+
+  .able-seekbar-loaded {
+    background: $color-black;
+  }
+
+  .able-seekbar-played {
+    background: $color-gray-medium;
+  }
+
+  .able-seekbar-head {
+    background: $color-white;
+    height: 1em;
+    width: 1em;
+    top: -0.5em;
+  }
+
+  .able-controller button {
+    background: $color-teal;
+    outline-color: $color-teal;
+
+    html[data-contrast="true"] & {
+      background: $color-black;
+      outline-color: $color-white;
+    }
+  }
+
+  .able-status-bar {
+    overflow: hidden;
+    height: 2em;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

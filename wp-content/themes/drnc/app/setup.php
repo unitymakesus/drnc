@@ -71,6 +71,17 @@ add_action('after_setup_theme', function () {
        'size' => 'drnc-logo-2x'
      ));
 
+     /**
+      * Add image sizes
+      */
+     add_image_size('tiny-thumbnail', 80, 80, true);
+
+     add_filter( 'image_size_names_choose', function( $sizes ) {
+       return array_merge( $sizes, array(
+         'tiny-thumbnail' => __( 'Tiny Thumbnail' ),
+       ) );
+     } );
+
     /**
      * Use main stylesheet for visual editor
      * @see resources/assets/styles/layouts/_tinymce.scss

@@ -8174,6 +8174,17 @@ html[data-contrast="true"] a {
   color: #FFF;
 }
 
+html[data-contrast="true"] .banner .logo img {
+  background: url(/wp-content/themes/drnc/dist/images/DRNC-Logo-BW@2x.png) no-repeat;
+  background-size: contain;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 100%;
+  padding-top: 27.65%;
+  overflow: hidden;
+}
+
 html {
   font-size: 18px;
 }
@@ -8347,6 +8358,7 @@ html[data-contrast="true"] .main a:not(.btn):not(.btn-large):not(.btn-small):act
 
 .main dt {
   font-weight: bold;
+  clear: both;
 }
 
 .main dd {
@@ -8381,6 +8393,61 @@ html[data-contrast="true"] blockquote {
 
 strong {
   font-weight: 700;
+}
+
+.able-wrapper .able-player {
+  background: #000;
+}
+
+html[data-contrast="true"] .able-wrapper .able-player {
+  border: 1px solid #FFF;
+}
+
+.able-wrapper .able-controller {
+  background: #09343C;
+  border-color: #09343C;
+}
+
+html[data-contrast="true"] .able-wrapper .able-controller {
+  background: #000;
+  border-color: #FFF;
+}
+
+.able-wrapper .able-seekbar {
+  height: calc(0.5em + 4px);
+  background: #09343C;
+}
+
+.able-wrapper .able-seekbar-loaded {
+  background: #000;
+}
+
+.able-wrapper .able-seekbar-played {
+  background: #858585;
+}
+
+.able-wrapper .able-seekbar-head {
+  background: #FFF;
+  height: 1em;
+  width: 1em;
+  top: -0.5em;
+}
+
+.able-wrapper .able-controller button {
+  background: #3D6E77;
+  outline-color: #3D6E77;
+}
+
+html[data-contrast="true"] .able-wrapper .able-controller button {
+  background: #000;
+  outline-color: #FFF;
+}
+
+.able-wrapper .able-status-bar {
+  overflow: hidden;
+  height: 2em;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .background-point-left > .row,
@@ -9591,6 +9658,22 @@ html[data-contrast="true"] .pagination span.current {
   }
 }
 
+.entry-content-asset {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.entry-content-asset iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /** Captions */
 
 .banner nav {
@@ -9843,6 +9926,7 @@ html[data-contrast="true"] .sidebar .widget_categories {
 
 .home h1 {
   margin: 0;
+  max-width: 6em;
 }
 
 .home h2 {

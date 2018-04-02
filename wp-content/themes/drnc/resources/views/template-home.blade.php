@@ -51,7 +51,7 @@
       <div class="row">
         <div class="col m4 s12">
           <h2 id="work-title">Our Work</h2>
-          <p>Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque.</p>
+          <p>{{ get_field('our_work_text') }}</p>
         </div>
 
         <div class="col m8 s12">

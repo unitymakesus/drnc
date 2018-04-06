@@ -10104,6 +10104,10 @@ ul.social-names a:active {
   margin-top: 0;
 }
 
+.hentry .meta {
+  margin: 1em 0;
+}
+
 body#tinymce {
   margin: 12px !important;
 }

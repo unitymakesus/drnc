@@ -74,7 +74,7 @@ module.exports = jQuery;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(2);
-module.exports = __webpack_require__(10);
+module.exports = __webpack_require__(11);
 
 
 /***/ }),
@@ -90,6 +90,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes_home__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__routes_about__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__routes_tools__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__routes_form__ = __webpack_require__(9);
 // import external dependencies
 
 
@@ -103,10 +104,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
 /**
  * Web Font Loader
  */
-var WebFont = __webpack_require__(9);
+var WebFont = __webpack_require__(10);
 
 WebFont.load({
  google: {
@@ -123,6 +125,7 @@ var routes = new __WEBPACK_IMPORTED_MODULE_1__util_Router__["a" /* default */]({
   // About Us page, note the change from about-us to aboutUs.
   aboutUs: __WEBPACK_IMPORTED_MODULE_4__routes_about__["a" /* default */],
   templateTools: __WEBPACK_IMPORTED_MODULE_5__routes_tools__["a" /* default */],
+  form: __WEBPACK_IMPORTED_MODULE_6__routes_form__["a" /* default */],
 });
 
 // Load Events
@@ -347,6 +350,101 @@ Router.prototype.loadEvents = function loadEvents () {
 
 /***/ }),
 /* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {/* harmony default export */ __webpack_exports__["a"] = ({
+  finalize: function finalize() {
+    // Multi-page form pagination and progress functions
+    $('.form-step').on('click', '.btn', function(e) {
+      console.log('btn click');
+      e.preventDefault();
+      var thisSection = $(this).closest('.form-step');
+
+      // Don't allow clicks on disabled buttons
+      if ($(this).hasClass('disabled')) {
+        return false;
+      }
+
+      // If loader already added to DOM, don't proceed
+      if( $(this).next('.loading-spinner').length ) {
+        console.log('already spinner');
+        e.preventDefault();
+        return false;
+      } else {
+        console.log('add spinner');
+        // Add loader to DOM
+        $(this).after('<div class="loading-spinner"></div>');
+      }
+
+      // Next button handler
+      if ($(this).attr('data-button-type') == "next") {
+        var thisStep = Number(thisSection.attr('data-section-number'));
+        var nextStepN = thisStep+1;
+        var nextStepT = $('.form-progress .progress-step[data-step-current]').next().html();
+
+        // Hide this section
+        thisSection.addClass('hidden').attr('aria-hidden', 'true');
+
+        // Show next section
+        $('.form-step[data-section-number="' + nextStepN + '"]').removeClass('hidden').attr('aria-hidden', 'false');
+
+        // Change progress step
+        $('.form-progress').attr('aria-valuenow', nextStepN);
+        $('.form-progress').attr('aria-valuetext', 'Step ' + nextStepN + ' of 3: ' + nextStepT);
+        $('.form-progress').attr('aria-valuetext', 'Step ' + nextStepN + ' of 3: ' + nextStepT);
+        $('.form-progress .progress-step[data-step-current]').removeAttr('data-step-current').attr('data-step-complete', '')
+          .next().removeAttr('data-step-incomplete').attr('data-step-current', '');
+
+        $(this).next('.loading-spinner').remove();
+
+      // Submit button handler
+      } else if ($(this).attr('data-button-type') == "submit") {
+        $('form#ecosubmit').submit();
+      }
+    });
+
+    // Progress step click functions
+    $('.form-progress').on('click', '.progress-step[data-step-complete]', function() {
+      var targetIndex = $(this).index();
+      var thisSection = $('.form-step[aria-hidden="false"]');
+      var targetStepN = targetIndex+1;
+      var targetStepT = $(this).html();
+
+      // Hide this section
+      thisSection.addClass('hidden').attr('aria-hidden', 'true');
+
+      // Show target section
+      $('.form-step[data-section-number="' + targetStepN + '"]').removeClass('hidden').attr('aria-hidden', 'false');
+
+      // Change progress step
+      $('.form-progress').attr('aria-valuenow', targetStepN);
+      $('.form-progress').attr('aria-valuetext', 'Step ' + targetStepN + ' of 3: ' + targetStepT);
+      $('.form-progress').attr('aria-valuetext', 'Step ' + targetStepN + ' of 3: ' + targetStepT);
+      $('.form-progress .progress-step[data-step-current]').removeAttr('data-step-current').attr('data-step-incomplete', '');
+      $(this).removeAttr('data-step-complete').attr('data-step-current', '');
+    });
+
+    // Conditional fields -- show contact areas depending on answer
+    $('.select-1 input[type="radio"]').on('change', function() {
+      var pattern = /legal guardian/;
+      var exists = pattern.test(this.value);
+      if (exists === true) {
+        $('#individual-contact').removeClass('hidden');
+        $('#individual-contact').attr('aria-hidden', 'false');
+      } else {
+        $('#individual-contact').addClass('hidden');
+        $('#individual-contact').attr('aria-hidden', 'true');
+      }
+    });
+
+  },
+});
+
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/* Web Font Loader v1.6.28 - (c) Adobe Systems, Google. License: Apache 2.0 */(function(){function aa(a,b,c){return a.call.apply(a.bind,arguments)}function ba(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}}function p(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?aa:ba;return p.apply(null,arguments)}var q=Date.now||function(){return+new Date};function ca(a,b){this.a=a;this.o=b||a;this.c=this.o.document}var da=!!window.FontFace;function t(a,b,c,d){b=a.c.createElement(b);if(c)for(var e in c)c.hasOwnProperty(e)&&("style"==e?b.style.cssText=c[e]:b.setAttribute(e,c[e]));d&&b.appendChild(a.c.createTextNode(d));return b}function u(a,b,c){a=a.c.getElementsByTagName(b)[0];a||(a=document.documentElement);a.insertBefore(c,a.lastChild)}function v(a){a.parentNode&&a.parentNode.removeChild(a)}
@@ -370,7 +468,7 @@ g,0<d.length&&(d=za[d[0]])&&(a.c[e]=d))}a.c[e]||(d=za[e])&&(a.c[e]=d);for(d=0;d<
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -6,7 +6,9 @@
     }
 
     td {
-      p:first-child {
+      vertical-align: top;
+
+      ul:first-child, p:first-child {
         margin-top: 0;
       }
     }

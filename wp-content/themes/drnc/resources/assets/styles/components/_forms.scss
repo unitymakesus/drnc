@@ -6,15 +6,19 @@
 select {
   display: block;
   border: 1px solid lighten($color-gray-medium, 20%);
-  border-radius: 5px;
+  border-radius: 0;
 
   &.default, option[value=""] {
     color: $color-gray-medium;
   }
 }
 
-input[type="text"] {
-  &.facetwp-search {
+label {
+  color: $color-black;
+}
+
+input[type="text"], input[type="number"], input[type="tel"], input[type="email"] {
+  &.facetwp-search, &.wpcf7-form-control {
     background: $color-white;
     border: 1px solid lighten($color-gray-medium, 20%);
     font-size: 1rem;
@@ -28,6 +32,173 @@ input[type="text"] {
 
     .home & {
       border-radius: 5px;
+    }
+  }
+}
+
+.wpcf7-not-valid {
+  border: 2px solid $error-color !important;
+  background-color: lighten($error-color, 60%) !important;
+}
+
+.wpcf7-not-valid-tip, .wpcf7-validation-errors {
+  color: $error-color;
+}
+
+.wpcf7-list-item {
+  display: block;
+  margin-bottom: 0.8em;
+
+  .wpcf7-list-item-label {
+    height: auto !important;
+  }
+}
+
+.form-step {
+  position: relative;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.form-section {
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid $color-gray-dark;
+
+  legend {
+    font-family: $font-serif;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.form-row {
+  position: relative;
+  margin: 0 0 10px;
+  // border: 1px solid $navy;
+  // background: white;
+  // padding: 20px;
+}
+
+// AJAX loading spinner
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  position: relative;
+  display: inline-block;
+  vertical-align: text-top;
+  margin: 0 30px;
+
+  &::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 10px solid $color-green;
+    border-top-color: $color-green-dark;
+    animation: spinner 0.6s linear infinite;
+  }
+}
+
+// Form Progress
+ol.form-progress {
+  list-style: none;
+  display: table;
+  margin: 1.5rem 0;
+  table-layout: fixed;
+  width: 100%;
+  padding: 0;
+  counter-reset: progressStep;
+
+  &:focus {
+    outline: 0;
+
+    li[data-step-current] {
+      outline: $color-gray-dark dotted 1px;
+    }
+  }
+
+  @media #{$small-and-down} {
+    padding: 0;
+  }
+
+  li {
+    text-align: center;
+    display: table-cell;
+    list-style: none;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 2rem 0 0;
+    position: relative;
+    width: 100%;
+    counter-increment: progressStep;
+
+    &::before, &::after {
+      background: $color-teal;
+      color: $color-white;
+      display: block;
+      position: absolute;
+    }
+
+    &::before {
+      content: counter(progressStep);
+      border-radius: 3px;
+      font-weight: bold;
+      height: 1.5rem;
+      left: 50%;
+      margin-left: -0.75rem;
+      line-height: 1.5rem;
+      padding-left: 0.1rem;
+      top: 0;
+      transform: scale(1, 1);
+      width: 1.5rem;
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      height: 0.25rem;
+      left: -50%;
+      top: 0.65rem;
+      width: 100%;
+    }
+
+    &[data-step-current] {
+      color: $color-purple-dark;
+      font-weight: bold;
+
+      &::before, &::after {
+        background: $color-purple-dark;
+        color: $color-white;
+      }
+    }
+
+    &[data-step-complete] {
+      &::before, &::after {
+        background: $color-purple;
+        color: $color-white;
+      }
+    }
+
+    &:first-child::after {
+      display: none;
     }
   }
 }

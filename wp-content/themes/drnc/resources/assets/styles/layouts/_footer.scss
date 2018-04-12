@@ -35,8 +35,11 @@
   .widget_nav_menu .menu {
     @extend .social-icons;
 
+    padding: 0;
+    text-align: left;
+
     li {
-      float: left;
+      padding: 0 6px 0 0;
 
       a {
         border-color: $color-green-dark;

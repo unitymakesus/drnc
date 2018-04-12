@@ -26,6 +26,10 @@ html {
 
 .flex {
   display: flex;
+
+  @media #{$small-and-down} {
+    flex-wrap: wrap;
+  }
 }
 
 .flex-center {

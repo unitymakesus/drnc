@@ -48,7 +48,7 @@
         }
       }
 
-      &.current-menu-item {
+      &.current-menu-item, &.active, &.current-page-ancestor:not(:first-child) {
         a {
           background: $color-purple-dark;
 

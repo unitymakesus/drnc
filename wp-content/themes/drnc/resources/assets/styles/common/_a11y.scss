@@ -19,15 +19,56 @@
   }
 }
 
+.a11y-tools-trigger {
+  display: block;
+  background: $color-black;
+  border-radius: 100%;
+  color: $color-white;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  position: relative;
+
+  i {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
 .a11y-tools {
+  height: 60px;
+  overflow: hidden;
+  transition: height 0.3s ease;
+
+  @media #{$small-and-down} {
+    height: 0;
+
+    .a11y-tools-active & {
+      height: 60px;
+    }
+  }
+
   html[data-contrast="true"] & {
     border-bottom: 1px solid $color-white;
+  }
+
+  .container {
+    @media #{$small-and-down} {
+      justify-content: flex-start;
+    }
   }
 
   fieldset {
     border: none;
     padding: 0;
     margin: 0;
+
+    @media #{$small-and-down} {
+      padding: 5px 0;
+    }
 
     legend, & > div {
       display: block;

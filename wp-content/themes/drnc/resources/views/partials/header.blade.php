@@ -45,7 +45,7 @@
 
   <nav role="navigation">
     <div class="container">
-      <div class="row">
+      <div class="row flex space-between">
         <a class="logo left" href="{{ home_url('/') }}" rel="home">
           @if (has_custom_logo())
             @php
@@ -63,17 +63,23 @@
         </a>
 
         <div class="utility right">
-          @if (has_nav_menu('social_links'))
-            {!! wp_nav_menu(['theme_location' => 'social_links', 'menu_class' => 'social-icons right-align', 'menu_id' => 'header-social']) !!}
-          @endif
-          <div class="right-align"><a href="/donate/" class="btn">Support Our Work</a></div>
+          <div class="hide-on-med-and-up">
+            <a href="#" class="a11y-tools-trigger" aria-label="Show accessibility tools"><i class="material-icons">accessibility</i></a>
+            <a href="#" class="right menu-trigger"><i class="material-icons">menu</i></a>
+          </div>
+
+          <div class="hide-on-small-only">
+            @if (has_nav_menu('social_links'))
+              {!! wp_nav_menu(['theme_location' => 'social_links', 'menu_class' => 'social-icons right-align', 'menu_id' => 'header-social']) !!}
+            @endif
+            <div class="right-align"><a href="/donate/" class="btn">Support Our Work</a></div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="row navbar">
       @if (has_nav_menu('primary_navigation'))
-        <a href="#" class="right menu-trigger show-on-medium-and-down"><i class="material-icons">menu</i></a>
         {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-menu flex flex-center space-between container', 'menu_id' => 'sidenav']) !!}
         <div class="sidenav-overlay"></div>
       @endif

@@ -23,6 +23,29 @@ export default {
     });
   },
   finalize() {
+    // Show a11y toolbar
+    $('.a11y-tools-trigger').on('click', function(e) {
+      e.preventDefault();
+      if ($('body').hasClass('a11y-tools-active')) {
+        $('body').removeClass('a11y-tools-active');
+        $(this).attr('aria-label', 'Show accessibility tools');
+      } else {
+        $('body').addClass('a11y-tools-active');
+        $(this).attr('aria-label', 'Hide accessibility tools');
+      }
+    });
+
+    // Show sidenav
+    $('.menu-trigger').on('focus click', function(e) {
+      e.preventDefault();
+      $('body').addClass('sidenav-active');
+    });
+
+    // Hide sidenav
+    $('.sidenav-overlay').on('click', function() {
+      $('body').removeClass('sidenav-active');
+    });
+
     // Controls for changing text size
     $('#text-size input[name="text-size"]').on('change', function() {
       let tsize = $(this).val();

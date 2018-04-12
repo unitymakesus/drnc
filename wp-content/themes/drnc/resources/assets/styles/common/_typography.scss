@@ -22,6 +22,13 @@ h3, .h3 {
   font-family: $font-serif;
   font-size: rem-calc(24px);
   color: $color-teal-dark;
+  letter-spacing: 1px;
+}
+
+h4, .h4 {
+  font-family: $font-sans;
+  font-size: rem-calc(24px);
+  color: $color-purple;
 }
 
 .main {

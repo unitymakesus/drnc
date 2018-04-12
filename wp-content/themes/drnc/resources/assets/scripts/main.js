@@ -19,7 +19,7 @@ var WebFont = require('webfontloader');
 
 WebFont.load({
  google: {
-   families: ['Noto+Sans:400,400i,700,700i', 'Playfair+Display:700'],
+   families: ['Noto+Sans:400,400i,700,700i', 'Playfair+Display:700', 'Material+Icons'],
  },
 });
 

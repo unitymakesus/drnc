@@ -73,6 +73,7 @@ a {
 
       &::before {
         content: '\2022';
+        display: block;
         color: $color-purple;
         position: absolute;
         left: 10px;

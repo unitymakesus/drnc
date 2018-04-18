@@ -8473,6 +8473,7 @@ html[data-contrast="true"] a:active {
 
 .main ul li::before {
   content: '\2022';
+  display: block;
   color: #4C1844;
   position: absolute;
   left: 10px;
@@ -10334,6 +10335,77 @@ html[data-contrast="true"] .sidebar .widget_categories {
   background: #6E773D;
 }
 
+.events-list.events-list li,
+.single-mc-events li {
+  padding: 0;
+  clear: both;
+}
+
+.events-list.events-list li::before,
+.single-mc-events li::before {
+  display: none;
+}
+
+.events-list.events-list h3,
+.single-mc-events h3 {
+  margin: 0;
+  line-height: 1.3em;
+}
+
+.events-list.events-list p,
+.single-mc-events p {
+  margin-bottom: 0;
+  font-size: 1.11111rem;
+}
+
+.events-list.events-list .featured-event,
+.single-mc-events .featured-event {
+  background: #3D6E77;
+  border: 4px solid #09343C;
+  color: #FFF;
+  padding: 20px;
+}
+
+.events-list.events-list .featured-event h3,
+.single-mc-events .featured-event h3 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.events-list.events-list .featured-event h3 a,
+.single-mc-events .featured-event h3 a {
+  color: #FFF;
+}
+
+.events-list.events-list .featured-event p,
+.single-mc-events .featured-event p {
+  clear: both;
+}
+
+.events-list.events-list time,
+.single-mc-events time {
+  background: #4C1844;
+  border: 4px solid #31102C;
+  color: #FFF;
+  font-family: "Playfair Display", serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  padding: 5px 10px;
+  float: left;
+  margin: 0 20px 20px 0;
+  text-align: center;
+  letter-spacing: 2px;
+  min-width: 4.5em;
+}
+
+.events-list.events-list time span,
+.single-mc-events time span {
+  display: block;
+  font-size: 3em;
+  padding-bottom: 0.3em;
+  letter-spacing: 0;
+}
+
 .home h1 {
   margin: 0 auto;
   max-width: 6em;
@@ -10499,30 +10571,6 @@ ul.social-names a:active {
 
 .fb_iframe_widget {
   width: 100%;
-}
-
-.events-list.events-list li {
-  padding: 0;
-}
-
-.events-list.events-list li::before {
-  display: none;
-}
-
-.events-list.events-list .featured-event {
-  background: #3D6E77;
-  border: 4px solid #09343C;
-  color: #FFF;
-  padding: 20px;
-}
-
-.events-list.events-list time {
-  background: #4C1844;
-  border: 4px solid #31102C;
-  color: #FFF;
-  font-family: "Playfair Display", serif;
-  padding: 5px;
-  float: left;
 }
 
 .resource,

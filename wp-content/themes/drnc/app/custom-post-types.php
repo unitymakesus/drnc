@@ -40,7 +40,7 @@ add_action( 'init', function() {
     )
   ));
 
-	register_taxonomy('resource-topic', 'drnc-resource', array(
+	register_taxonomy('resource-topic',  array('post', 'drnc-resource'), array(
 		'labels' => array(
 			'name' => __( 'Topics' ),
 			'singular_name' => __( 'Topic' )

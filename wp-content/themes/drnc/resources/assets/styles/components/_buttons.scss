@@ -1,11 +1,15 @@
 .btn {
   border: 4px solid $color-purple-dark;
+  color: $color-white;
   font-family: $font-serif;
+  font-weight: normal;
   text-transform: none;
   line-height: 1.8em;
+  text-decoration: none;
 
   &:hover, &:focus, &:active {
     background: lighten($color-purple, 10%);
+    color: $color-white;
 
     @extend .z-depth-4;
   }

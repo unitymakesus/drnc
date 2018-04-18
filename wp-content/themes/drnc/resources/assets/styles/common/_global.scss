@@ -10,9 +10,12 @@ html {
   }
 }
 
+body {
+  font-family: $font-sans;
+}
+
 * {
   box-sizing: border-box;
-  font-family: $font-sans;
 }
 
 .container {

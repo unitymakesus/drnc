@@ -36,6 +36,16 @@ input[type="text"], input[type="number"], input[type="tel"], input[type="email"]
   }
 }
 
+input[type=password][name="post_password"] {
+  border: 1px solid lighten($color-gray-medium, 20%);
+}
+
+label[for*="pwbox"] {
+  & + input[type="submit"] {
+    @extend .btn;
+  }
+}
+
 .wpcf7-not-valid {
   border: 2px solid $error-color !important;
   background-color: lighten($error-color, 60%) !important;

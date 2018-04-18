@@ -23,6 +23,11 @@ h3, .h3 {
   font-size: rem-calc(24px);
   color: $color-teal-dark;
   letter-spacing: 1px;
+
+  &.entry-title {
+    font-family: $font-sans;
+    font-weight: bold;
+  }
 }
 
 h4, .h4 {
@@ -31,24 +36,24 @@ h4, .h4 {
   color: $color-purple;
 }
 
+a {
+  text-decoration: underline;
+  font-weight: bold;
+  transition: all 0.3s;
+
+  &:hover, &:active {
+    text-decoration-style: double;
+    color: $color-green;
+
+    html[data-contrast="true"] & {
+      color: $color-white;
+    }
+  }
+}
+
 .main {
   p, li, dt, dd {
     line-height: 1.8em;
-  }
-
-  a:not(.btn) {
-    text-decoration: underline;
-    font-weight: bold;
-    transition: all 0.3s;
-
-    &:hover, &:active {
-      text-decoration-style: double;
-      color: $color-green;
-
-      html[data-contrast="true"] & {
-        color: $color-white;
-      }
-    }
   }
 
   dt {

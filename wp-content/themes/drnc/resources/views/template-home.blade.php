@@ -80,7 +80,10 @@
             <li class="icon-linkedin"><a href="https://www.linkedin.com/company/251907/">LinkedIn</a></li>
           </ul>
 
-          [EVENTS]
+          <div class="events-list">
+            {!! do_shortcode('[my_calendar_upcoming category="4" template=\'<div class="featured-event"><time>{date format=\"M\"} <span>{date format=\"j\"}</span> {date format=\"Y\"}</time> <h3>{linking_title}</h3><p class=\"strong\">{location}<br />{timerange}</p></div>\' before="0" show_today="yes" type="event" order="asc"]') !!}
+            {!! do_shortcode('[my_calendar_upcoming category="1,2,3" template=\'<time>{date format=\"M\"} <span>{date format=\"j\"}</span> {date format=\"Y\"}</time> <h3>{link_title}</h3><p class=\"strong\">{location}<br />{timerange}</p>\' before="0" after="2" show_today="yes" type="event" order="asc"]') !!}
+          </div>
         </section>
       </div>
     </div>

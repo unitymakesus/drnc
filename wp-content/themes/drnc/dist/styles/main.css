@@ -9243,7 +9243,7 @@ html[data-contrast="true"] .sidebar-primary .background-teal.background-point-ri
   background: #000;
 }
 
-.btn,
+.btn.btn,
 .btn-large,
 .btn-small,
 label[for*="pwbox"] + input[type="submit"] {
@@ -9256,15 +9256,15 @@ label[for*="pwbox"] + input[type="submit"] {
   text-decoration: none;
 }
 
-.btn:hover,
+.btn.btn:hover,
 .btn-large:hover,
 .btn-small:hover,
 label[for*="pwbox"] + input[type="submit"]:hover,
-.btn:focus,
+.btn.btn:focus,
 .btn-large:focus,
 .btn-small:focus,
 label[for*="pwbox"] + input[type="submit"]:focus,
-.btn:active,
+.btn.btn:active,
 .btn-large:active,
 .btn-small:active,
 label[for*="pwbox"] + input[type="submit"]:active {
@@ -9278,25 +9278,25 @@ label[for*="pwbox"] + input[type="submit"]:active {
   height: auto;
 }
 
-.btn-teal {
+.btn-teal.btn-teal {
   background: #3D6E77;
   border-color: #09343C;
 }
 
-.btn-teal:hover,
-.btn-teal:focus,
-.btn-teal:active {
+.btn-teal.btn-teal:hover,
+.btn-teal.btn-teal:focus,
+.btn-teal.btn-teal:active {
   background: #4e8d99;
 }
 
-.btn-green {
+.btn-green.btn-green {
   background: #6E773D;
   border-color: #343C09;
 }
 
-.btn-green:hover,
-.btn-green:focus,
-.btn-green:active {
+.btn-green.btn-green:hover,
+.btn-green.btn-green:focus,
+.btn-green.btn-green:active {
   background: #8d994e;
 }
 
@@ -10292,16 +10292,16 @@ html[data-contrast="true"] .sidebar .widget_categories {
   padding: 5px 0;
 }
 
-.page-footer a:not(.btn):not(.btn-large):not(.btn-small):not(label[for*="pwbox"] + input[type="submit"]) {
+.page-footer a {
   color: #FFF;
-  text-decoration: underline;
+  font-weight: normal;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.page-footer a:not(.btn):not(.btn-large):not(.btn-small):not(label[for*="pwbox"] + input[type="submit"]):hover,
-.page-footer a:not(.btn):not(.btn-large):not(.btn-small):not(label[for*="pwbox"] + input[type="submit"]):active {
+.page-footer a:hover,
+.page-footer a:active {
   -webkit-text-decoration-style: double;
           text-decoration-style: double;
   color: #cde2e6;

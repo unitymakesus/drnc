@@ -51,6 +51,7 @@ class AdminPagePrivacy extends AdminPage {
         $html .= $this->form_section( 'Software Privacy', 'It is important to conceal what versions of software you are using.' );
         $rows = $this->form_checkbox( $this->settings, 'WordPress Version', 'wp_generator', 'Hide WordPress Version', 'WordPress leaves a little public footprints on your site in multiple places. This feature removes the WordPress version from the generator tag and RSS feed.' );      
         $rows .= $this->form_checkbox( $this->settings, 'Script Versions', 'hide_script_versions', 'Hide Script Versions', 'This replaces all script versions appended to the enqueued JS and CSS files with the current date (YYYYMMDD).' );      
+        $rows .= '<tr><td colspan="2"><i>NOTICE: You can also <a href="admin.php?page=security-safe-files#file-access">deny access to files</a> that disclose software versions.</i></td></tr>';
         $html .= $this->form_table( $rows );
 
         // Website Privacy

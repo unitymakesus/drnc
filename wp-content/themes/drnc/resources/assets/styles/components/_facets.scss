@@ -21,9 +21,11 @@
 }
 
 .facet-label {
-  font-size: 1.25rem;
+  @extend h3;
+
+  font-family: $font-serif;
   font-weight: bold;
-  margin-bottom: 0.25em;
+  margin: 0.75em 0;
 }
 
 .facetwp-checkbox.facetwp-checkbox {

@@ -93,6 +93,20 @@ class Security extends Plugin {
             // Disallow Theme File Editing
             $this->add_constant_policy( $settings, 'PolicyDisallowFileEdit', 'DISALLOW_FILE_EDIT', true );
 
+            // Protect WordPress Version Files
+            $this->add_policy( $settings, 'PolicyWordPressVersionFiles', 'version_files_core' );
+
+            if ( $this->is_pro() ) {
+            
+                // Protect Plugin Version Files
+                //$this->add_policy( $settings, 'PolicyPluginVersionFiles', 'version_files_plugins' );
+
+                // Protect Theme Version Files
+                //$this->add_policy( $settings, 'PolicyThemeVersionFiles', 'version_files_themes' );
+
+            } // is_pro()
+
+
             // Auto Updates: https://codex.wordpress.org/Configuring_Automatic_Background_Updates
             if ( version_compare( $wp_version, '3.7.0') >= 0 && ! defined('AUTOMATIC_UPDATER_DISABLED') ) {
 

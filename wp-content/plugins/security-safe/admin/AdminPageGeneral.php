@@ -55,7 +55,7 @@ class AdminPageGeneral extends AdminPage {
         // General Settings
         $html .= $this->form_section( 'Settings', false );
         $rows = $this->form_select( $this->settings, 'All Security Policies', 'on', array( '0' => 'Disabled', '1' => 'Enabled' ), 'If you experience a problem, you may want to temporarily turn off all security polocies at once to troubleshoot the issue. Each individual policy type can be temporarily disabled at the top of each page\'s settings tab.' );
-        $rows .= $this->form_button( 'Reset Settings', 'link-delete', get_admin_url() . '?page=security-safe&tab=general&reset=1', 'Click this button to reset the Security Safe settings back to default. WARNING: You will lose all configuration changes you have made.' );
+        $rows .= $this->form_button( 'Reset Settings', 'link-delete', get_admin_url() . '?page=security-safe&reset=1', 'Click this button to reset the Security Safe settings back to default. WARNING: You will lose all configuration changes you have made.' );
         $rows .= $this->form_checkbox( $this->settings, 'Cleanup Database When Disabling Plugin', 'cleanup', 'Remove Settings When Disabled', 'If you ever decide to disable this plugin, you may want us to remove our settings from the database. Do not check this box if you are temporarily disabling the plugin.' );      
         $html .= $this->form_table( $rows );
 

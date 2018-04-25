@@ -200,7 +200,10 @@ class AdminPage {
     
     protected function form_section( $title, $desc ) {
 
-        $html = '<h3>' . $title . '</h3>';
+        // Create ID to allow links to specific areas of admin
+        $id = str_replace( ' ', '-', trim( strtolower( $title ) ) );
+        
+        $html = '<h3 id="' . $id . '">' . $title . '</h3>';
         $html .= '<p>' . $desc . '</p>';
 
         // Memory Cleanup
@@ -219,7 +222,7 @@ class AdminPage {
      * @param string $short_desc The text that is displayed to the right on the checkbox.
      * @param string $long_desc The description text displayed below the title.
      */
-    protected function form_checkbox( $page_options, $name, $slug, $short_desc, $long_desc ) {
+    protected function form_checkbox( $page_options, $name, $slug, $short_desc, $long_desc, $disabled = false ) {
 
         $html = '<tr class="checkbox">';
 
@@ -229,8 +232,9 @@ class AdminPage {
             $html .= '<td>';
 
             $checked = ( isset( $page_options[ $slug ] ) && $page_options[ $slug ] == '1' ) ? ' CHECKED' : '';
+            $disabled = ( $disabled ) ? ' DISABLED' : '';
         
-            $html .= '<label><input name="' . $slug . '" type="checkbox" value="1"' . $checked . '/>' . $short_desc . '</label>';
+            $html .= '<label><input name="' . $slug . '" type="checkbox" value="1"' . $checked . $disabled . '/>' . $short_desc . '</label>';
             
             if ( $long_desc ) {
 
@@ -441,5 +445,17 @@ class AdminPage {
 
     } // display_messages()
 
+    /**
+     * Wrapper for the main object is_pro() function
+     * @return boolean
+     */
+    protected function is_pro() {
+
+        global $SecuritySafe;
+
+        return $SecuritySafe->is_pro();
+
+    } // is_pro()
+    
 
 } // Admin()

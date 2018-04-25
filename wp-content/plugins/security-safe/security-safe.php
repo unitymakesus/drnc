@@ -7,7 +7,7 @@ if ( ! defined( 'WPINC' ) ) { die; }
 
 /**
  * @package SecuritySafe
- * @version 1.1.3
+ * @version 1.1.5
  */
 
 /*
@@ -16,7 +16,7 @@ if ( ! defined( 'WPINC' ) ) { die; }
  * Description: Security Safe - Security, Hardening, Auditing & Privacy
  * Author: Sovereign Stack, LLC
  * Author URI: https://sovstack.com
- * Version: 1.1.3
+ * Version: 1.1.5
  * Text Domain: security-safe
  * Domain Path:  /languages
  * License: GPLv3 or later
@@ -38,20 +38,31 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-$plugin = array(
-    'name'          => 'Security Safe',
-    'version'       => '1.1.3',
-    'slug'          => 'security-safe',
-    'options'       => 'securitysafe_options',
-    'file'          => __FILE__,
-    'dir'           => __DIR__,
-    'dir_admin'     => __DIR__ . '/admin',
-    'dir_common'    => __DIR__ . '/common',
-    'dir_lang'      => __DIR__ . '/languages',
-    'url'           => plugin_dir_url( __FILE__ ),
-    'url_author'    => 'https://sovstack.com/',
-    'url_more_info' => 'https://sovstack.com/security-safe/',
-    );
+$plugin = array();
+
+// Base Plugin
+$plugin['name'] = 'Security Safe';
+$plugin['version'] = '1.1.5';
+$plugin['slug'] = 'security-safe';
+$plugin['options'] = 'securitysafe_options';
+$plugin['file'] = __FILE__;
+$plugin['dir'] = __DIR__;
+$plugin['dir_admin'] = __DIR__ . '/admin';
+$plugin['dir_common'] = __DIR__ . '/common';
+$plugin['dir_lang'] = __DIR__ . '/languages';
+$plugin['url'] = plugin_dir_url( __FILE__ );
+$plugin['url_author'] = 'https://sovstack.com/';
+$plugin['url_more_info'] ='https://sovstack.com/security-safe/';
+
+// Pro Addon
+$plugin['version_pro'] = false;
+$plugin['slug_pro'] = $plugin['slug'] . '-pro';
+$plugin['file_pro'] = $plugin['slug_pro'] . '.php';
+$plugin['dir_pro'] = dirname ( __DIR__ ) . '/' . $plugin['slug_pro'];
+$plugin['dir_admin_pro'] = $plugin['dir_pro'] . '/admin';
+$plugin['dir_common_pro'] = $plugin['dir_pro'] . '/common';
+$plugin['dir_lang_pro'] = $plugin['dir_pro'] . '/languages';
+$plugin['url_more_info_pro'] ='https://sovstack.com/security-safe/pro/';
 
 // Autoload
 require_once( __DIR__ . '/vendor/autoload.php' );

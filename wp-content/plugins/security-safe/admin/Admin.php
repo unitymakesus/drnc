@@ -364,8 +364,7 @@ class Admin extends Security {
                 
                 <p class="desc"><?php printf( __( '%s', 'security-safe' ), $page->description ); ?></p>
             
-                <a href="<?php echo $plugin['url_more_info']; ?>" target="_blank" class="ss-logo"><img src="<?php echo $plugin['url']; ?>/img/logo.svg" alt="<?php echo $plugin['name']; ?>"><br />
-                <span class="version">Version <?php echo $plugin['version']; ?></span></a>
+                <a href="<?php echo $plugin['url_more_info']; ?>" target="_blank" class="ss-logo"><img src="<?php echo $plugin['url']; ?>/img/logo.svg" alt="<?php echo $plugin['name']; ?>"><br /><span class="version">Version <?php echo $plugin['version']; ?></span><?php if ( $this->is_pro() ) { ?><span class="version pro">Pro Version <?php echo $plugin['version_pro']; ?></span><?php } ?></a>
 
             </div><!-- .intro -->
 
@@ -374,8 +373,6 @@ class Admin extends Security {
             <?php $page->display_tabs(); ?>
 
             <form method="post" action="">
-
-                <?php wp_nonce_field( 'security-safe-settings' ); ?>
     
                 <div class="all-tab-content">
 
@@ -389,11 +386,11 @@ class Admin extends Security {
                                 <p>Share your positive experience!</p>
                                 <p><a href="https://wordpress.org/plugins/security-safe/#reviews" target="_blank" class="rate-stars"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></a></p>
                             </div>
-
+                            <?php if ( ! $this->is_pro() ) { ?>
                             <div class="security-safe-pro widget">
-                                <img src="<?php echo $plugin['url']; ?>img/security-safe-pro.png" alt="Security Safe Pro is Coming Soon!" />
+                                <a href="<?php echo $plugin['url_more_info_pro']; ?>" target="_blank"><img src="<?php echo $plugin['url']; ?>img/security-safe-pro.png?ver=<?php echo $plugin['version']; ?>" alt="Security Safe Pro is Coming Soon!" /></a>
                             </div>
-                            
+                            <?php } ?>
                         </div>
                     <?php } ?>
 

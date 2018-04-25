@@ -26,6 +26,13 @@ class Plugin {
 
 
     /**
+     * Security Safe Pro Status
+     * @var boolean
+     */
+    public $pro;
+
+
+    /**
      * local settings values array.
      * @var array
      */
@@ -50,6 +57,9 @@ class Plugin {
 
         // Set Plugin Information
         $this->plugin = ( is_array( $plugin ) ) ? $plugin : exit;
+
+        // Set Pro Variable
+        $this->pro = ( $this->check_pro() ) ? true : false;
 
         // Add Text Domain For Translations
         load_plugin_textdomain( 'security-safe', false, $this->plugin['dir_lang'] );
@@ -101,15 +111,6 @@ class Plugin {
      * @since 0.1.0
      */
     protected function set_settings( $settings ) {
-
-        // Check to see if the posted request is valid
-        if( isset( $_POST ) && ! empty( $POST) ) {
-
-            $valid = check_admin_referer( 'security-safe-settings' );
-
-            if ( ! $valid ) { die( 'Not A Valid Request!' ); }
-
-        } // isset()
 
         if ( is_array( $settings ) && isset( $settings['plugin']['version'] ) ) {
             
@@ -181,7 +182,9 @@ class Plugin {
 
             }
 
-            $page_slug = str_replace( array( 'security-safe-', 'security-safe' ), '', $_GET['page'] );
+            // Create Page Slug
+            $page_slug = filter_var( $_GET['page'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH );
+            $page_slug = str_replace( array( 'security-safe-', 'security-safe' ), '', $page_slug );
             
             // Compensation For Oddball Scenarios
             $page_slug = ( $page_slug == '' ) ? 'general' : $page_slug;
@@ -253,6 +256,9 @@ class Plugin {
         $files = array();
         $files['on'] = '1';
         $files['DISALLOW_FILE_EDIT'] = '1';
+        $files['version_files_core'] = '0';
+        $files['version_files_plugins'] = '0';
+        $files['version_files_themes'] = '0';
         $files['allow_dev_auto_core_updates'] = '0';
         $files['allow_major_auto_core_updates'] = '0';
         $files['allow_minor_auto_core_updates'] = '1';
@@ -287,6 +293,7 @@ class Plugin {
         $general['on'] = '1';
         $general['security_level'] = '1';
         $general['cleanup'] = '0';
+        $general['cache_busting'] = '1';
 
         // Plugin Version Tracking -----------------|
         $plugin = array();
@@ -413,8 +420,8 @@ class Plugin {
 
             $this->log( 'Form was submitted.' );
 
-            // Posted Settings
-            $new_settings = $_POST;
+            // Sanitized Posted Settings
+            $new_settings = filter_var_array( $_POST, FILTER_SANITIZE_STRING );
 
             // Remove submit value
             unset( $new_settings['submit'] );
@@ -459,7 +466,6 @@ class Plugin {
             } // ! empty()
 
             // Cleanup Settings
-            unset( $options['_wpnonce'], $options['_wp_http_referer'] );
             $settings[ $settings_page ] = $options; // Update page settings
 
             // Compare New / Old Settings
@@ -502,6 +508,32 @@ class Plugin {
 
     } // post_settings()
 
+    /**
+     * Returns status of Pro version
+     * @since  1.1.4
+     * @return boolean
+     */ 
+    public function is_pro() {
+
+        return $this->pro;
+
+    } // is_pro()
+
+
+    /**
+     * Detects whether the Pro version is installed
+     * @since  1.1.4
+     * @return boolean
+     */ 
+    private function check_pro() {
+
+        $plugin = $this->plugin['slug_pro'] . '/' . $this->plugin['file_pro'];
+        $active = apply_filters( 'active_plugins', get_option('active_plugins') );
+
+        return in_array( $plugin, $active );
+
+    } // check_pro()
+
 
     /**
      * Removes the global variable for the plugin after PHP is done executing.
@@ -529,6 +561,49 @@ class Plugin {
         } // isset()
 
     } // disable_plugin()
+
+    /**
+     * Get cache_buster value from database
+     * @return int
+     */ 
+    function get_cache_busting() {
+
+        $settings = $this->settings;
+
+        $cache_busting = ( isset( $settings['general']['cache_busting'] ) ) ? (int) $settings['general']['cache_busting'] : $this->increase_cache_busting(true);
+
+        return $cache_busting;
+
+    } // get_cache_busting()
+
+
+
+    /**
+     * Increase cache_busting value by 1
+     * @param  boolean $return Return cache_busting value if true
+     */
+    function increase_cache_busting( $return = false ) {
+
+        $settings = $this->settings;
+
+        $cache_busting = ( isset( $settings['general']['cache_busting'] ) && $settings['general']['cache_busting'] > 0 ) ? (int) $settings['general']['cache_busting'] : 0;
+
+        // Increase Value
+        $settings['general']['cache_busting'] = ( $settings['general']['cache_busting'] > 99 ) ? 1 : $cache_busting + 1; //Increase value
+
+        $result = $this->set_settings( $settings );
+
+        if ( $return && $result ) {
+
+            return $settings['general']['cache_busting'];
+
+        } else if ( $return ) {
+
+            return "0";
+            
+        }
+
+    } // increase_cache_busting()
 
 
     /**

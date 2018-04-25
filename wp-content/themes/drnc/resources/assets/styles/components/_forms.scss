@@ -15,9 +15,10 @@ select {
 
 label {
   color: $color-black;
+  font-size: 1rem;
 }
 
-input[type="text"], input[type="number"], input[type="tel"], input[type="email"] {
+input[type="text"], input[type="number"], input[type="tel"], input[type="email"], input[type="date"] {
   &.facetwp-search, &.wpcf7-form-control {
     background: $color-white;
     border: 1px solid lighten($color-gray-medium, 20%);
@@ -46,7 +47,13 @@ label[for*="pwbox"] {
   }
 }
 
-.wpcf7-not-valid {
+input[type="radio"], input[type="checkbox"] {
+  &:focus + .wpcf7-list-item-label {
+    outline: 1px dotted $color-gray-medium;
+  }
+}
+
+.wpcf7-not-valid, input.error {
   border: 2px solid $error-color !important;
   background-color: lighten($error-color, 60%) !important;
 }
@@ -77,7 +84,7 @@ label[for*="pwbox"] {
   margin-bottom: 20px;
   border: 1px solid $color-gray-dark;
 
-  legend {
+  & > legend {
     font-family: $font-serif;
     font-weight: bold;
     font-size: 1.3em;
@@ -91,7 +98,7 @@ label[for*="pwbox"] {
 
 .form-row {
   position: relative;
-  margin: 0 0 10px;
+  margin: 0 0 rem-calc(20px);
   // border: 1px solid $navy;
   // background: white;
   // padding: 20px;
@@ -201,6 +208,8 @@ ol.form-progress {
     }
 
     &[data-step-complete] {
+      cursor: pointer;
+
       &::before, &::after {
         background: $color-purple;
         color: $color-white;

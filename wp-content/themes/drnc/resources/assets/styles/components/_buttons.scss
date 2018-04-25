@@ -13,6 +13,13 @@
 
     @extend .z-depth-4;
   }
+
+  &.disabled {
+    background: $color-gray-light;
+    border-color: $color-gray-medium;
+    color: $color-gray-medium !important;
+    pointer-events: all;
+  }
 }
 
 .btn-lg {

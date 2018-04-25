@@ -19,6 +19,10 @@ class AdminPageFiles extends AdminPage {
      */  
     protected function set_page() {
 
+        global $SecuritySafe;
+
+        $plugin = $SecuritySafe->plugin;
+
         // Fix Permissions
         $this->fix_permissions();
 
@@ -65,12 +69,22 @@ class AdminPageFiles extends AdminPage {
             'content_callback' => 'tab_uploads',
         );
 
+        $tab_plugins_intro = 'WordPress sets file permissions to minimum safe values by default when you install or update plugins. You will likely find file permission issues after migrating a site from one server to another. The file permissions for a plugin will get fixed when you perform an update on that particular plugin. We would recommend correcting any issues labeled "bad" immediately, versus waiting for an update.';
+        
+        if ( ! $this->is_pro() ) {
+        
+            $tab_plugins_intro .= '<br /><br /><b>Batch Plugin Permissions</b> (<a href="' . $plugin['url_more_info_pro'] . '" target="_blank">Pro Feature</a>) - You can change all plugin permissions to Standard or Secure permissions with one click.';
+            $tab_plugins_intro .= '<br /><br /><b>Prevent Plugin Version Snooping</b> (<a href="' . $plugin['url_more_info_pro'] . '" target="_blank">Pro Feature</a>) - Prevent access to plugin version files.';
+            $tab_plugins_intro .= '<br /><br /><b>Maintain Secure Permissions</b> (<a href="' . $plugin['url_more_info_pro'] . '" target="_blank">Pro Feature</a>) - WordPress will overwrite your file permissions changes when an update is performed. Security Safe Pro will automatically fix your permissions after an update.';
+        
+        }
+
         $this->tabs[] = array(
             'id' => 'plugins',
             'label' => 'Plugins',
             'title' => 'Plugins Audit',
-            'heading' => 'Check to make sure all plugin file permissions set properly.',
-            'intro' => 'If you see some permissions that do not look correct, please contact the plugin developers to inform them of the issue. They should fix the issue and release a new version of their plugin. If there are serious security issues identified, and you do not get a response from them, we would recommend removing the plugin from your site.',
+            'heading' => 'When plugin updates run, they will overwrite your permission changes.',
+            'intro' => $tab_plugins_intro,
             'classes' => array( 'full' ),
             'content_callback' => 'tab_plugins',
         );
@@ -94,7 +108,9 @@ class AdminPageFiles extends AdminPage {
      */ 
     function tab_settings() {
 
-        global $wp_version;
+        global $wp_version, $SecuritySafe;
+
+        $plugin = $SecuritySafe->plugin;
 
         $html = '';
 
@@ -125,6 +141,20 @@ class AdminPageFiles extends AdminPage {
         // File Access
         $html .= $this->form_section( 'File Access', false );
         $rows = $this->form_checkbox( $this->settings, 'Theme File Editing', 'DISALLOW_FILE_EDIT', 'Disable Theme Editing', 'Disable the ability for admin users to edit your theme files from the WordPress admin.' );
+        $rows .= $this->form_checkbox( $this->settings, 'WordPress Version Files', 'version_files_core', 'Prevent Access', 'Prevent access to files that disclose WordPress versions: readme.html and license.txt. Also see <a href="admin.php?page=security-safe-privacy#software-privacy">Software Privacy</a>.' );
+        
+        if ( $this->is_pro() ) {
+
+            $rows .= $this->form_checkbox( $this->settings, 'Plugin Version Files', 'version_files_plugins', 'Prevent Access', 'Prevent access to files that disclose plugin versions: readme.txt, readme.md, changelog.txt, changelog.md, and license.txt. Also see <a href="admin.php?page=security-safe-privacy#software-privacy">Software Privacy</a>.' );
+            $rows .= $this->form_checkbox( $this->settings, 'Theme Version Files', 'version_files_themes', 'Prevent Access', 'Prevent access to files that disclose plugin versions: readme.txt, readme.md, changelog.txt, changelog.md, and license.txt. Also see <a href="admin.php?page=security-safe-privacy#software-privacy">Software Privacy</a>.' );
+
+        } else {
+
+            $rows .= $this->form_checkbox( $this->settings, 'Plugin Version Files', 'version_files_plugins', 'Prevent Access (<a href="' . $plugin['url_more_info_pro'] . '" target="_blank">Pro Feature</a>)', 'Prevent access to files that disclose plugin versions.', true );
+            $rows .= $this->form_checkbox( $this->settings, 'Theme Version Files', 'version_files_themes', 'Prevent Access (<a href="' . $plugin['url_more_info_pro'] . '" target="_blank">Pro Feature</a>)', 'Prevent access to files that disclose plugin versions.', true );
+
+        }
+
         $html .= $this->form_table( $rows );
 
         // Save Button
@@ -186,7 +216,7 @@ class AdminPageFiles extends AdminPage {
      */ 
     function tab_theme() {
 
-        return $this->display_permissions_table( $this->get_dir_files( get_template_directory() ) );
+        return $this->display_permissions_table( $this->get_dir_files( get_template_directory() ), 'tab_theme' );
 
     } // tab_theme()
 
@@ -212,7 +242,7 @@ class AdminPageFiles extends AdminPage {
 
         $plugins_dir = ( defined( 'WP_PLUGIN_DIR' ) ) ? WP_PLUGIN_DIR : dirname ( dirname( __DIR__ ) );
 
-        return $this->display_permissions_table( $this->get_dir_files( $plugins_dir ) );
+        return $this->display_permissions_table( $this->get_dir_files( $plugins_dir ), 'tab_plugins' );
 
     } // tab_plugins()
 
@@ -225,7 +255,27 @@ class AdminPageFiles extends AdminPage {
 
         // Latest Versions
         $latest_versions = array();
-        $latest_versions['PHP'] = array( '7' => '7.2.1', '5.6' => '5.6.33' );
+
+        //https://secure.php.net/ChangeLog-7.php
+        //https://secure.php.net/ChangeLog-5.php
+        $latest_versions['PHP'] = array( 
+            '7.2.0' => '7.2.4',
+            '7.1.0' => '7.1.16',
+            '7.0.0' => '7.0.29',
+            '5.6.0' => '5.6.35' );
+
+        $php_min = '5.6.0';
+
+        $ok = array();
+        $ok['php'] = false;
+
+        $bad = array();
+        $bad['php'] = false;
+
+        $PHP_VERSION = PHP_VERSION;
+        //$PHP_VERSION = '5.6.12'; // test only
+
+        $notice_class = '';
 
         $html = '';
 
@@ -248,38 +298,48 @@ class AdminPageFiles extends AdminPage {
             $status = '';
             $recommend = '';
 
-            if ( version_compare( PHP_VERSION, $latest_versions['PHP']['7'] ) == 0 ) {
+            if ( in_array( $PHP_VERSION, $latest_versions['PHP'] ) ) {
 
-                $status = 'Good';
-                $recommend = $latest_versions['PHP']['7'];
+                // PHP Version Is Secure
+                $status = 'Secure';
+                $recommend = $PHP_VERSION;
 
-            } elseif ( version_compare( PHP_VERSION, '7.0.0' ) >= 0 ) {
+            } else if ( version_compare( $PHP_VERSION, $php_min, '<' ) ) {
                 
-                $status = 'OK';
-                $recommend = $latest_versions['PHP']['7'];
-
-            } elseif ( version_compare( PHP_VERSION, $latest_versions['PHP']['5.6'] ) == 0 ) {
-
-                $status = 'Good';
-                $recommend = $latest_versions['PHP']['5.6'];
-            
-            } elseif ( version_compare( PHP_VERSION, '5.6.0' ) >= 0 ) {
-                
-                $status = 'OK';
-                $recommend = $latest_versions['PHP']['5.6'];
-                
-            } else {
-                
+                // This Version Is Vulnerable
                 $status = 'Bad';
-                $recommend = $latest_versions['PHP']['5.6'];
-                
-            }
+                $recommend = $latest_versions['PHP'][ $php_min ];
+
+                $bad['php'] = array( $PHP_VERSION, $php_min );
+                $notice_class = 'notice-error';
+           
+            } else {
+
+                // Needs Update To Latest Secure Patch Version
+                foreach ( $latest_versions['PHP'] as $minor => $patch ) {
+
+                    if ( version_compare( $PHP_VERSION, $minor, '>=' ) ) {
+                        
+                        $status = 'OK';
+                        $recommend = $patch;
+
+                        $ok['php'] = array( $PHP_VERSION, $patch );
+                        $notice_class = 'notice-warning';
+
+                        break;
+
+                    }
+
+                } // foreach()
+
+            } // endif
 
             $versions[] = array( 
                 'name' => 'PHP', 
-                'current' => PHP_VERSION,
+                'current' => $PHP_VERSION,
                 'recommend' => $recommend, 
                 'status' => $status,
+                'class' => $notice_class,
             );
 
         } // PHP_VERSION
@@ -313,6 +373,7 @@ class AdminPageFiles extends AdminPage {
                             'current' => $current,
                             'recommend' => '-', 
                             'status' => '-',
+                            'class' => '',
                         );
 
                     } // strpos()
@@ -326,7 +387,7 @@ class AdminPageFiles extends AdminPage {
         // Display All Version
         foreach ( $versions as $v ) {
 
-            $html .= '<tr>';
+            $html .= '<tr class="' . $v['class'] . '">';
             $html .= '<td class="check-column">' . __( $v['name'] ) . '</td>';
             $html .= '<td class="check-column" style="text-align: center;">' . __( $v['current'], 'security-safe' ) . '</td>';
             $html .= '<td class="check-column" style="text-align: center;">' . __( $v['recommend'], 'security-safe' ) . '</td>';
@@ -344,8 +405,11 @@ class AdminPageFiles extends AdminPage {
 
         $html .= '</table>';
 
+        // Display Notices
+        $this->display_notices_perms( false, $ok, $bad );
+
         // Memory Cleanup
-        unset( $latest_versions, $versions, $status, $recommend, $phpinfo, $name, $section, $key, $val, $current, $v );
+        unset( $latest_versions, $versions, $status, $recommend, $phpinfo, $name, $section, $key, $val, $current, $v, $php_min, $minor, $patch, $bad );
 
         return $html;
 
@@ -403,9 +467,11 @@ class AdminPageFiles extends AdminPage {
 
     /**
      * Display all file permissions in a table
+     * @param  array $paths An array of absolute paths
+     * @param  string $tab Tab identification: used to determine features for one tab versus another.
      * @since  1.0.3
      */
-    private function display_permissions_table( $paths = false ) {
+    private function display_permissions_table( $paths = false, $tab = false ) {
 
         $html = '
             <table class="wp-list-table widefat fixed striped file-perm-table">
@@ -422,6 +488,18 @@ class AdminPageFiles extends AdminPage {
         if ( is_array( $paths ) && ! empty ( $paths ) ) { 
 
             $file_count = 0;
+
+            $good = array();
+            $good['dirs'] = 0;
+            $good['files'] = 0;
+
+            $bad = array();
+            $bad['dirs'] = 0;
+            $bad['files'] = 0;
+
+            $ok = array();
+            $ok['dirs'] = 0;
+            $ok['files'] = 0;
 
             foreach ( $paths as $p ) {
 
@@ -444,6 +522,8 @@ class AdminPageFiles extends AdminPage {
                     $group = ( isset( $perm[1] ) ) ? $perm[1] : 0;
                     $world = ( isset( $perm[2] ) ) ? $perm[2] : 0;
 
+                    $notice_class = '';
+
                     // Determine Directory or File
                     if ( $is_dir ) {
 
@@ -455,10 +535,29 @@ class AdminPageFiles extends AdminPage {
 
                             $status = ( $current == $sec ) ? 'secure' : 'good';
 
+                            if ( $status == 'good' && ( $this->is_pro() || ( $tab != 'tab_plugins' && $tab != 'tab_theme' ) ) ) {
+
+                                $good['dirs'] = $good['dirs'] + 1;
+                                $notice_class = 'notice-info';
+
+                            }
+
                         } else {
 
                             // Ceiling
                             $status = ( $world > 5 ) ? 'bad' : 'ok';
+
+                            if ( $status == 'bad' ) {
+
+                                $bad['dirs'] = $bad['dirs'] + 1;
+                                $notice_class = 'notice-error';
+
+                            } else {
+
+                                $ok['dirs'] = $ok['dirs'] + 1;
+                                $notice_class = 'notice-warning';
+
+                            }
 
                         } // $current
 
@@ -469,15 +568,34 @@ class AdminPageFiles extends AdminPage {
                         $sec = '644'; // Secure
 
                         // Secure Permissions for certain files
-                        $sec = ( strpos( $p, 'wp-config.php' ) ) ? '600' : $sec;
-                        $sec = ( strpos( $p, 'php.ini' ) ) ? '600' : $sec;
+                        $sec = ( stripos( $p, 'wp-config.php' ) ) ? '600' : $sec;
+                        $sec = ( stripos( $p, 'php.ini' ) ) ? '600' : $sec;
+
+                        // Prevent Version Snooping
+                        $sec = ( stripos( $p, 'readme.html' ) ) ? '640' : $sec;
+                        $sec = ( stripos( $p, 'readme.txt' ) ) ? '640' : $sec;
+                        $sec = ( stripos( $p, 'readme.md' ) ) ? '640' : $sec;
+                        $sec = ( stripos( $p, 'changelog.txt' ) ) ? '640' : $sec;
+                        $sec = ( stripos( $p, 'changelog.md' ) ) ? '640' : $sec;
+                        $sec = ( stripos( $p, 'license.txt' ) ) ? '640' : $sec;
 
                         if ( $current == $min || $current == $sec ) {
 
                             if ( $min == $sec ) {
-                                $status = 'good';
+
+                                $status = 'secure';
+
                             } else {
+
                                 $status = ( $current == $sec ) ? 'secure' : 'good';
+
+                                if ( $status == 'good' && ( $this->is_pro() || ( $tab != 'tab_plugins' && $tab != 'tab_theme' ) ) ) {
+
+                                    $good['files'] = $good['files'] + 1;
+                                    $notice_class = 'notice-info';
+
+                                }
+
                             }
                             
                         } else {
@@ -488,16 +606,36 @@ class AdminPageFiles extends AdminPage {
                             // Floor
                             $status = ( $owner < 4 || $group < 0 || $world < 0 ) ? 'bad' : $status;
 
+                            if ( $status == 'bad' ) {
+
+                                $bad['files'] = $bad['files'] + 1;
+                                $notice_class = 'notice-error';
+
+                            } else {
+
+                                $ok['files'] = $ok['files'] + 1;
+                                $notice_class = 'notice-warning';
+
+                            }
+
                         } // $current
                         
                     } // $permissions[0]
-                        
+
                     // Create Standard Option
                     $option_min = ( $status != 'good' && $min != $current ) ? '<option value="' . $min . '|' . $rel_path . '">' . $min . ' - Standard</option>' : false;
                     
-                    // Create Secure Option
-                    $option_sec = ( $status != 'secure' ) ? '<option value="' . $sec . '|' . $rel_path . '">' . $sec . ' - Secure</option>' : false;
-                    $option_sec = ( $min == $sec ) ? false : $option_sec;
+                    if ( $this->is_pro() || ( $tab != 'tab_plugins' && $tab != 'tab_theme' ) ) {
+                        
+                        // Create Secure Option
+                        $option_sec = ( $status != 'secure' ) ? '<option value="' . $sec . '|' . $rel_path . '">' . $sec . ' - Secure</option>' : false;
+                        $option_sec = ( $min == $sec ) ? false : $option_sec;
+
+                    } else {
+
+                        $option_sec = false;
+
+                    }
                     
                     if ( $option_min || $option_sec ) {
 
@@ -515,7 +653,7 @@ class AdminPageFiles extends AdminPage {
 
                     } // $option_min
 
-                    $html .=    '<tr>
+                    $html .=    '<tr class="' . $notice_class . '">
                                     <td class="check-column">' . $rel_path . '</td>
                                     <td class="check-column" style="text-align: center;">' . $type . '</td>
                                     <td class="check-column" style="text-align: center;">' . $owner . $group . $world . '</td>
@@ -538,8 +676,11 @@ class AdminPageFiles extends AdminPage {
 
         $html .= '</table>';
 
+        // Display Notices
+        $this->display_notices_perms( $good, $ok, $bad );
+
         // Memory Cleanup
-        unset( $paths, $p, $info, $permissions, $perm, $owner, $group, $world, $type, $rec, $status );
+        unset( $paths, $p, $info, $permissions, $perm, $owner, $group, $world, $type, $rec, $status, $good, $ok, $bad );
 
         return $html;
 
@@ -552,7 +693,7 @@ class AdminPageFiles extends AdminPage {
      */ 
     private function get_dir_files( $folder, $deep = true ) {
 
-        // Scan All Files In Plugins Directory
+        // Scan All Files In Directory
         $files = scandir( $folder );
         $results = array();
 
@@ -580,7 +721,9 @@ class AdminPageFiles extends AdminPage {
                     $array_results = $this->get_dir_files( $folder . '/' . $file );
                     
                     foreach ( $array_results as $r ){
+
                         $results[] = $r;
+
                     }// foreach()
 
                 } else {
@@ -591,8 +734,10 @@ class AdminPageFiles extends AdminPage {
                 } // $deep
 
             } else {
+
                 //It is a file
                 $results[] = $folder . '/' . $file;
+
             }
 
         } // foreach()
@@ -619,10 +764,10 @@ class AdminPageFiles extends AdminPage {
                 // Add Notice To Look At Process Log
                 $SecuritySafe->messages[] = array( 'Please review the Process Log below for details.' , 1, 0 );
 
-                // Display Notice
-                $SecuritySafe->display_notices();
+                // Sanitize $_POST Before We Do Anything
+                $post = filter_var_array( $_POST, FILTER_SANITIZE_STRING );
 
-                foreach ( $_POST as $name => $value ) {
+                foreach ( $post as $name => $value ) {
 
                     $v = explode( '|', $value );
 
@@ -638,6 +783,9 @@ class AdminPageFiles extends AdminPage {
 
                 } // foreach()
 
+                // Cleanup Memory
+                unset( $post, $name, $value, $v );
+
             } // $_GET['tab']
 
         } // $_POST
@@ -647,8 +795,8 @@ class AdminPageFiles extends AdminPage {
 
     /** 
      * Set Permissions For File or Directory
-     * @param [type] $path Absolute path to file or directory
-     * @param [type] $perm Desired permissions value 3 chars
+     * @param $path Absolute path to file or directory
+     * @param $perm Desired permissions value 3 chars
      */
     private function set_permissions( $path, $perm ) {
         
@@ -682,10 +830,12 @@ class AdminPageFiles extends AdminPage {
                 elseif  ( $perm == '755' ) {  $result = chmod( $path, 0755 ); }
                 elseif  ( $perm == '711' ) {  $result = chmod( $path, 0711 ); }
                 elseif  ( $perm == '644' ) {  $result = chmod( $path, 0644 ); }
+                elseif  ( $perm == '640' ) {  $result = chmod( $path, 0640 ); }
                 elseif  ( $perm == '604' ) {  $result = chmod( $path, 0604 ); }
                 elseif  ( $perm == '600' ) {  $result = chmod( $path, 0600 ); }
 
                 $result = true;
+
             } // strlen()
 
         } else {
@@ -704,7 +854,157 @@ class AdminPageFiles extends AdminPage {
 
         } // $result
 
+        // Cleanup Memory
+        unset( $path, $rel_path, $perm, $result );
+
     } // set_permissions()
+
+
+
+    /**
+     * Displays the current status of files that are not secure.
+     * @since  1.1.4
+     */ 
+    private function display_notices_perms( $good, $ok, $bad ) {
+
+        global $SecuritySafe;
+
+        // Display Notices
+        if ( 
+            ( isset( $good['dirs'] ) && $good['dirs'] > 0 ) || 
+            ( isset( $good['files'] ) && $good['files'] > 0 ) 
+        ) {
+
+            $message = 'You have ';
+
+            if ( $good['dirs'] > 0 ) {
+
+                $plural = ( $good['dirs'] > 1 ) ? ' directories' : ' directory';
+
+                // Add Notice To Look At Process Log
+                $message .= $good['dirs'] . $plural;
+
+            }
+
+            if ( $good['dirs'] > 0 && $good['files'] > 0 ) {
+
+                $message .= ' and ';
+
+            }
+
+            if ( $good['files'] > 0 ) {
+
+                $plural = ( $good['files'] > 1 ) ? ' files' : ' file';
+
+                // Add Notice To Look At Process Log
+                $message .= $good['files'] . $plural;
+            
+            }
+
+            $message .= ' that could be more secure.';
+
+            $SecuritySafe->messages[] = array( $message , 1, 1 );
+
+        } // endif $good
+
+        if ( 
+            ( isset( $ok['dirs'] ) && $ok['dirs'] > 0 ) || 
+            ( isset( $ok['files'] ) && $ok['files'] > 0 ) 
+        ) {
+
+            $message = 'You have ';
+
+            if ( isset( $ok['dirs'] ) && $ok['dirs'] > 0 ) {
+
+                $plural = ( $ok['dirs'] > 1 ) ? ' directories' : ' directory';
+
+                // Add Notice To Look At Process Log
+                $message .= $ok['dirs'] . $plural;
+
+            }
+
+            if ( isset( $ok['dirs'] ) && isset( $ok['files'] ) && $ok['dirs'] > 0 && $ok['files'] > 0 ) {
+
+                $message .= ' and ';
+
+            }
+
+            if ( isset( $ok['files'] ) && $ok['files'] > 0 ) {
+
+                $plural = ( $ok['files'] > 1 ) ? ' files' : ' file';
+
+                // Add Notice To Look At Process Log
+                $message .= $ok['files'] . $plural;
+            
+            }
+
+            $message .= ' with safe but unique permissions. This might cause functionality issues.';
+
+            $SecuritySafe->messages[] = array( $message , 2, 1 );
+
+        } // endif $ok
+
+        if ( 
+            ( isset( $bad['dirs'] ) && $bad['dirs'] > 0 ) || 
+            ( isset( $bad['files'] ) && $bad['files'] > 0 ) 
+        ) {
+
+            $message = 'You have ';
+
+            if ( isset( $bad['dirs'] ) && $bad['dirs'] > 0 ) {
+
+                $plural = ( $bad['dirs'] > 1 ) ? ' directories' : ' directory';
+                $message .=  $bad['dirs'] . ' vulnerable' . $plural;
+
+            }
+
+            if ( isset( $bad['dirs'] ) && isset( $bad['files'] ) && $bad['dirs'] > 0 && $bad['files'] > 0 ) {
+
+                $message .= ' and ';
+
+            }
+
+            if ( isset( $bad['files'] ) && $bad['files'] > 0 ) {
+
+                $plural = ( $bad['files'] > 1 ) ? ' files' : ' file';
+
+                // Add Notice To Look At Process Log
+                $message .= $bad['files'] . ' vulnerable' . $plural;
+                
+            }
+
+            $message .= '.';
+
+            $SecuritySafe->messages[] = array( $message , 3, 0 );
+
+        } // endif $bad
+
+        // PHP Notices
+        if ( isset( $ok['php'] ) && is_array( $ok['php'] ) ) {
+
+            $PHP_major = substr( $ok['php'][1], 0, 1 );
+            $PHP_changelog = 'https://secure.php.net/ChangeLog-' . $PHP_major . '.php';
+            $message = 'You have PHP version ' . $ok['php'][0] . ' and it needs to be updated to version ' . $ok['php'][1] . ' or higher. If version ' . $ok['php'][1] . ' was released more than 30 days ago and there is more than a 90-day timespan between PHP version ' . $ok['php'][0] . ' and ' . $ok['php'][1] . ' (<a href="' . $PHP_changelog . '" target="_blank">see changelog</a>), contact your hosting provider to upgrade PHP.';
+
+            $SecuritySafe->messages[] = array( $message , 2, 0 );
+        
+        } // $bad['php']
+
+        if ( isset( $bad['php'] ) && is_array( $bad['php'] ) ) {
+
+            $message = 'You are using PHP version ' . $bad['php'][0] . ', which is no longer supported and has critical vulnerabilities. Immediately contact your hosting company to upgrade PHP to version ' . $bad['php'][1] . ' or higher.';
+
+            $SecuritySafe->messages[] = array( $message , 3, 0 );
+        
+        } // $bad['php']
+                    
+        // Display Notices Created In This File
+        $SecuritySafe->display_notices();
+
+        // Cleanup Memory
+        unset( $good, $ok, $bad, $message, $plural );
+    
+    } // display_notices_perms()
 
 
 } // AdminPageFiles()

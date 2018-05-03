@@ -19,22 +19,60 @@
   }
 }
 
-.a11y-tools-trigger {
-  display: block;
-  background: $color-black;
-  border-radius: 100%;
-  color: $color-white;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  position: relative;
+.a11y-tools-trigger-wrapper {
+  position: absolute;
+  right: 5%;
+  top: 5px;
+  transition: top 0.3s ease;
 
-  i {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
+  @media #{$small-and-down} {
+    .a11y-tools-active & {
+      top: 65px;
+    }
+  }
+
+  input:focus + label {
+    outline: $color-gray-dark auto 5px;
+  }
+
+  label {
+    display: block;
+    background: $color-black;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    i {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $color-white;
+    }
+
+    span {
+      display: none;
+    }
+
+    &:hover {
+      background: $color-green;
+    }
+
+    html[data-contrast="true"] & {
+      border: 3px solid $color-white;
+
+      &:hover {
+        background: $color-white;
+
+        i {
+          color: $color-black;
+        }
+      }
+    }
   }
 }
 
@@ -42,6 +80,7 @@
   height: 60px;
   overflow: hidden;
   transition: height 0.3s ease;
+  position: relative;
 
   @media #{$small-and-down} {
     height: 0;
@@ -100,7 +139,7 @@
         color: $color-black;
       }
 
-      &:hover, &:focus {
+      &:hover {
         background: $color-gray-medium;
 
         &::after {
@@ -122,6 +161,48 @@
           &::after {
             color: $color-black;
           }
+        }
+      }
+    }
+
+    input {
+      &[type="radio"] {
+        &:checked + label {
+          background: $color-green-dark;
+
+          &::after {
+            color: $color-white;
+          }
+
+          html[data-contrast="true"] & {
+            background: $color-gray-dark;
+          }
+        }
+
+        &:focus + label {
+          outline: $color-gray-dark auto 5px;
+        }
+      }
+
+      &[type="checkbox"] {
+        &:checked + label {
+          background: $color-green-dark;
+
+          &::after {
+            background-image: url('../images/icon-contrast-inverse.svg');
+          }
+
+          html[data-contrast="true"] & {
+            background: $color-gray-dark;
+
+            &:hover, &:focus {
+              background: $color-gray-medium;
+            }
+          }
+        }
+
+        &:focus + label {
+          outline: $color-gray-dark auto 5px;
         }
       }
     }
@@ -160,34 +241,6 @@
 
       div[class*="large-"] label::after {
         font-size: 27px;
-      }
-    }
-
-    input[type="radio"]:checked + label {
-      background: $color-green-dark;
-
-      &::after {
-        color: $color-white;
-      }
-
-      html[data-contrast="true"] & {
-        background: $color-gray-dark;
-      }
-    }
-
-    input[type="checkbox"]:checked + label {
-      background: $color-green-dark;
-
-      &::after {
-        background-image: url('../images/icon-contrast-inverse.svg');
-      }
-
-      html[data-contrast="true"] & {
-        background: $color-gray-dark;
-
-        &:hover, &:focus {
-          background: $color-gray-medium;
-        }
       }
     }
   }

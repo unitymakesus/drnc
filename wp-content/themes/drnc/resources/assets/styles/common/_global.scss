@@ -8,6 +8,10 @@ html {
   &[data-text-size="large"] {
     font-size: 24px;
   }
+
+  @media #{$small-and-down} {
+    font-size: 16px;
+  }
 }
 
 body {
@@ -57,6 +61,14 @@ body {
 
   .flex-item {
     padding: 10px;
+  }
+
+  &.s1x {
+    @media #{$small-and-down} {
+      .flex-item {
+        width: 100%;
+      }
+    }
   }
 
   &.m2x {

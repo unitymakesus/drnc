@@ -3,6 +3,13 @@
 @endif
 <a href="#main" class="screen-reader-text">Skip to content</a>
 <header class="banner" role="banner">
+  <div class="hide-on-med-and-up">
+    <div class="a11y-tools-trigger-wrapper">
+      <input type="checkbox" name="a11y-tools-trigger" id="a11y-tools-trigger" value="true" />
+      <label for="a11y-tools-trigger"><i class="material-icons" aria-label="Show accessibility tools">accessibility</i></a>
+    </div>
+  </div>
+
   <div class="a11y-tools z-depth-2" role="toolbar" aria-label="Accessibility Tools">
     <div class="container flex flex-end">
       <fieldset id="text-size" class="text-size" tabindex="-1">
@@ -64,8 +71,10 @@
 
         <div class="utility right">
           <div class="hide-on-med-and-up">
-            <a href="#" class="a11y-tools-trigger" aria-label="Show accessibility tools"><i class="material-icons">accessibility</i></a>
-            <a href="#" class="right menu-trigger"><i class="material-icons">menu</i></a>
+            <div class="menu-trigger-wrapper">
+              <input type="checkbox" name="menu-trigger" id="menu-trigger" value="true" />
+              <label for="menu-trigger"><i class="material-icons" aria-label="Show navigation menu">menu</i></a>
+            </div>
           </div>
 
           <div class="hide-on-small-only">
@@ -80,8 +89,7 @@
 
     <div class="row navbar">
       @if (has_nav_menu('primary_navigation'))
-        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-menu flex flex-center space-between container', 'menu_id' => 'sidenav']) !!}
-        <div class="sidenav-overlay"></div>
+        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-menu flex flex-center space-between container collapsible']) !!}
       @endif
     </div>
   </nav>

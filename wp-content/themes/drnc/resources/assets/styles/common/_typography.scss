@@ -5,6 +5,11 @@ h1, .h1 {
 
   .home & {
     font-size: rem-calc(65px);
+
+    @media #{$small-and-down} {
+      font-size: rem-calc(55px);
+      text-align: center;
+    }
   }
 }
 

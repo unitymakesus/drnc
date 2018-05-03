@@ -11,6 +11,7 @@
 
       @media #{$small-and-down} {
         flex-wrap: nowrap;
+        margin-bottom: 0;
       }
     }
   }
@@ -44,15 +45,33 @@
     margin-bottom: 0;
   }
 
-  .menu-trigger {
-    text-decoration: none;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    color: $color-black;
+  .menu-trigger-wrapper {
+    position: relative;
+    top: 45px;
 
-    i {
-      font-size: 2em;
+    input:focus + label {
+      outline: $color-gray-dark auto 5px;
+    }
+
+    label {
+      display: block;
+      text-decoration: none;
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      color: $color-black;
+
+      i {
+        font-size: 2em;
+      }
+
+      &:hover {
+        color: $color-green;
+      }
+
+      html[data-contrast="true"] & {
+        color: $color-white;
+      }
     }
   }
 }
@@ -79,6 +98,23 @@ nav {
         color: $color-white;
         text-decoration: underline;
       }
+    }
+  }
+
+  @media #{$small-and-down} {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 0;
+    width: 100%;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+
+    li {
+      width: 100%;
+    }
+
+    .mobilenav-active & {
+      max-height: 30em;
     }
   }
 }

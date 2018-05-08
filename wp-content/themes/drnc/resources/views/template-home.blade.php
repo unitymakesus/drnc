@@ -47,7 +47,7 @@
 
     <section class="background-green background-point-right" role="region" aria-labelled-by="work-title">
       <div class="line left-1 vertical green-light length-80"></div>
-      <div class="line top-1 horizontal green-light length-20"></div>
+      <div class="line top-2 horizontal green-light length-20"></div>
       <div class="row">
         <div class="col m4 s12">
           <h2 id="work-title">Our Work</h2>

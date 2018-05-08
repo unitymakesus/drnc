@@ -7,6 +7,12 @@
     margin-bottom: 1em;
     margin-top: 0;
   }
+
+  &.has-post-thumbnail {
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .hentry {

@@ -64,16 +64,22 @@ body {
   }
 
   &.s1x {
-    @media #{$small-and-down} {
-      .flex-item {
+    .flex-item {
+      display: flex;
+      position: relative;
+
+      @media #{$xsmall-and-down} {
         width: 100%;
       }
     }
   }
 
   &.m2x {
-    @media #{$medium-and-up} {
-      .flex-item {
+    .flex-item {
+      display: flex;
+      position: relative;
+
+      @media #{$small-and-up} {
         width: 50%;
       }
     }

@@ -1,6 +1,12 @@
 .page-footer {
   padding: 0;
 
+  @media #{$small-and-down} {
+    .line {
+      display: none;
+    }
+  }
+
   .background-point-left > .row {
     margin-bottom: 0;
 
@@ -14,6 +20,10 @@
     a {
       display: block;
       padding: 5px 0;
+    }
+
+    @media #{$small-and-down} {
+      column-count: 2;
     }
   }
 
@@ -50,6 +60,22 @@
           border-color: $color-green-dark;
           background: $color-green;
         }
+      }
+    }
+  }
+
+  .footer-copyright {
+    @media #{$small-and-down} {
+      text-align: center;
+      font-size: 0.9em;
+      line-height: 2em;
+
+      .flex, .copyright, .unity-link {
+        display: block;
+      }
+
+      .unity-link {
+        margin: 5px auto;
       }
     }
   }

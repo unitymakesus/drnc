@@ -1,6 +1,6 @@
 .background-point-left {
   & > .row {
-    & > .col:nth-child(1) {
+    & > .col:nth-child(1), & > .col.flex-order-m1.flex-order-m1 {
       position: relative;
 
       &::before, &::after {
@@ -10,7 +10,7 @@
       }
 
       @media #{$small-and-down} {
-        padding: 4em 0 calc(20vw + 2em) 0;
+        padding: 4em 3rem calc(20vw + 2em) 3rem;
 
         &::before, &::after {
           bottom: 0;
@@ -48,7 +48,26 @@
     & > .col:nth-child(2) {
       @media #{$small-and-down} {
         padding: 0 10% 4em 10%;
-        text-align: center;
+      }
+      @media #{$medium-and-up} {
+        padding: 100px 7.5% 100px 0;
+      }
+    }
+  }
+
+  &.background-order-swap {
+    & > .row > .col.flex-order-m1 {
+      @media #{$small-and-down} {
+        padding: 0 1.5em 1em 1.5em;
+      }
+      @media #{$medium-and-up} {
+        padding: 100px 150px 100px 7.5%;
+      }
+    }
+
+    & > .row > .col.flex-order-m2 {
+      @media #{$small-and-down} {
+        padding: 2em 1.5em calc(20vw + 2em) 1.5em;
       }
       @media #{$medium-and-up} {
         padding: 100px 7.5% 100px 0;
@@ -177,35 +196,61 @@ $cdark: $color-purple-dark, $color-green-dark, $color-teal-dark;
       }
     }
 
+    &.background-order-swap {
+      & > .row > .col.flex-order-m1 {
+        background: transparent;
+
+        @media #{$small-and-down} {
+          &::before, &::after {
+            display: none;
+          }
+        }
+        @media #{$medium-and-up} {
+          order: 1;
+
+          &::before {
+            @include triangle('bottom right', nth($cdark, $i));
+          }
+
+          &::after {
+            @include triangle('top right', nth($cdark, $i));
+          }
+        }
+      }
+
+      & > .row > .col.flex-order-m2 {
+        background: nth($cdark, $i);
+
+        @media #{$small-and-down} {
+          &::before {
+            @include triangle('bottom left', nth($creg, $i));
+          }
+
+          &::after {
+            @include triangle('bottom right', nth($creg, $i));
+          }
+        }
+        @media #{$medium-and-up} {
+          order: 2;
+
+          &::before, &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
     html[data-contrast="true"] & {
       background: $color-black;
       border-bottom: 1px solid $color-white;
       border-top: 1px solid $color-white;
 
-      &.background-point-left {
-        & > .row > .col:nth-child(1)::before {
-          @include triangle('bottom right', $color-black);
+      &.background-point-right, &.background-point-left, &.background-order-swap {
+        & > .row > .col.col::before, & > .row > .col.col::after {
+          display: none;
         }
 
-        & > .row > .col:nth-child(1)::after {
-          @include triangle('top right', $color-black);
-        }
-
-        & > .row > .col:nth-child(2) {
-          background: $color-black;
-        }
-      }
-
-      &.background-point-right {
-        & > .row > .col:nth-child(2)::before {
-          @include triangle('bottom left', $color-black);
-        }
-
-        & > .row > .col:nth-child(2)::after {
-          @include triangle('top left', $color-black);
-        }
-
-        & > .row > .col:nth-child(1) {
+        & > .row > .col.col {
           background: $color-black;
         }
       }

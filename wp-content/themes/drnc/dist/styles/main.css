@@ -10,6 +10,10 @@
 
 /** Box Model  */
 
+/** Modified Grid */
+
+/** Flow Text  */
+
 /** Gradients */
 
 /** Import everything from autoload */
@@ -2996,7 +3000,7 @@ ul.staggered-list li {
   Media Query Classes
 **********************/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .hide-on-small-only,
   .hide-on-small-and-down {
     display: none !important;
@@ -3009,13 +3013,13 @@ ul.staggered-list li {
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .hide-on-med-and-up {
     display: none !important;
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 992px) {
+@media only screen and (min-width: 768px) and (max-width: 992px) {
   .hide-on-med-only {
     display: none !important;
   }
@@ -3045,19 +3049,19 @@ ul.staggered-list li {
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 992px) {
+@media only screen and (min-width: 768px) and (max-width: 992px) {
   .show-on-medium {
     display: block !important;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .show-on-small {
     display: block !important;
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .show-on-medium-and-up {
     display: block !important;
   }
@@ -3069,7 +3073,7 @@ ul.staggered-list li {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .center-on-small-only {
     text-align: center;
   }
@@ -3567,7 +3571,7 @@ input[type=range] + .thumb {
   width: 90%;
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .container {
     width: 85%;
   }
@@ -4015,7 +4019,7 @@ input[type=range] + .thumb {
   left: 100%;
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .row .col.m1,
   .sidebar-primary .wrap .col.m1,
   .sidebar-primary .wrap .m1.main,
@@ -5142,7 +5146,7 @@ nav {
   background-color: #31102C;
   width: 100%;
   height: auto;
-  line-height: 60px;
+  line-height: auto;
 }
 
 nav.nav-extended {
@@ -5170,7 +5174,7 @@ nav i.material-icons {
   display: block;
   font-size: 24px;
   height: auto;
-  line-height: 60px;
+  line-height: auto;
 }
 
 nav .nav-wrapper {
@@ -5194,7 +5198,7 @@ nav .sidenav-trigger {
 
 nav .sidenav-trigger i {
   height: auto;
-  line-height: 60px;
+  line-height: auto;
 }
 
 nav .brand-logo {
@@ -5366,7 +5370,7 @@ nav .input-field label.active i {
   position: fixed;
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   nav.nav-extended .nav-wrapper {
     min-height: auto;
   }
@@ -5376,7 +5380,7 @@ nav .input-field label.active i {
   nav a.sidenav-trigger,
   nav a.sidenav-trigger i {
     height: auto;
-    line-height: 60px;
+    line-height: auto;
   }
 
   .navbar-fixed {
@@ -5497,123 +5501,111 @@ small {
   }
 }
 
-@media only screen and (min-width: 390px) {
+@media only screen and (min-width: 371.55556px) {
   .flow-text {
     font-size: 1.224rem;
   }
 }
 
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 383.11111px) {
   .flow-text {
     font-size: 1.248rem;
   }
 }
 
-@media only screen and (min-width: 450px) {
+@media only screen and (min-width: 394.66667px) {
   .flow-text {
     font-size: 1.272rem;
   }
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 406.22222px) {
   .flow-text {
     font-size: 1.296rem;
   }
 }
 
-@media only screen and (min-width: 510px) {
+@media only screen and (min-width: 417.77778px) {
   .flow-text {
     font-size: 1.32rem;
   }
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 429.33333px) {
   .flow-text {
     font-size: 1.344rem;
   }
 }
 
-@media only screen and (min-width: 570px) {
+@media only screen and (min-width: 440.88889px) {
   .flow-text {
     font-size: 1.368rem;
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 452.44444px) {
   .flow-text {
     font-size: 1.392rem;
   }
 }
 
-@media only screen and (min-width: 630px) {
+@media only screen and (min-width: 464px) {
   .flow-text {
     font-size: 1.416rem;
   }
 }
 
-@media only screen and (min-width: 660px) {
+@media only screen and (min-width: 475.55556px) {
   .flow-text {
     font-size: 1.44rem;
   }
 }
 
-@media only screen and (min-width: 690px) {
+@media only screen and (min-width: 487.11111px) {
   .flow-text {
     font-size: 1.464rem;
   }
 }
 
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 498.66667px) {
   .flow-text {
     font-size: 1.488rem;
   }
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 510.22222px) {
   .flow-text {
     font-size: 1.512rem;
   }
 }
 
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 521.77778px) {
   .flow-text {
     font-size: 1.536rem;
   }
 }
 
-@media only screen and (min-width: 810px) {
+@media only screen and (min-width: 533.33333px) {
   .flow-text {
     font-size: 1.56rem;
   }
 }
 
-@media only screen and (min-width: 840px) {
+@media only screen and (min-width: 544.88889px) {
   .flow-text {
     font-size: 1.584rem;
   }
 }
 
-@media only screen and (min-width: 870px) {
+@media only screen and (min-width: 556.44444px) {
   .flow-text {
     font-size: 1.608rem;
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 568px) {
   .flow-text {
     font-size: 1.632rem;
-  }
-}
-
-@media only screen and (min-width: 930px) {
-  .flow-text {
-    font-size: 1.656rem;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  .flow-text {
-    font-size: 1.68rem;
   }
 }
 
@@ -6754,7 +6746,7 @@ textarea.materialize-textarea + label:after,
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .input-field .prefix ~ input {
     width: 80%;
     width: calc(100% - 3rem);
@@ -7742,7 +7734,7 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
   transition: top 0.3s ease;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .a11y-tools-active .a11y-tools-trigger-wrapper {
     top: 65px;
   }
@@ -7805,7 +7797,7 @@ html[data-contrast="true"] .a11y-tools-trigger-wrapper label:hover i {
   position: relative;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .a11y-tools {
     height: 0;
   }
@@ -7819,7 +7811,7 @@ html[data-contrast="true"] .a11y-tools {
   border-bottom: 1px solid #FFF;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .a11y-tools .container {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -7833,7 +7825,7 @@ html[data-contrast="true"] .a11y-tools {
   margin: 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .a11y-tools fieldset {
     padding: 5px 0;
   }
@@ -8063,6 +8055,12 @@ html[data-contrast="true"] .banner .logo img {
   overflow: hidden;
 }
 
+html[data-contrast="true"] .events-list.events-list time,
+html[data-contrast="true"] .single-mc-events time {
+  background: #000;
+  border-color: #4A4A4A;
+}
+
 html {
   font-size: 18px;
 }
@@ -8075,7 +8073,7 @@ html[data-text-size="large"] {
   font-size: 24px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   html {
     font-size: 16px;
   }
@@ -8090,7 +8088,7 @@ body {
           box-sizing: border-box;
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .container {
     width: 90%;
   }
@@ -8108,7 +8106,7 @@ body {
   display: flex;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .flex {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -8150,10 +8148,24 @@ body {
   padding: 10px;
 }
 
+.flex-grid.s1x .flex-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
 @media only screen and (max-width: 600px) {
   .flex-grid.s1x .flex-item {
     width: 100%;
   }
+}
+
+.flex-grid.m2x .flex-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 @media only screen and (min-width: 601px) {
@@ -8210,7 +8222,140 @@ h1,
   font-size: 3.61111rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 620px) {
+  .home h1,
+  .home .h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 631.55556px) {
+  .home h1,
+  .home .h1 {
+    font-size: 2.55rem;
+  }
+}
+
+@media only screen and (min-width: 643.11111px) {
+  .home h1,
+  .home .h1 {
+    font-size: 2.6rem;
+  }
+}
+
+@media only screen and (min-width: 654.66667px) {
+  .home h1,
+  .home .h1 {
+    font-size: 2.65rem;
+  }
+}
+
+@media only screen and (min-width: 666.22222px) {
+  .home h1,
+  .home .h1 {
+    font-size: 2.7rem;
+  }
+}
+
+@media only screen and (min-width: 677.77778px) {
+  .home h1,
+  .home .h1 {
+    font-size: 2.75rem;
+  }
+}
+
+@media only screen and (min-width: 689.33333px) {
+  .home h1,
+  .home .h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media only screen and (min-width: 700.88889px) {
+  .home h1,
+  .home .h1 {
+    font-size: 2.85rem;
+  }
+}
+
+@media only screen and (min-width: 712.44444px) {
+  .home h1,
+  .home .h1 {
+    font-size: 2.9rem;
+  }
+}
+
+@media only screen and (min-width: 724px) {
+  .home h1,
+  .home .h1 {
+    font-size: 2.95rem;
+  }
+}
+
+@media only screen and (min-width: 735.55556px) {
+  .home h1,
+  .home .h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 747.11111px) {
+  .home h1,
+  .home .h1 {
+    font-size: 3.05rem;
+  }
+}
+
+@media only screen and (min-width: 758.66667px) {
+  .home h1,
+  .home .h1 {
+    font-size: 3.1rem;
+  }
+}
+
+@media only screen and (min-width: 770.22222px) {
+  .home h1,
+  .home .h1 {
+    font-size: 3.15rem;
+  }
+}
+
+@media only screen and (min-width: 781.77778px) {
+  .home h1,
+  .home .h1 {
+    font-size: 3.2rem;
+  }
+}
+
+@media only screen and (min-width: 793.33333px) {
+  .home h1,
+  .home .h1 {
+    font-size: 3.25rem;
+  }
+}
+
+@media only screen and (min-width: 804.88889px) {
+  .home h1,
+  .home .h1 {
+    font-size: 3.3rem;
+  }
+}
+
+@media only screen and (min-width: 816.44444px) {
+  .home h1,
+  .home .h1 {
+    font-size: 3.35rem;
+  }
+}
+
+@media only screen and (min-width: 828px) {
+  .home h1,
+  .home .h1 {
+    font-size: 3.4rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .home h1,
   .home .h1 {
     font-size: 3.05556rem;
@@ -8227,7 +8372,14 @@ h2,
 
 .home h2,
 .home .h2 {
-  font-size: 2.5rem;
+  font-size: 2.22222rem;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .home h2,
+  .home .h2 {
+    font-size: 2rem;
+  }
 }
 
 h3,
@@ -8380,7 +8532,13 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
 .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(1),
 .sidebar-primary .background-point-left > .wrap > .main:nth-child(1),
 .sidebar-primary .wrap .background-point-left > .row > .sidebar:nth-child(1),
-.sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1) {
+.sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1),
+.background-point-left > .row > .col.flex-order-m1.flex-order-m1,
+.sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1,
+.sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main,
+.sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main,
+.sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar,
+.sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar {
   position: relative;
 }
 
@@ -8395,20 +8553,38 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
 .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(1)::after,
 .sidebar-primary .background-point-left > .wrap > .main:nth-child(1)::after,
 .sidebar-primary .wrap .background-point-left > .row > .sidebar:nth-child(1)::after,
-.sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::after {
+.sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::after,
+.background-point-left > .row > .col.flex-order-m1.flex-order-m1::before,
+.sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1::before,
+.sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main::before,
+.sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main::before,
+.sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar::before,
+.sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar::before,
+.background-point-left > .row > .col.flex-order-m1.flex-order-m1::after,
+.sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1::after,
+.sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main::after,
+.sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main::after,
+.sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar::after,
+.sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar::after {
   content: '';
   position: absolute;
   display: block;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-point-left > .row > .col:nth-child(1),
   .sidebar-primary .background-point-left > .wrap > .col:nth-child(1),
   .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(1),
   .sidebar-primary .background-point-left > .wrap > .main:nth-child(1),
   .sidebar-primary .wrap .background-point-left > .row > .sidebar:nth-child(1),
-  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1) {
-    padding: 4em 0 calc(20vw + 2em) 0;
+  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1),
+  .background-point-left > .row > .col.flex-order-m1.flex-order-m1,
+  .sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar {
+    padding: 4em 3rem calc(20vw + 2em) 3rem;
   }
 
   .background-point-left > .row > .col:nth-child(1)::before,
@@ -8422,7 +8598,19 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(1)::after,
   .sidebar-primary .background-point-left > .wrap > .main:nth-child(1)::after,
   .sidebar-primary .wrap .background-point-left > .row > .sidebar:nth-child(1)::after,
-  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::after {
+  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::after,
+  .background-point-left > .row > .col.flex-order-m1.flex-order-m1::before,
+  .sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1::before,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main::before,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main::before,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar::before,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar::before,
+  .background-point-left > .row > .col.flex-order-m1.flex-order-m1::after,
+  .sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1::after,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main::after,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main::after,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar::after,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar::after {
     bottom: 0;
     width: 50%;
     height: 20vw;
@@ -8433,7 +8621,13 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(1)::before,
   .sidebar-primary .background-point-left > .wrap > .main:nth-child(1)::before,
   .sidebar-primary .wrap .background-point-left > .row > .sidebar:nth-child(1)::before,
-  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::before {
+  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::before,
+  .background-point-left > .row > .col.flex-order-m1.flex-order-m1::before,
+  .sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1::before,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main::before,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main::before,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar::before,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar::before {
     left: 0;
   }
 
@@ -8442,18 +8636,30 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(1)::after,
   .sidebar-primary .background-point-left > .wrap > .main:nth-child(1)::after,
   .sidebar-primary .wrap .background-point-left > .row > .sidebar:nth-child(1)::after,
-  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::after {
+  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::after,
+  .background-point-left > .row > .col.flex-order-m1.flex-order-m1::after,
+  .sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1::after,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main::after,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main::after,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar::after,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar::after {
     right: 0;
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .background-point-left > .row > .col:nth-child(1),
   .sidebar-primary .background-point-left > .wrap > .col:nth-child(1),
   .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(1),
   .sidebar-primary .background-point-left > .wrap > .main:nth-child(1),
   .sidebar-primary .wrap .background-point-left > .row > .sidebar:nth-child(1),
-  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1) {
+  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1),
+  .background-point-left > .row > .col.flex-order-m1.flex-order-m1,
+  .sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar {
     padding: 100px 150px 100px 7.5%;
   }
 
@@ -8468,7 +8674,19 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(1)::after,
   .sidebar-primary .background-point-left > .wrap > .main:nth-child(1)::after,
   .sidebar-primary .wrap .background-point-left > .row > .sidebar:nth-child(1)::after,
-  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::after {
+  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::after,
+  .background-point-left > .row > .col.flex-order-m1.flex-order-m1::before,
+  .sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1::before,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main::before,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main::before,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar::before,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar::before,
+  .background-point-left > .row > .col.flex-order-m1.flex-order-m1::after,
+  .sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1::after,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main::after,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main::after,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar::after,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar::after {
     right: 0;
     width: 100px;
     height: 50%;
@@ -8479,7 +8697,13 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(1)::before,
   .sidebar-primary .background-point-left > .wrap > .main:nth-child(1)::before,
   .sidebar-primary .wrap .background-point-left > .row > .sidebar:nth-child(1)::before,
-  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::before {
+  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::before,
+  .background-point-left > .row > .col.flex-order-m1.flex-order-m1::before,
+  .sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1::before,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main::before,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main::before,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar::before,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar::before {
     top: 0;
   }
 
@@ -8488,12 +8712,18 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(1)::after,
   .sidebar-primary .background-point-left > .wrap > .main:nth-child(1)::after,
   .sidebar-primary .wrap .background-point-left > .row > .sidebar:nth-child(1)::after,
-  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::after {
+  .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(1)::after,
+  .background-point-left > .row > .col.flex-order-m1.flex-order-m1::after,
+  .sidebar-primary .background-point-left > .wrap > .col.flex-order-m1.flex-order-m1::after,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.main::after,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.main::after,
+  .sidebar-primary .wrap .background-point-left > .row > .flex-order-m1.flex-order-m1.sidebar::after,
+  .sidebar-primary .background-point-left > .wrap > .flex-order-m1.flex-order-m1.sidebar::after {
     bottom: 0;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-point-left > .row > .col:nth-child(2),
   .sidebar-primary .background-point-left > .wrap > .col:nth-child(2),
   .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(2),
@@ -8501,11 +8731,10 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   .sidebar-primary .wrap .background-point-left > .row > .sidebar:nth-child(2),
   .sidebar-primary .background-point-left > .wrap > .sidebar:nth-child(2) {
     padding: 0 10% 4em 10%;
-    text-align: center;
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .background-point-left > .row > .col:nth-child(2),
   .sidebar-primary .background-point-left > .wrap > .col:nth-child(2),
   .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(2),
@@ -8516,7 +8745,51 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
+  .background-point-left.background-order-swap > .row > .col.flex-order-m1,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .col.flex-order-m1,
+  .sidebar-primary .wrap .background-point-left.background-order-swap > .row > .flex-order-m1.main,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .flex-order-m1.main,
+  .sidebar-primary .wrap .background-point-left.background-order-swap > .row > .flex-order-m1.sidebar,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .flex-order-m1.sidebar {
+    padding: 0 1.5em 1em 1.5em;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .background-point-left.background-order-swap > .row > .col.flex-order-m1,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .col.flex-order-m1,
+  .sidebar-primary .wrap .background-point-left.background-order-swap > .row > .flex-order-m1.main,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .flex-order-m1.main,
+  .sidebar-primary .wrap .background-point-left.background-order-swap > .row > .flex-order-m1.sidebar,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .flex-order-m1.sidebar {
+    padding: 100px 150px 100px 7.5%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .background-point-left.background-order-swap > .row > .col.flex-order-m2,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .col.flex-order-m2,
+  .sidebar-primary .wrap .background-point-left.background-order-swap > .row > .flex-order-m2.main,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .flex-order-m2.main,
+  .sidebar-primary .wrap .background-point-left.background-order-swap > .row > .flex-order-m2.sidebar,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .flex-order-m2.sidebar {
+    padding: 2em 1.5em calc(20vw + 2em) 1.5em;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .background-point-left.background-order-swap > .row > .col.flex-order-m2,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .col.flex-order-m2,
+  .sidebar-primary .wrap .background-point-left.background-order-swap > .row > .flex-order-m2.main,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .flex-order-m2.main,
+  .sidebar-primary .wrap .background-point-left.background-order-swap > .row > .flex-order-m2.sidebar,
+  .sidebar-primary .background-point-left.background-order-swap > .wrap > .flex-order-m2.sidebar {
+    padding: 100px 7.5% 100px 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .background-point-right > .row > .col:nth-child(1),
   .sidebar-primary .background-point-right > .wrap > .col:nth-child(1),
   .sidebar-primary .wrap .background-point-right > .row > .main:nth-child(1),
@@ -8527,7 +8800,7 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .background-point-right > .row > .col:nth-child(1),
   .sidebar-primary .background-point-right > .wrap > .col:nth-child(1),
   .sidebar-primary .wrap .background-point-right > .row > .main:nth-child(1),
@@ -8564,7 +8837,7 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   display: block;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-point-right > .row > .col:nth-child(2),
   .sidebar-primary .background-point-right > .wrap > .col:nth-child(2),
   .sidebar-primary .wrap .background-point-right > .row > .main:nth-child(2),
@@ -8610,7 +8883,7 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .background-point-right > .row > .col:nth-child(2),
   .sidebar-primary .background-point-right > .wrap > .col:nth-child(2),
   .sidebar-primary .wrap .background-point-right > .row > .main:nth-child(2),
@@ -8669,7 +8942,7 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   display: flex;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-purple > .row,
   .sidebar-primary .background-purple > .wrap {
     -webkit-box-orient: vertical;
@@ -8699,7 +8972,7 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #31102C 50%);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-purple.background-point-left > .row > .col:nth-child(1)::after,
   .sidebar-primary .background-purple.background-point-left > .wrap > .col:nth-child(1)::after,
   .sidebar-primary .wrap .background-purple.background-point-left > .row > .main:nth-child(1)::after,
@@ -8714,7 +8987,7 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .background-purple.background-point-left > .row > .col:nth-child(1)::after,
   .sidebar-primary .background-purple.background-point-left > .wrap > .col:nth-child(1)::after,
   .sidebar-primary .wrap .background-purple.background-point-left > .row > .main:nth-child(1)::after,
@@ -8738,7 +9011,7 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   background: #31102C;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-purple.background-point-right > .row > .col:nth-child(2)::before,
   .sidebar-primary .background-purple.background-point-right > .wrap > .col:nth-child(2)::before,
   .sidebar-primary .wrap .background-purple.background-point-right > .row > .main:nth-child(2)::before,
@@ -8753,7 +9026,7 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .background-purple.background-point-right > .row > .col:nth-child(2)::before,
   .sidebar-primary .background-purple.background-point-right > .wrap > .col:nth-child(2)::before,
   .sidebar-primary .wrap .background-purple.background-point-right > .row > .main:nth-child(2)::before,
@@ -8790,109 +9063,244 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   background: #31102C;
 }
 
+.background-purple.background-order-swap > .row > .col.flex-order-m1,
+.sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m1,
+.sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.main,
+.sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.main,
+.sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.sidebar,
+.sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.sidebar {
+  background: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  .background-purple.background-order-swap > .row > .col.flex-order-m1::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m1::before,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.main::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.main::before,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.sidebar::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.sidebar::before,
+  .background-purple.background-order-swap > .row > .col.flex-order-m1::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m1::after,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.main::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.main::after,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.sidebar::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.sidebar::after {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .background-purple.background-order-swap > .row > .col.flex-order-m1,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m1,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.main,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.main,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.sidebar,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.sidebar {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  .background-purple.background-order-swap > .row > .col.flex-order-m1::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m1::before,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.main::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.main::before,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.sidebar::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.sidebar::before {
+    background-image: -o-linear-gradient(to bottom right, transparent 0%, transparent 50%, #31102C 50%);
+    background-image: -webkit-gradient(linear, left top, right bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #31102C));
+    background-image: -webkit-linear-gradient(top left, transparent 0%, transparent 50%, #31102C 50%);
+    background-image: -o-linear-gradient(top left, transparent 0%, transparent 50%, #31102C 50%);
+    background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #31102C 50%);
+  }
+
+  .background-purple.background-order-swap > .row > .col.flex-order-m1::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m1::after,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.main::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.main::after,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m1.sidebar::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m1.sidebar::after {
+    background-image: -o-linear-gradient(to top right, transparent 0%, transparent 50%, #31102C 50%);
+    background-image: -webkit-gradient(linear, left bottom, right top, from(transparent), color-stop(50%, transparent), color-stop(50%, #31102C));
+    background-image: -webkit-linear-gradient(bottom left, transparent 0%, transparent 50%, #31102C 50%);
+    background-image: -o-linear-gradient(bottom left, transparent 0%, transparent 50%, #31102C 50%);
+    background-image: linear-gradient(to top right, transparent 0%, transparent 50%, #31102C 50%);
+  }
+}
+
+.background-purple.background-order-swap > .row > .col.flex-order-m2,
+.sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m2,
+.sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.main,
+.sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.main,
+.sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.sidebar,
+.sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.sidebar {
+  background: #31102C;
+}
+
+@media only screen and (max-width: 768px) {
+  .background-purple.background-order-swap > .row > .col.flex-order-m2::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m2::before,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.main::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.main::before,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.sidebar::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.sidebar::before {
+    background-image: -o-linear-gradient(to bottom left, transparent 0%, transparent 50%, #4C1844 50%);
+    background-image: -webkit-gradient(linear, right top, left bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #4C1844));
+    background-image: -webkit-linear-gradient(top right, transparent 0%, transparent 50%, #4C1844 50%);
+    background-image: -o-linear-gradient(top right, transparent 0%, transparent 50%, #4C1844 50%);
+    background-image: linear-gradient(to bottom left, transparent 0%, transparent 50%, #4C1844 50%);
+  }
+
+  .background-purple.background-order-swap > .row > .col.flex-order-m2::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m2::after,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.main::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.main::after,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.sidebar::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.sidebar::after {
+    background-image: -o-linear-gradient(to bottom right, transparent 0%, transparent 50%, #4C1844 50%);
+    background-image: -webkit-gradient(linear, left top, right bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #4C1844));
+    background-image: -webkit-linear-gradient(top left, transparent 0%, transparent 50%, #4C1844 50%);
+    background-image: -o-linear-gradient(top left, transparent 0%, transparent 50%, #4C1844 50%);
+    background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #4C1844 50%);
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .background-purple.background-order-swap > .row > .col.flex-order-m2,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m2,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.main,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.main,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.sidebar,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.sidebar {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .background-purple.background-order-swap > .row > .col.flex-order-m2::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m2::before,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.main::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.main::before,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.sidebar::before,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.sidebar::before,
+  .background-purple.background-order-swap > .row > .col.flex-order-m2::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .col.flex-order-m2::after,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.main::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.main::after,
+  .sidebar-primary .wrap .background-purple.background-order-swap > .row > .flex-order-m2.sidebar::after,
+  .sidebar-primary .background-purple.background-order-swap > .wrap > .flex-order-m2.sidebar::after {
+    display: none;
+  }
+}
+
 html[data-contrast="true"] .background-purple {
   background: #000;
   border-bottom: 1px solid #FFF;
   border-top: 1px solid #FFF;
 }
 
-html[data-contrast="true"] .background-purple.background-point-left > .row > .col:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .col:nth-child(1)::before,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .col:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .main:nth-child(1)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .main:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .main:nth-child(1)::before,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .main:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .sidebar:nth-child(1)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .sidebar:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .sidebar:nth-child(1)::before,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .sidebar:nth-child(1)::before {
-  background-image: -o-linear-gradient(to bottom right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, left top, right bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(top left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(top left, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #000 50%);
+html[data-contrast="true"] .background-purple.background-point-right > .row > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .col.col::before,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .main::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .main::before,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .main::before,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .main::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .sidebar::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .sidebar::before,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .sidebar::before,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .sidebar::before,
+html[data-contrast="true"] .background-purple.background-point-right > .row > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .col.col::after,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .main::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .main::after,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .main::after,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .main::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .sidebar::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .sidebar::after,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .sidebar::after,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .sidebar::after,
+html[data-contrast="true"] .background-purple.background-point-left > .row > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .col.col::before,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .main::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .main::before,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .main::before,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .main::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .sidebar::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .sidebar::before,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .sidebar::before,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .sidebar::before,
+html[data-contrast="true"] .background-purple.background-point-left > .row > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .col.col::after,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .main::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .main::after,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .main::after,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .main::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .sidebar::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .sidebar::after,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .sidebar::after,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .sidebar::after,
+html[data-contrast="true"] .background-purple.background-order-swap > .row > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-order-swap > .wrap > .col.col::before,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-order-swap > .wrap > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-order-swap > .row > .main::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-order-swap > .row > .main::before,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-order-swap > .wrap > .main::before,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-order-swap > .wrap > .main::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-order-swap > .row > .sidebar::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-order-swap > .row > .sidebar::before,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-order-swap > .wrap > .sidebar::before,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-order-swap > .wrap > .sidebar::before,
+html[data-contrast="true"] .background-purple.background-order-swap > .row > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-order-swap > .wrap > .col.col::after,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-order-swap > .wrap > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-order-swap > .row > .main::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-order-swap > .row > .main::after,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-order-swap > .wrap > .main::after,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-order-swap > .wrap > .main::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-order-swap > .row > .sidebar::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-order-swap > .row > .sidebar::after,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-order-swap > .wrap > .sidebar::after,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-order-swap > .wrap > .sidebar::after {
+  display: none;
 }
 
-html[data-contrast="true"] .background-purple.background-point-left > .row > .col:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .col:nth-child(1)::after,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .col:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .main:nth-child(1)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .main:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .main:nth-child(1)::after,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .main:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .sidebar:nth-child(1)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .sidebar:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .sidebar:nth-child(1)::after,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .sidebar:nth-child(1)::after {
-  background-image: -o-linear-gradient(to top right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, left bottom, right top, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(bottom left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(bottom left, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to top right, transparent 0%, transparent 50%, #000 50%);
-}
-
-html[data-contrast="true"] .background-purple.background-point-left > .row > .col:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .col:nth-child(2),
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .col:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .main:nth-child(2),
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .main:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .main:nth-child(2),
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .main:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .sidebar:nth-child(2),
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .sidebar:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .sidebar:nth-child(2),
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .sidebar:nth-child(2) {
-  background: #000;
-}
-
-html[data-contrast="true"] .background-purple.background-point-right > .row > .col:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .col:nth-child(2)::before,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .col:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .main:nth-child(2)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .main:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .main:nth-child(2)::before,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .main:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .sidebar:nth-child(2)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .sidebar:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .sidebar:nth-child(2)::before,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .sidebar:nth-child(2)::before {
-  background-image: -o-linear-gradient(to bottom left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, right top, left bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(top right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(top right, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to bottom left, transparent 0%, transparent 50%, #000 50%);
-}
-
-html[data-contrast="true"] .background-purple.background-point-right > .row > .col:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .col:nth-child(2)::after,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .col:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .main:nth-child(2)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .main:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .main:nth-child(2)::after,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .main:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .sidebar:nth-child(2)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .sidebar:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .sidebar:nth-child(2)::after,
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .sidebar:nth-child(2)::after {
-  background-image: -o-linear-gradient(to top left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, right bottom, left top, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(bottom right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(bottom right, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to top left, transparent 0%, transparent 50%, #000 50%);
-}
-
-html[data-contrast="true"] .background-purple.background-point-right > .row > .col:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .col:nth-child(1),
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .col:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .main:nth-child(1),
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .main:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .main:nth-child(1),
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .main:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .sidebar:nth-child(1),
-.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .sidebar:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .sidebar:nth-child(1),
-.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .sidebar:nth-child(1) {
+html[data-contrast="true"] .background-purple.background-point-right > .row > .col.col,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .col.col,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .col.col,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .main,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .main,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .main,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .main,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-right > .row > .sidebar,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-right > .row > .sidebar,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-right > .wrap > .sidebar,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-right > .wrap > .sidebar,
+html[data-contrast="true"] .background-purple.background-point-left > .row > .col.col,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .col.col,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .col.col,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .main,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .main,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .main,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .main,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-point-left > .row > .sidebar,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-point-left > .row > .sidebar,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-point-left > .wrap > .sidebar,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-point-left > .wrap > .sidebar,
+html[data-contrast="true"] .background-purple.background-order-swap > .row > .col.col,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-order-swap > .wrap > .col.col,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-order-swap > .wrap > .col.col,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-order-swap > .row > .main,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-order-swap > .row > .main,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-order-swap > .wrap > .main,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-order-swap > .wrap > .main,
+html[data-contrast="true"] .sidebar-primary .wrap .background-purple.background-order-swap > .row > .sidebar,
+.sidebar-primary .wrap html[data-contrast="true"] .background-purple.background-order-swap > .row > .sidebar,
+html[data-contrast="true"] .sidebar-primary .background-purple.background-order-swap > .wrap > .sidebar,
+.sidebar-primary html[data-contrast="true"] .background-purple.background-order-swap > .wrap > .sidebar {
   background: #000;
 }
 
@@ -8909,7 +9317,7 @@ html[data-contrast="true"] .sidebar-primary .background-purple.background-point-
   display: flex;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-green > .row,
   .sidebar-primary .background-green > .wrap {
     -webkit-box-orient: vertical;
@@ -8939,7 +9347,7 @@ html[data-contrast="true"] .sidebar-primary .background-purple.background-point-
   background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #343C09 50%);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-green.background-point-left > .row > .col:nth-child(1)::after,
   .sidebar-primary .background-green.background-point-left > .wrap > .col:nth-child(1)::after,
   .sidebar-primary .wrap .background-green.background-point-left > .row > .main:nth-child(1)::after,
@@ -8954,7 +9362,7 @@ html[data-contrast="true"] .sidebar-primary .background-purple.background-point-
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .background-green.background-point-left > .row > .col:nth-child(1)::after,
   .sidebar-primary .background-green.background-point-left > .wrap > .col:nth-child(1)::after,
   .sidebar-primary .wrap .background-green.background-point-left > .row > .main:nth-child(1)::after,
@@ -8978,7 +9386,7 @@ html[data-contrast="true"] .sidebar-primary .background-purple.background-point-
   background: #343C09;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-green.background-point-right > .row > .col:nth-child(2)::before,
   .sidebar-primary .background-green.background-point-right > .wrap > .col:nth-child(2)::before,
   .sidebar-primary .wrap .background-green.background-point-right > .row > .main:nth-child(2)::before,
@@ -8993,7 +9401,7 @@ html[data-contrast="true"] .sidebar-primary .background-purple.background-point-
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .background-green.background-point-right > .row > .col:nth-child(2)::before,
   .sidebar-primary .background-green.background-point-right > .wrap > .col:nth-child(2)::before,
   .sidebar-primary .wrap .background-green.background-point-right > .row > .main:nth-child(2)::before,
@@ -9030,109 +9438,244 @@ html[data-contrast="true"] .sidebar-primary .background-purple.background-point-
   background: #343C09;
 }
 
+.background-green.background-order-swap > .row > .col.flex-order-m1,
+.sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m1,
+.sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.main,
+.sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.main,
+.sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.sidebar,
+.sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.sidebar {
+  background: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  .background-green.background-order-swap > .row > .col.flex-order-m1::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m1::before,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.main::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.main::before,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.sidebar::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.sidebar::before,
+  .background-green.background-order-swap > .row > .col.flex-order-m1::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m1::after,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.main::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.main::after,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.sidebar::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.sidebar::after {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .background-green.background-order-swap > .row > .col.flex-order-m1,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m1,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.main,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.main,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.sidebar,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.sidebar {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  .background-green.background-order-swap > .row > .col.flex-order-m1::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m1::before,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.main::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.main::before,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.sidebar::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.sidebar::before {
+    background-image: -o-linear-gradient(to bottom right, transparent 0%, transparent 50%, #343C09 50%);
+    background-image: -webkit-gradient(linear, left top, right bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #343C09));
+    background-image: -webkit-linear-gradient(top left, transparent 0%, transparent 50%, #343C09 50%);
+    background-image: -o-linear-gradient(top left, transparent 0%, transparent 50%, #343C09 50%);
+    background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #343C09 50%);
+  }
+
+  .background-green.background-order-swap > .row > .col.flex-order-m1::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m1::after,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.main::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.main::after,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m1.sidebar::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m1.sidebar::after {
+    background-image: -o-linear-gradient(to top right, transparent 0%, transparent 50%, #343C09 50%);
+    background-image: -webkit-gradient(linear, left bottom, right top, from(transparent), color-stop(50%, transparent), color-stop(50%, #343C09));
+    background-image: -webkit-linear-gradient(bottom left, transparent 0%, transparent 50%, #343C09 50%);
+    background-image: -o-linear-gradient(bottom left, transparent 0%, transparent 50%, #343C09 50%);
+    background-image: linear-gradient(to top right, transparent 0%, transparent 50%, #343C09 50%);
+  }
+}
+
+.background-green.background-order-swap > .row > .col.flex-order-m2,
+.sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m2,
+.sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.main,
+.sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.main,
+.sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.sidebar,
+.sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.sidebar {
+  background: #343C09;
+}
+
+@media only screen and (max-width: 768px) {
+  .background-green.background-order-swap > .row > .col.flex-order-m2::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m2::before,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.main::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.main::before,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.sidebar::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.sidebar::before {
+    background-image: -o-linear-gradient(to bottom left, transparent 0%, transparent 50%, #6E773D 50%);
+    background-image: -webkit-gradient(linear, right top, left bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #6E773D));
+    background-image: -webkit-linear-gradient(top right, transparent 0%, transparent 50%, #6E773D 50%);
+    background-image: -o-linear-gradient(top right, transparent 0%, transparent 50%, #6E773D 50%);
+    background-image: linear-gradient(to bottom left, transparent 0%, transparent 50%, #6E773D 50%);
+  }
+
+  .background-green.background-order-swap > .row > .col.flex-order-m2::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m2::after,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.main::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.main::after,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.sidebar::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.sidebar::after {
+    background-image: -o-linear-gradient(to bottom right, transparent 0%, transparent 50%, #6E773D 50%);
+    background-image: -webkit-gradient(linear, left top, right bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #6E773D));
+    background-image: -webkit-linear-gradient(top left, transparent 0%, transparent 50%, #6E773D 50%);
+    background-image: -o-linear-gradient(top left, transparent 0%, transparent 50%, #6E773D 50%);
+    background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #6E773D 50%);
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .background-green.background-order-swap > .row > .col.flex-order-m2,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m2,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.main,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.main,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.sidebar,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.sidebar {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .background-green.background-order-swap > .row > .col.flex-order-m2::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m2::before,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.main::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.main::before,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.sidebar::before,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.sidebar::before,
+  .background-green.background-order-swap > .row > .col.flex-order-m2::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .col.flex-order-m2::after,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.main::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.main::after,
+  .sidebar-primary .wrap .background-green.background-order-swap > .row > .flex-order-m2.sidebar::after,
+  .sidebar-primary .background-green.background-order-swap > .wrap > .flex-order-m2.sidebar::after {
+    display: none;
+  }
+}
+
 html[data-contrast="true"] .background-green {
   background: #000;
   border-bottom: 1px solid #FFF;
   border-top: 1px solid #FFF;
 }
 
-html[data-contrast="true"] .background-green.background-point-left > .row > .col:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .col:nth-child(1)::before,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .col:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .main:nth-child(1)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .main:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .main:nth-child(1)::before,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .main:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .sidebar:nth-child(1)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .sidebar:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .sidebar:nth-child(1)::before,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .sidebar:nth-child(1)::before {
-  background-image: -o-linear-gradient(to bottom right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, left top, right bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(top left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(top left, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #000 50%);
+html[data-contrast="true"] .background-green.background-point-right > .row > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .col.col::before,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .main::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .main::before,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .main::before,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .main::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .sidebar::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .sidebar::before,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .sidebar::before,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .sidebar::before,
+html[data-contrast="true"] .background-green.background-point-right > .row > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .col.col::after,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .main::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .main::after,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .main::after,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .main::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .sidebar::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .sidebar::after,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .sidebar::after,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .sidebar::after,
+html[data-contrast="true"] .background-green.background-point-left > .row > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .col.col::before,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .main::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .main::before,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .main::before,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .main::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .sidebar::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .sidebar::before,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .sidebar::before,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .sidebar::before,
+html[data-contrast="true"] .background-green.background-point-left > .row > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .col.col::after,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .main::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .main::after,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .main::after,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .main::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .sidebar::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .sidebar::after,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .sidebar::after,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .sidebar::after,
+html[data-contrast="true"] .background-green.background-order-swap > .row > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .background-green.background-order-swap > .wrap > .col.col::before,
+.sidebar-primary html[data-contrast="true"] .background-green.background-order-swap > .wrap > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-order-swap > .row > .main::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-order-swap > .row > .main::before,
+html[data-contrast="true"] .sidebar-primary .background-green.background-order-swap > .wrap > .main::before,
+.sidebar-primary html[data-contrast="true"] .background-green.background-order-swap > .wrap > .main::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-order-swap > .row > .sidebar::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-order-swap > .row > .sidebar::before,
+html[data-contrast="true"] .sidebar-primary .background-green.background-order-swap > .wrap > .sidebar::before,
+.sidebar-primary html[data-contrast="true"] .background-green.background-order-swap > .wrap > .sidebar::before,
+html[data-contrast="true"] .background-green.background-order-swap > .row > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .background-green.background-order-swap > .wrap > .col.col::after,
+.sidebar-primary html[data-contrast="true"] .background-green.background-order-swap > .wrap > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-order-swap > .row > .main::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-order-swap > .row > .main::after,
+html[data-contrast="true"] .sidebar-primary .background-green.background-order-swap > .wrap > .main::after,
+.sidebar-primary html[data-contrast="true"] .background-green.background-order-swap > .wrap > .main::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-order-swap > .row > .sidebar::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-order-swap > .row > .sidebar::after,
+html[data-contrast="true"] .sidebar-primary .background-green.background-order-swap > .wrap > .sidebar::after,
+.sidebar-primary html[data-contrast="true"] .background-green.background-order-swap > .wrap > .sidebar::after {
+  display: none;
 }
 
-html[data-contrast="true"] .background-green.background-point-left > .row > .col:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .col:nth-child(1)::after,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .col:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .main:nth-child(1)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .main:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .main:nth-child(1)::after,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .main:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .sidebar:nth-child(1)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .sidebar:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .sidebar:nth-child(1)::after,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .sidebar:nth-child(1)::after {
-  background-image: -o-linear-gradient(to top right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, left bottom, right top, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(bottom left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(bottom left, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to top right, transparent 0%, transparent 50%, #000 50%);
-}
-
-html[data-contrast="true"] .background-green.background-point-left > .row > .col:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .col:nth-child(2),
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .col:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .main:nth-child(2),
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .main:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .main:nth-child(2),
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .main:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .sidebar:nth-child(2),
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .sidebar:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .sidebar:nth-child(2),
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .sidebar:nth-child(2) {
-  background: #000;
-}
-
-html[data-contrast="true"] .background-green.background-point-right > .row > .col:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .col:nth-child(2)::before,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .col:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .main:nth-child(2)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .main:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .main:nth-child(2)::before,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .main:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .sidebar:nth-child(2)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .sidebar:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .sidebar:nth-child(2)::before,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .sidebar:nth-child(2)::before {
-  background-image: -o-linear-gradient(to bottom left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, right top, left bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(top right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(top right, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to bottom left, transparent 0%, transparent 50%, #000 50%);
-}
-
-html[data-contrast="true"] .background-green.background-point-right > .row > .col:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .col:nth-child(2)::after,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .col:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .main:nth-child(2)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .main:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .main:nth-child(2)::after,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .main:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .sidebar:nth-child(2)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .sidebar:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .sidebar:nth-child(2)::after,
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .sidebar:nth-child(2)::after {
-  background-image: -o-linear-gradient(to top left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, right bottom, left top, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(bottom right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(bottom right, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to top left, transparent 0%, transparent 50%, #000 50%);
-}
-
-html[data-contrast="true"] .background-green.background-point-right > .row > .col:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .col:nth-child(1),
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .col:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .main:nth-child(1),
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .main:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .main:nth-child(1),
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .main:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .sidebar:nth-child(1),
-.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .sidebar:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .sidebar:nth-child(1),
-.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .sidebar:nth-child(1) {
+html[data-contrast="true"] .background-green.background-point-right > .row > .col.col,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .col.col,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .col.col,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .main,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .main,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .main,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .main,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-right > .row > .sidebar,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-right > .row > .sidebar,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-right > .wrap > .sidebar,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-right > .wrap > .sidebar,
+html[data-contrast="true"] .background-green.background-point-left > .row > .col.col,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .col.col,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .col.col,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .main,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .main,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .main,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .main,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-point-left > .row > .sidebar,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-point-left > .row > .sidebar,
+html[data-contrast="true"] .sidebar-primary .background-green.background-point-left > .wrap > .sidebar,
+.sidebar-primary html[data-contrast="true"] .background-green.background-point-left > .wrap > .sidebar,
+html[data-contrast="true"] .background-green.background-order-swap > .row > .col.col,
+html[data-contrast="true"] .sidebar-primary .background-green.background-order-swap > .wrap > .col.col,
+.sidebar-primary html[data-contrast="true"] .background-green.background-order-swap > .wrap > .col.col,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-order-swap > .row > .main,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-order-swap > .row > .main,
+html[data-contrast="true"] .sidebar-primary .background-green.background-order-swap > .wrap > .main,
+.sidebar-primary html[data-contrast="true"] .background-green.background-order-swap > .wrap > .main,
+html[data-contrast="true"] .sidebar-primary .wrap .background-green.background-order-swap > .row > .sidebar,
+.sidebar-primary .wrap html[data-contrast="true"] .background-green.background-order-swap > .row > .sidebar,
+html[data-contrast="true"] .sidebar-primary .background-green.background-order-swap > .wrap > .sidebar,
+.sidebar-primary html[data-contrast="true"] .background-green.background-order-swap > .wrap > .sidebar {
   background: #000;
 }
 
@@ -9149,7 +9692,7 @@ html[data-contrast="true"] .sidebar-primary .background-green.background-point-r
   display: flex;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-teal > .row,
   .sidebar-primary .background-teal > .wrap {
     -webkit-box-orient: vertical;
@@ -9179,7 +9722,7 @@ html[data-contrast="true"] .sidebar-primary .background-green.background-point-r
   background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #09343C 50%);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-teal.background-point-left > .row > .col:nth-child(1)::after,
   .sidebar-primary .background-teal.background-point-left > .wrap > .col:nth-child(1)::after,
   .sidebar-primary .wrap .background-teal.background-point-left > .row > .main:nth-child(1)::after,
@@ -9194,7 +9737,7 @@ html[data-contrast="true"] .sidebar-primary .background-green.background-point-r
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .background-teal.background-point-left > .row > .col:nth-child(1)::after,
   .sidebar-primary .background-teal.background-point-left > .wrap > .col:nth-child(1)::after,
   .sidebar-primary .wrap .background-teal.background-point-left > .row > .main:nth-child(1)::after,
@@ -9218,7 +9761,7 @@ html[data-contrast="true"] .sidebar-primary .background-green.background-point-r
   background: #09343C;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .background-teal.background-point-right > .row > .col:nth-child(2)::before,
   .sidebar-primary .background-teal.background-point-right > .wrap > .col:nth-child(2)::before,
   .sidebar-primary .wrap .background-teal.background-point-right > .row > .main:nth-child(2)::before,
@@ -9233,7 +9776,7 @@ html[data-contrast="true"] .sidebar-primary .background-green.background-point-r
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   .background-teal.background-point-right > .row > .col:nth-child(2)::before,
   .sidebar-primary .background-teal.background-point-right > .wrap > .col:nth-child(2)::before,
   .sidebar-primary .wrap .background-teal.background-point-right > .row > .main:nth-child(2)::before,
@@ -9270,109 +9813,244 @@ html[data-contrast="true"] .sidebar-primary .background-green.background-point-r
   background: #09343C;
 }
 
+.background-teal.background-order-swap > .row > .col.flex-order-m1,
+.sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m1,
+.sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.main,
+.sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.main,
+.sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.sidebar,
+.sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.sidebar {
+  background: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  .background-teal.background-order-swap > .row > .col.flex-order-m1::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m1::before,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.main::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.main::before,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.sidebar::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.sidebar::before,
+  .background-teal.background-order-swap > .row > .col.flex-order-m1::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m1::after,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.main::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.main::after,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.sidebar::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.sidebar::after {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .background-teal.background-order-swap > .row > .col.flex-order-m1,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m1,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.main,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.main,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.sidebar,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.sidebar {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  .background-teal.background-order-swap > .row > .col.flex-order-m1::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m1::before,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.main::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.main::before,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.sidebar::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.sidebar::before {
+    background-image: -o-linear-gradient(to bottom right, transparent 0%, transparent 50%, #09343C 50%);
+    background-image: -webkit-gradient(linear, left top, right bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #09343C));
+    background-image: -webkit-linear-gradient(top left, transparent 0%, transparent 50%, #09343C 50%);
+    background-image: -o-linear-gradient(top left, transparent 0%, transparent 50%, #09343C 50%);
+    background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #09343C 50%);
+  }
+
+  .background-teal.background-order-swap > .row > .col.flex-order-m1::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m1::after,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.main::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.main::after,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m1.sidebar::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m1.sidebar::after {
+    background-image: -o-linear-gradient(to top right, transparent 0%, transparent 50%, #09343C 50%);
+    background-image: -webkit-gradient(linear, left bottom, right top, from(transparent), color-stop(50%, transparent), color-stop(50%, #09343C));
+    background-image: -webkit-linear-gradient(bottom left, transparent 0%, transparent 50%, #09343C 50%);
+    background-image: -o-linear-gradient(bottom left, transparent 0%, transparent 50%, #09343C 50%);
+    background-image: linear-gradient(to top right, transparent 0%, transparent 50%, #09343C 50%);
+  }
+}
+
+.background-teal.background-order-swap > .row > .col.flex-order-m2,
+.sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m2,
+.sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.main,
+.sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.main,
+.sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.sidebar,
+.sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.sidebar {
+  background: #09343C;
+}
+
+@media only screen and (max-width: 768px) {
+  .background-teal.background-order-swap > .row > .col.flex-order-m2::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m2::before,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.main::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.main::before,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.sidebar::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.sidebar::before {
+    background-image: -o-linear-gradient(to bottom left, transparent 0%, transparent 50%, #3D6E77 50%);
+    background-image: -webkit-gradient(linear, right top, left bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #3D6E77));
+    background-image: -webkit-linear-gradient(top right, transparent 0%, transparent 50%, #3D6E77 50%);
+    background-image: -o-linear-gradient(top right, transparent 0%, transparent 50%, #3D6E77 50%);
+    background-image: linear-gradient(to bottom left, transparent 0%, transparent 50%, #3D6E77 50%);
+  }
+
+  .background-teal.background-order-swap > .row > .col.flex-order-m2::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m2::after,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.main::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.main::after,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.sidebar::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.sidebar::after {
+    background-image: -o-linear-gradient(to bottom right, transparent 0%, transparent 50%, #3D6E77 50%);
+    background-image: -webkit-gradient(linear, left top, right bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #3D6E77));
+    background-image: -webkit-linear-gradient(top left, transparent 0%, transparent 50%, #3D6E77 50%);
+    background-image: -o-linear-gradient(top left, transparent 0%, transparent 50%, #3D6E77 50%);
+    background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #3D6E77 50%);
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .background-teal.background-order-swap > .row > .col.flex-order-m2,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m2,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.main,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.main,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.sidebar,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.sidebar {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .background-teal.background-order-swap > .row > .col.flex-order-m2::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m2::before,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.main::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.main::before,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.sidebar::before,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.sidebar::before,
+  .background-teal.background-order-swap > .row > .col.flex-order-m2::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .col.flex-order-m2::after,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.main::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.main::after,
+  .sidebar-primary .wrap .background-teal.background-order-swap > .row > .flex-order-m2.sidebar::after,
+  .sidebar-primary .background-teal.background-order-swap > .wrap > .flex-order-m2.sidebar::after {
+    display: none;
+  }
+}
+
 html[data-contrast="true"] .background-teal {
   background: #000;
   border-bottom: 1px solid #FFF;
   border-top: 1px solid #FFF;
 }
 
-html[data-contrast="true"] .background-teal.background-point-left > .row > .col:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .col:nth-child(1)::before,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .col:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .main:nth-child(1)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .main:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .main:nth-child(1)::before,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .main:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .sidebar:nth-child(1)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .sidebar:nth-child(1)::before,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .sidebar:nth-child(1)::before,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .sidebar:nth-child(1)::before {
-  background-image: -o-linear-gradient(to bottom right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, left top, right bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(top left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(top left, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to bottom right, transparent 0%, transparent 50%, #000 50%);
+html[data-contrast="true"] .background-teal.background-point-right > .row > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .col.col::before,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .main::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .main::before,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .main::before,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .main::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .sidebar::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .sidebar::before,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .sidebar::before,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .sidebar::before,
+html[data-contrast="true"] .background-teal.background-point-right > .row > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .col.col::after,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .main::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .main::after,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .main::after,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .main::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .sidebar::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .sidebar::after,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .sidebar::after,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .sidebar::after,
+html[data-contrast="true"] .background-teal.background-point-left > .row > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .col.col::before,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .main::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .main::before,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .main::before,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .main::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .sidebar::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .sidebar::before,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .sidebar::before,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .sidebar::before,
+html[data-contrast="true"] .background-teal.background-point-left > .row > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .col.col::after,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .main::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .main::after,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .main::after,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .main::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .sidebar::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .sidebar::after,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .sidebar::after,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .sidebar::after,
+html[data-contrast="true"] .background-teal.background-order-swap > .row > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-order-swap > .wrap > .col.col::before,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-order-swap > .wrap > .col.col::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-order-swap > .row > .main::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-order-swap > .row > .main::before,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-order-swap > .wrap > .main::before,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-order-swap > .wrap > .main::before,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-order-swap > .row > .sidebar::before,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-order-swap > .row > .sidebar::before,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-order-swap > .wrap > .sidebar::before,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-order-swap > .wrap > .sidebar::before,
+html[data-contrast="true"] .background-teal.background-order-swap > .row > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-order-swap > .wrap > .col.col::after,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-order-swap > .wrap > .col.col::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-order-swap > .row > .main::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-order-swap > .row > .main::after,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-order-swap > .wrap > .main::after,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-order-swap > .wrap > .main::after,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-order-swap > .row > .sidebar::after,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-order-swap > .row > .sidebar::after,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-order-swap > .wrap > .sidebar::after,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-order-swap > .wrap > .sidebar::after {
+  display: none;
 }
 
-html[data-contrast="true"] .background-teal.background-point-left > .row > .col:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .col:nth-child(1)::after,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .col:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .main:nth-child(1)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .main:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .main:nth-child(1)::after,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .main:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .sidebar:nth-child(1)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .sidebar:nth-child(1)::after,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .sidebar:nth-child(1)::after,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .sidebar:nth-child(1)::after {
-  background-image: -o-linear-gradient(to top right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, left bottom, right top, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(bottom left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(bottom left, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to top right, transparent 0%, transparent 50%, #000 50%);
-}
-
-html[data-contrast="true"] .background-teal.background-point-left > .row > .col:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .col:nth-child(2),
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .col:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .main:nth-child(2),
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .main:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .main:nth-child(2),
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .main:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .sidebar:nth-child(2),
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .sidebar:nth-child(2),
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .sidebar:nth-child(2),
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .sidebar:nth-child(2) {
-  background: #000;
-}
-
-html[data-contrast="true"] .background-teal.background-point-right > .row > .col:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .col:nth-child(2)::before,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .col:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .main:nth-child(2)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .main:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .main:nth-child(2)::before,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .main:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .sidebar:nth-child(2)::before,
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .sidebar:nth-child(2)::before,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .sidebar:nth-child(2)::before,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .sidebar:nth-child(2)::before {
-  background-image: -o-linear-gradient(to bottom left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, right top, left bottom, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(top right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(top right, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to bottom left, transparent 0%, transparent 50%, #000 50%);
-}
-
-html[data-contrast="true"] .background-teal.background-point-right > .row > .col:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .col:nth-child(2)::after,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .col:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .main:nth-child(2)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .main:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .main:nth-child(2)::after,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .main:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .sidebar:nth-child(2)::after,
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .sidebar:nth-child(2)::after,
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .sidebar:nth-child(2)::after,
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .sidebar:nth-child(2)::after {
-  background-image: -o-linear-gradient(to top left, transparent 0%, transparent 50%, #000 50%);
-  background-image: -webkit-gradient(linear, right bottom, left top, from(transparent), color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -webkit-linear-gradient(bottom right, transparent 0%, transparent 50%, #000 50%);
-  background-image: -o-linear-gradient(bottom right, transparent 0%, transparent 50%, #000 50%);
-  background-image: linear-gradient(to top left, transparent 0%, transparent 50%, #000 50%);
-}
-
-html[data-contrast="true"] .background-teal.background-point-right > .row > .col:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .col:nth-child(1),
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .col:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .main:nth-child(1),
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .main:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .main:nth-child(1),
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .main:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .sidebar:nth-child(1),
-.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .sidebar:nth-child(1),
-html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .sidebar:nth-child(1),
-.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .sidebar:nth-child(1) {
+html[data-contrast="true"] .background-teal.background-point-right > .row > .col.col,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .col.col,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .col.col,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .main,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .main,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .main,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .main,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-right > .row > .sidebar,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-right > .row > .sidebar,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-right > .wrap > .sidebar,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-right > .wrap > .sidebar,
+html[data-contrast="true"] .background-teal.background-point-left > .row > .col.col,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .col.col,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .col.col,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .main,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .main,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .main,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .main,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-point-left > .row > .sidebar,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-point-left > .row > .sidebar,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-point-left > .wrap > .sidebar,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-point-left > .wrap > .sidebar,
+html[data-contrast="true"] .background-teal.background-order-swap > .row > .col.col,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-order-swap > .wrap > .col.col,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-order-swap > .wrap > .col.col,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-order-swap > .row > .main,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-order-swap > .row > .main,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-order-swap > .wrap > .main,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-order-swap > .wrap > .main,
+html[data-contrast="true"] .sidebar-primary .wrap .background-teal.background-order-swap > .row > .sidebar,
+.sidebar-primary .wrap html[data-contrast="true"] .background-teal.background-order-swap > .row > .sidebar,
+html[data-contrast="true"] .sidebar-primary .background-teal.background-order-swap > .wrap > .sidebar,
+.sidebar-primary html[data-contrast="true"] .background-teal.background-order-swap > .wrap > .sidebar {
   background: #000;
 }
 
@@ -9724,7 +10402,7 @@ ol.form-progress:focus li[data-step-current] {
   outline: #4A4A4A dotted 1px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   ol.form-progress {
     padding: 0;
   }
@@ -9904,6 +10582,7 @@ html[data-contrast="true"] .page-footer .widget_nav_menu .menu li:hover.icon-twi
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  z-index: 1;
 }
 
 .line.purple-light {
@@ -9951,6 +10630,12 @@ html[data-contrast="true"] .line {
   bottom: 1.5em;
 }
 
+@media only screen and (max-width: 768px) {
+  .line.bottom-1 {
+    display: none;
+  }
+}
+
 .line.left-2 {
   left: 3em;
 }
@@ -9963,6 +10648,12 @@ html[data-contrast="true"] .line {
   bottom: 3em;
 }
 
+@media only screen and (max-width: 768px) {
+  .line.bottom-2 {
+    display: none;
+  }
+}
+
 .line.left-3 {
   left: 4.5em;
 }
@@ -9973,6 +10664,12 @@ html[data-contrast="true"] .line {
 
 .line.bottom-3 {
   bottom: 4.5em;
+}
+
+@media only screen and (max-width: 768px) {
+  .line.bottom-3 {
+    display: none;
+  }
 }
 
 .line.vertical.length-10 {
@@ -10214,7 +10911,7 @@ html[data-contrast="true"] .pagination span.current {
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .banner nav > .container > .row,
   .banner .sidebar-primary nav > .container > .wrap,
   .sidebar-primary .banner nav > .container > .wrap {
@@ -10235,7 +10932,7 @@ html[data-contrast="true"] .pagination span.current {
   display: inline-block;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 992px) {
   .banner .logo {
     padding-left: 0;
   }
@@ -10246,9 +10943,22 @@ html[data-contrast="true"] .pagination span.current {
   text-align: right;
 }
 
-@media only screen and (max-width: 600px) {
+.banner .utility .btn,
+.banner .utility .btn-large,
+.banner .utility .btn-small,
+.banner .utility label[for*="pwbox"] + input[type="submit"] {
+  height: auto;
+}
+
+@media only screen and (max-width: 992px) {
   .banner .utility {
     padding: 10px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 
@@ -10259,7 +10969,6 @@ html[data-contrast="true"] .pagination span.current {
 
 .banner .menu-trigger-wrapper {
   position: relative;
-  top: 45px;
 }
 
 .banner .menu-trigger-wrapper input:focus + label {
@@ -10277,6 +10986,7 @@ html[data-contrast="true"] .pagination span.current {
 
 .banner .menu-trigger-wrapper label i {
   font-size: 2em;
+  line-height: 1.5em;
 }
 
 .banner .menu-trigger-wrapper label:hover {
@@ -10290,6 +11000,13 @@ html[data-contrast="true"] .banner .menu-trigger-wrapper label {
 nav ul a {
   text-decoration: none;
   font-weight: normal;
+  padding: 1rem 15px;
+}
+
+.navbar-menu {
+  width: 100%;
+  border: none;
+  margin: 0;
 }
 
 .navbar-menu li.current-page-ancestor,
@@ -10311,7 +11028,31 @@ nav ul a {
   text-decoration: underline;
 }
 
-@media only screen and (max-width: 600px) {
+.navbar-menu li a {
+  background: none !important;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .navbar-menu {
+    height: 4.66667em;
+  }
+
+  .navbar-menu li {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .navbar-menu li a {
+    font-size: 0.9em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .navbar-menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -10480,6 +11221,12 @@ html[data-contrast="true"] .sidebar .widget_categories {
   padding: 0;
 }
 
+@media only screen and (max-width: 768px) {
+  .page-footer .line {
+    display: none;
+  }
+}
+
 .page-footer .background-point-left > .row,
 .page-footer .sidebar-primary .background-point-left > .wrap,
 .sidebar-primary .page-footer .background-point-left > .wrap {
@@ -10504,6 +11251,13 @@ html[data-contrast="true"] .sidebar .widget_categories {
 .page-footer .footer-menu a {
   display: block;
   padding: 5px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .page-footer .footer-menu {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
 }
 
 .page-footer a {
@@ -10548,6 +11302,24 @@ html[data-contrast="true"] .sidebar .widget_categories {
 .page-footer .widget_nav_menu .menu li a:focus {
   border-color: #343C09;
   background: #6E773D;
+}
+
+@media only screen and (max-width: 768px) {
+  .page-footer .footer-copyright {
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 2em;
+  }
+
+  .page-footer .footer-copyright .flex,
+  .page-footer .footer-copyright .copyright,
+  .page-footer .footer-copyright .unity-link {
+    display: block;
+  }
+
+  .page-footer .footer-copyright .unity-link {
+    margin: 5px auto;
+  }
 }
 
 .events-list.events-list li,
@@ -10650,9 +11422,33 @@ html[data-contrast="true"] .sidebar .widget_categories {
   padding-top: 30px;
 }
 
+@media only screen and (max-width: 768px) {
+  .home .main .background-purple {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .home .main .background-purple .col:first-child,
+  .home .main .background-purple .sidebar-primary .wrap .main:first-child,
+  .sidebar-primary .wrap .home .main .background-purple .main:first-child,
+  .home .main .background-purple .sidebar-primary .wrap .sidebar:first-child,
+  .sidebar-primary .wrap .home .main .background-purple .sidebar:first-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .sa-tools {
   position: relative;
-  z-index: 1;
+  z-index: 5;
 }
 
 .sa-tools h2 {
@@ -10694,16 +11490,26 @@ html[data-contrast="true"] .sa-tools .sidebar-primary .wrap .sidebar,
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  width: 100%;
 }
 
 .work-tile a {
-  display: block;
-  padding: 100px 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  padding: 10px;
+  height: 11.11111rem;
   text-align: center;
   font-size: 1.2em;
   color: #FFF;
   letter-spacing: 0.5px;
-  position: relative;
   text-shadow: 0 0 15px #000;
 }
 
@@ -10792,6 +11598,12 @@ ul.social-names a:active {
 
 .fb_iframe_widget {
   width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.fb_iframe_widget iframe {
+  max-width: 100%;
 }
 
 .resource,
@@ -10807,6 +11619,11 @@ ul.social-names a:active {
 .excerpt .facet-label {
   margin-bottom: 1em;
   margin-top: 0;
+}
+
+.resource.has-post-thumbnail img,
+.excerpt.has-post-thumbnail img {
+  width: 100%;
 }
 
 .hentry .meta {

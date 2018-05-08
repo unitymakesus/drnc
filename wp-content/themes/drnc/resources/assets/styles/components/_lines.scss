@@ -1,6 +1,7 @@
 .line {
   position: absolute;
   transition: all 0.5s;
+  z-index: 1;
 
   &.purple-light {
     background: lighten($color-purple, 20%);
@@ -48,6 +49,10 @@
 
     &.bottom-#{$d} {
       bottom: $d*1.5em;
+
+      @media #{$small-and-down} {
+        display: none;
+      }
     }
   }
 

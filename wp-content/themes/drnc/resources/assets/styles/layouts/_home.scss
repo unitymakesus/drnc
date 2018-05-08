@@ -17,11 +17,24 @@
   section.col {
     padding-top: 30px;
   }
+
+  .main .background-purple {
+    @media #{$small-and-down} {
+      text-align: center;
+    }
+    @media #{$medium-and-up} {
+      .col:first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
 }
 
 .sa-tools {
   position: relative;
-  z-index: 1;
+  z-index: 5;
 
   h2 {
     color: $color-teal-dark;
@@ -58,17 +71,21 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  width: 100%;
 
   @extend .z-depth-1;
 
   a {
-    display: block;
-    padding: 100px 10px 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    height: rem-calc(200px);
     text-align: center;
     font-size: 1.2em;
     color: $color-white;
     letter-spacing: 0.5px;
-    position: relative;
     text-shadow: 0 0 15px $color-black;
 
     span {
@@ -152,4 +169,10 @@ ul.social-names {
 
 .fb_iframe_widget {
   width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+
+  iframe {
+    max-width: 100%;
+  }
 }

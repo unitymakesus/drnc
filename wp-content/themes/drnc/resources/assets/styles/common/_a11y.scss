@@ -297,4 +297,9 @@ html[data-contrast="true"] {
     padding-top: 27.65%;
     overflow: hidden;
   }
+
+  .events-list.events-list time, .single-mc-events time {
+    background: $color-black;
+    border-color: $color-gray-dark;
+  }
 }

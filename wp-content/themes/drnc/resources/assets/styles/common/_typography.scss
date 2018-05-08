@@ -6,6 +6,16 @@ h1, .h1 {
   .home & {
     font-size: rem-calc(65px);
 
+    // Flexible sizing on medium
+    $i: 0;
+
+    @while $i <= $intervals {
+      @media only screen and (min-width: 620 + ($i * $interval-size)) {
+        font-size: 2.5rem * (1 + (0.02 * $i));
+      }
+      $i: $i + 1;
+    }
+
     @media #{$small-and-down} {
       font-size: rem-calc(55px);
       text-align: center;
@@ -19,7 +29,11 @@ h2, .h2 {
   color: $color-purple;
 
   .home & {
-    font-size: rem-calc(45px);
+    font-size: rem-calc(40px);
+
+    @media #{$medium-only} {
+      font-size: rem-calc(36px);
+    }
   }
 }
 

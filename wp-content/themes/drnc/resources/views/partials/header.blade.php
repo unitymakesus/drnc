@@ -6,7 +6,7 @@
   <div class="hide-on-med-and-up">
     <div class="a11y-tools-trigger-wrapper">
       <input type="checkbox" name="a11y-tools-trigger" id="a11y-tools-trigger" value="true" />
-      <label for="a11y-tools-trigger"><i class="material-icons" aria-label="Show accessibility tools">accessibility</i></a>
+      <label for="a11y-tools-trigger"><i class="material-icons" aria-label="Show accessibility tools">accessibility_new</i></a>
     </div>
   </div>
 

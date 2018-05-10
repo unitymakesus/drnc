@@ -136,6 +136,7 @@ nav {
     width: 100%;
     transition: max-height 0.3s ease;
     max-height: 0;
+    overflow: hidden;
 
     li {
       width: 100%;

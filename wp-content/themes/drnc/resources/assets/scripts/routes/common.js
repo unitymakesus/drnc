@@ -21,6 +21,11 @@ export default {
         $(this).children('a').attr('aria-current', 'page');
       }
     });
+
+    /**
+     * Add mobile trigger for sidebar navigation
+     */
+    $('.widget_nav_menu > div[class*="menu-"]').prepend('<button class="sidebar-nav-trigger" id="sidebar-nav-trigger">Select Page <i class="material-icons">keyboard_arrow_down</i></button>');
   },
   finalize() {
     // Show a11y toolbar
@@ -71,6 +76,54 @@ export default {
       });
     }
 
+    // Show mobile sidebar-nav
+    function showMobileAsideNav() {
+      $('body').addClass('mobile-aside-nav-active');
+
+      // Enable focus of nav items using tabindex
+      $('.widget_nav_menu').each(function() {
+        var el = $(this);
+        $('a', el).attr('tabindex', '0');
+      });
+    }
+
+    // Hide mobile sidebar-nav
+    function hideMobileAsideNav() {
+      $('body').removeClass('mobile-aside-nav-active');
+
+      // Disable focus of nav items using tabindex
+      $('.widget_nav_menu').each(function() {
+        var el = $(this);
+        $('a', el).attr('tabindex', '-1');
+      });
+    }
+
+    // Toggle mobile sidebar-nav
+    $('.widget_nav_menu').on('click', '#sidebar-nav-trigger', function() {
+      if ($('body').hasClass('mobile-aside-nav-active')) {
+        hideMobileAsideNav();
+      } else {
+        showMobileAsideNav();
+      }
+    });
+
+    // Only show mobile sidebarnav if an element inside is receiving focus
+    $('.widget_nav_menu').each(function() {
+      var el = $(this);
+
+      $('a', el).on('focus', function() {
+        $(this).parents('li').addClass('hover');
+      }).on('focusout', function() {
+        $(this).parents('li').removeClass('hover');
+
+        setTimeout(function() {
+          if ($(':focus').closest('ul.menu').length == 0) {
+            hideMobileAsideNav();
+          }
+        })
+      });
+    });
+
     // Toggle mobile nav
     $('#menu-trigger').on('change focusout', function() {
       if ($(this).prop('checked')) {
@@ -80,7 +133,7 @@ export default {
       }
     });
 
-    // Make mobile menus keyboard accessible
+    // Only show mobile nav if an element inside is receiving focus
     $('.navbar-menu').each(function () {
       var el = $(this);
 

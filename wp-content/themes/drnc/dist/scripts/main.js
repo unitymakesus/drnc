@@ -249,7 +249,7 @@ Router.prototype.loadEvents = function loadEvents () {
     /**
      * Add mobile trigger for sidebar navigation
      */
-    $('.widget_nav_menu > div[class*="menu-"]').prepend('<button class="sidebar-nav-trigger" id="sidebar-nav-trigger">Select Page <i class="material-icons">keyboard_arrow_down</i></button>');
+    $('.sidebar .widget_nav_menu > div[class*="menu-"]').prepend('<button class="sidebar-nav-trigger hide-on-med-and-up" id="sidebar-nav-trigger">Select Page <i class="material-icons">keyboard_arrow_down</i></button>');
   },
   finalize: function finalize() {
     // Show a11y toolbar
@@ -640,9 +640,11 @@ Router.prototype.loadEvents = function loadEvents () {
 
     // Conditional fields -- show contact areas depending on answer
     $('.select-1 input[type="radio"]').on('change', function() {
-      var pattern = /legal guardian/;
-      var exists = pattern.test(this.value);
-      if (exists === true) {
+      var pattern1 = /legal guardian/;
+      var pattern2 = /abuse or neglect/;
+      var exists1 = pattern1.test(this.value);
+      var exists2 = pattern2.test(this.value);
+      if (exists1 === true || exists2 === true) {
         $('#individual-contact').removeClass('hidden');
         $('#individual-contact').attr('aria-hidden', 'false');
       } else {

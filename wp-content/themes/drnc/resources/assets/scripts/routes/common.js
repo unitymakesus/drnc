@@ -25,7 +25,7 @@ export default {
     /**
      * Add mobile trigger for sidebar navigation
      */
-    $('.widget_nav_menu > div[class*="menu-"]').prepend('<button class="sidebar-nav-trigger" id="sidebar-nav-trigger">Select Page <i class="material-icons">keyboard_arrow_down</i></button>');
+    $('.sidebar .widget_nav_menu > div[class*="menu-"]').prepend('<button class="sidebar-nav-trigger hide-on-med-and-up" id="sidebar-nav-trigger">Select Page <i class="material-icons">keyboard_arrow_down</i></button>');
   },
   finalize() {
     // Show a11y toolbar

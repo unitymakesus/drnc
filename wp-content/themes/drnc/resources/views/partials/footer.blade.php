@@ -11,13 +11,13 @@
       </div>
       <div class="col l7 m8 flex-order-m1 s12">
         <div class="row">
-          <div class="col l4 m5 s12">
+          <div class="col l4 m5 s6 xs12">
             @if (has_nav_menu('primary_navigation'))
               <h3>Menu</h3>
               {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'footer-menu']) !!}
             @endif
           </div>
-          <div class="col l8 m7 s12">
+          <div class="col l8 m7 s6 xs12">
             @php(dynamic_sidebar('sidebar-footer'))
           </div>
         </div>

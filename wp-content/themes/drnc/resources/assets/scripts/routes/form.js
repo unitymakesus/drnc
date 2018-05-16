@@ -133,9 +133,11 @@ export default {
 
     // Conditional fields -- show contact areas depending on answer
     $('.select-1 input[type="radio"]').on('change', function() {
-      const pattern = /legal guardian/;
-      let exists = pattern.test(this.value);
-      if (exists === true) {
+      const pattern1 = /legal guardian/;
+      const pattern2 = /abuse or neglect/;
+      let exists1 = pattern1.test(this.value);
+      let exists2 = pattern2.test(this.value);
+      if (exists1 === true || exists2 === true) {
         $('#individual-contact').removeClass('hidden');
         $('#individual-contact').attr('aria-hidden', 'false');
       } else {

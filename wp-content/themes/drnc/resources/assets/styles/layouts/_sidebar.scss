@@ -4,14 +4,16 @@
 
     .main {
       @extend .col;
-      @extend .l6;
+      @extend .xl6;
+      @extend .l7;
       @extend .m8;
       @extend .s12;
     }
 
     .sidebar {
       @extend .col;
-      @extend .l3;
+      @extend .xl3;
+      @extend .l4;
       @extend .m4;
       @extend .s12;
 

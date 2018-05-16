@@ -1,6 +1,7 @@
 h1, .h1 {
   font-family: $font-serif;
   font-size: rem-calc(45px);
+  font-weight: 600;
   color: $color-teal-dark;
 
   .home & {
@@ -26,6 +27,7 @@ h1, .h1 {
 h2, .h2 {
   font-family: $font-serif;
   font-size: rem-calc(36px);
+  font-weight: 600;
   color: $color-purple;
 
   .home & {
@@ -40,6 +42,7 @@ h2, .h2 {
 h3, .h3 {
   font-family: $font-serif;
   font-size: rem-calc(24px);
+  font-weight: 600;
   color: $color-teal-dark;
   letter-spacing: 1px;
 
@@ -114,6 +117,7 @@ blockquote {
 
 .label {
   font-family: $font-serif;
+  font-weight: 600;
 }
 
 strong {

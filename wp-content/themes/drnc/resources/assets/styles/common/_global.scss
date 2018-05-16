@@ -24,10 +24,10 @@ body {
 
 .container {
   @media #{$medium-and-up} {
-    width: 90%;
+    width: 95%;
   }
   @media #{$large-and-up} {
-    width: 85%;
+    width: 90%;
   }
 }
 
@@ -102,6 +102,12 @@ body {
   right: 0;
   bottom: 0;
   z-index: 5;
+}
+
+@media #{$xsmall-and-down} {
+  .row .col.xs12 {
+    width: 100%;
+  }
 }
 
 img {

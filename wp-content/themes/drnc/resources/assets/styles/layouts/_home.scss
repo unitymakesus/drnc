@@ -91,6 +91,7 @@
     span {
       position: relative;
       font-family: $font-serif;
+      font-weight: 600;
     }
 
     &::before {
@@ -159,6 +160,7 @@ ul.social-names {
     display: block;
     position: relative;
     font-family: $font-serif;
+    font-weight: 600;
     font-size: 1.2em;
 
     &:hover, &:focus, &:active {

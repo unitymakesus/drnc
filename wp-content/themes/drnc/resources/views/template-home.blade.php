@@ -77,7 +77,6 @@
           <p>You can also find us on:</p>
           <ul class="social-names">
             <li class="icon-twitter"><a href="https://twitter.com/disabilityrtsnc">Twitter</a></li>
-            <li class="icon-linkedin"><a href="https://www.linkedin.com/company/251907/">LinkedIn</a></li>
           </ul>
 
           <div class="events-list">

@@ -77,10 +77,12 @@ add_action('after_setup_theme', function () {
       * Add image sizes
       */
      add_image_size('tiny-thumbnail', 80, 80, true);
+     add_image_size('small-thumbnail', 150, 150, true);
 
      add_filter( 'image_size_names_choose', function( $sizes ) {
        return array_merge( $sizes, array(
          'tiny-thumbnail' => __( 'Tiny Thumbnail' ),
+         'small-thumbnail' => __( 'Small Thumbnail' ),
        ) );
      } );
 

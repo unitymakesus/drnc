@@ -11,6 +11,8 @@
 
     /* ======== Autocomplete ======== */
 
+    var ac_selected = false;
+
     wp.hooks.addAction('facetwp/refresh/autocomplete', function($this, facet_name) {
         var val = $this.find('.facetwp-autocomplete').val() || '';
         FWP.facets[facet_name] = val;
@@ -27,7 +29,12 @@
                 minChars: 3,
                 deferRequestBy: 200,
                 showNoSuggestionNotice: true,
+                triggerSelectOnValidInput: false,
                 noSuggestionNotice: FWP_JSON['no_results'],
+                onSelect: function() {
+                    ac_selected = true;
+                    FWP.autoload();
+                },
                 params: {
                     action: 'facetwp_autocomplete_load',
                     facet_name: facet_name,
@@ -40,8 +47,11 @@
     });
 
     $(document).on('keyup', '.facetwp-autocomplete', function(e) {
-        if (13 === e.which) {
+        if (13 === e.which && ! ac_selected) {
             FWP.autoload();
+        }
+        if (ac_selected) {
+            ac_selected = false;
         }
     });
 
@@ -77,7 +87,7 @@
         var $wrap = $(this).parent('.facetwp-checkbox').next('.facetwp-depth');
         $wrap.toggleClass('visible');
         var content = $wrap.hasClass('visible') ? FWP_JSON['collapse'] : FWP_JSON['expand'];
-        $(this).text(content);
+        $(this).html(content);
         e.stopPropagation();
     });
 
@@ -123,7 +133,7 @@
                 // un-hide groups with selected items
                 $facet.find('.facetwp-checkbox.checked').each(function() {
                     $(this).parents('.facetwp-depth').each(function() {
-                        $(this).prev('.facetwp-checkbox').find('.facetwp-expand').text(FWP_JSON['collapse']);
+                        $(this).prev('.facetwp-checkbox').find('.facetwp-expand').html(FWP_JSON['collapse']);
                         $(this).addClass('visible');
                     });
 
@@ -334,7 +344,7 @@
         return params.el.find('.facetwp-link.checked').text();
     });
 
-    $(document).on('click', '.facetwp-facet .facetwp-link', function() {
+    $(document).on('click', '.facetwp-type-hierarchy .facetwp-link', function() {
         $(this).closest('.facetwp-facet').find('.facetwp-link').removeClass('checked');
         if ('' !== $(this).attr('data-value')) {
             $(this).addClass('checked');
@@ -523,13 +533,13 @@
     });
 
     $(document).on('facetwp-loaded', function() {
-        $('.facetwp-facet .facetwp-search').each(function() {
+        $('.facetwp-type-search .facetwp-search').each(function() {
             var $facet = $(this).closest('.facetwp-facet');
             FWP.logic.search['set_button']($facet);
         });
     });
 
-    $(document).on('keyup', '.facetwp-facet .facetwp-search', function(e) {
+    $(document).on('keyup', '.facetwp-type-search .facetwp-search', function(e) {
         var $facet = $(this).closest('.facetwp-facet');
         var facet_name = $facet.attr('data-name');
 
@@ -608,7 +618,7 @@
     });
 
     $(document).on('facetwp-loaded', function() {
-        $('.facetwp-slider:not(.ready)').each(function() {
+        $('.facetwp-type-slider .facetwp-slider:not(.ready)').each(function() {
             var $parent = $(this).closest('.facetwp-facet');
             var facet_name = $parent.attr('data-name');
             var opts = FWP.settings[facet_name];
@@ -668,9 +678,51 @@
         });
     });
 
-    $(document).on('click', '.facetwp-slider-reset', function() {
+    $(document).on('click', '.facetwp-type-slider .facetwp-slider-reset', function() {
         var facet_name = $(this).closest('.facetwp-facet').attr('data-name');
         FWP.reset(facet_name);
+    });
+
+    /* ======== Rating ======== */
+
+    wp.hooks.addAction('facetwp/refresh/rating', function($this, facet_name) {
+        var selected_values = [];
+        $this.find('.facetwp-star.selected').each(function() {
+            var val = $(this).attr('data-value');
+            if ('' != val) {
+                selected_values.push(val);
+            }
+        });
+        FWP.facets[facet_name] = selected_values;
+    });
+
+    $(document).on('mouseover', '.facetwp-star', function() {
+        var $facet = $(this).closest('.facetwp-facet');
+
+        if ($(this).hasClass('selected')) {
+            $facet.find('.facetwp-star-label').text('Undo');
+        }
+        else {
+            var label = ('5' == $(this).attr('data-value')) ? '' : '& up';
+            $facet.find('.facetwp-star-label').text(label);
+            $facet.find('.facetwp-counter').text('(' + $(this).data('counter') + ')');
+        }
+    });
+
+    $(document).on('mouseout', '.facetwp-star', function() {
+        var $facet = $(this).closest('.facetwp-facet');
+        $facet.find('.facetwp-star-label').text('');
+        $facet.find('.facetwp-counter').text('');
+    });
+
+    $(document).on('click', '.facetwp-star', function() {
+        var $facet = $(this).closest('.facetwp-facet');
+        var is_selected = $(this).hasClass('selected');
+        $facet.find('.facetwp-star').removeClass('selected');
+        if (! is_selected) {
+            $(this).addClass('selected');
+        }
+        FWP.autoload();
     });
 
 })(jQuery);

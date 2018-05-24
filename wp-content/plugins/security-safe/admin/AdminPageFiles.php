@@ -216,7 +216,20 @@ class AdminPageFiles extends AdminPage {
      */ 
     function tab_theme() {
 
-        return $this->display_permissions_table( $this->get_dir_files( get_template_directory() ), 'tab_theme' );
+        $theme_parent = get_template_directory();
+        $theme_child = get_stylesheet_directory();
+        
+        $files = $this->get_dir_files( $theme_parent );
+
+        if ( $theme_parent != $theme_child ) {
+            
+            // Child Theme Present
+            $child_files = $this->get_dir_files( $theme_child );
+            $files = array_merge( $child_files, $files );
+
+        }
+
+        return $this->display_permissions_table( $files, 'tab_theme' );
 
     } // tab_theme()
 
@@ -259,10 +272,10 @@ class AdminPageFiles extends AdminPage {
         //https://secure.php.net/ChangeLog-7.php
         //https://secure.php.net/ChangeLog-5.php
         $latest_versions['PHP'] = array( 
-            '7.2.0' => '7.2.4',
-            '7.1.0' => '7.1.16',
-            '7.0.0' => '7.0.29',
-            '5.6.0' => '5.6.35' );
+            '7.2.0' => '7.2.5',
+            '7.1.0' => '7.1.17',
+            '7.0.0' => '7.0.30',
+            '5.6.0' => '5.6.36' );
 
         $php_min = '5.6.0';
 

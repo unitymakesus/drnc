@@ -64,6 +64,31 @@
     }
   }
 
+  form {
+    max-width: 300px;
+
+    label {
+      color: $color-white;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      background: $color-white;
+      border: 1px solid lighten($color-gray-medium, 20%);
+      font-size: 1rem;
+      margin: 10px 0 20px;
+      padding: 0 30px 0 5px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    input[type="submit"] {
+      @extend .btn;
+
+      width: 100%;
+    }
+  }
+
   .footer-copyright {
     @media #{$small-and-down} {
       text-align: center;

@@ -55,35 +55,6 @@ class FacetWP_Facet_Search extends FacetWP_Facet
 
 
     /**
-     * Output any admin scripts
-     */
-    function admin_scripts() {
-?>
-<script>
-(function($) {
-    wp.hooks.addAction('facetwp/load/search', function($this, obj) {
-        $this.find('.facet-search-engine').val(obj.search_engine);
-        $this.find('.facet-placeholder').val(obj.placeholder);
-        $this.find('.facet-auto-refresh').val(obj.auto_refresh);
-    });
-
-    wp.hooks.addFilter('facetwp/save/search', function(obj, $this) {
-        obj['search_engine'] = $this.find('.facet-search-engine').val();
-        obj['placeholder'] = $this.find('.facet-placeholder').val();
-        obj['auto_refresh'] = $this.find('.facet-auto-refresh').val();
-        return obj;
-    });
-
-    wp.hooks.addAction('facetwp/change/search', function($this) {
-        $this.closest('.facetwp-row').find('.name-source').hide();
-    });
-})(jQuery);
-</script>
-<?php
-    }
-
-
-    /**
      * Output admin settings HTML
      */
     function settings_html() {
@@ -113,10 +84,10 @@ class FacetWP_Facet_Search extends FacetWP_Facet
                 </div>
             </td>
             <td>
-                <select class="facet-auto-refresh">
-                    <option value="no"><?php _e( 'No', 'fwp' ); ?></option>
-                    <option value="yes"><?php _e( 'Yes', 'fwp' ); ?></option>
-                </select>
+                <label class="facetwp-switch">
+                    <input type="checkbox" class="facet-auto-refresh" />
+                    <span class="facetwp-slider"></span>
+                </label>
             </td>
         </tr>
 <?php

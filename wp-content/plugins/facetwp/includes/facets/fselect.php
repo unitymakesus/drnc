@@ -18,33 +18,12 @@ class FacetWP_Facet_fSelect extends FacetWP_Facet
         $from_clause = $wpdb->prefix . 'facetwp_index f';
         $where_clause = $params['where_clause'];
 
-        // Preserve options when single-select or when behavior = "OR"
+        // Preserve options for single-select or when in "OR" mode
         $is_single = FWP()->helper->facet_is( $facet, 'multiple', 'no' );
         $using_or = FWP()->helper->facet_is( $facet, 'operator', 'or' );
 
         if ( $is_single || $using_or ) {
-
-            // Apply filtering (ignore the facet's current selection)
-            if ( isset( FWP()->or_values ) && ( 1 < count( FWP()->or_values ) || ! isset( FWP()->or_values[ $facet['name'] ] ) ) ) {
-                $post_ids = array();
-                $or_values = FWP()->or_values; // Preserve the original
-                unset( $or_values[ $facet['name'] ] );
-
-                $counter = 0;
-                foreach ( $or_values as $name => $vals ) {
-                    $post_ids = ( 0 == $counter ) ? $vals : array_intersect( $post_ids, $vals );
-                    $counter++;
-                }
-
-                // Return only applicable results
-                $post_ids = array_intersect( $post_ids, FWP()->unfiltered_post_ids );
-            }
-            else {
-                $post_ids = FWP()->unfiltered_post_ids;
-            }
-
-            $post_ids = empty( $post_ids ) ? array( 0 ) : $post_ids;
-            $where_clause = ' AND post_id IN (' . implode( ',', $post_ids ) . ')';
+            $where_clause = $this->get_where_clause( $facet );
         }
 
         // Orderby
@@ -224,55 +203,6 @@ class FacetWP_Facet_fSelect extends FacetWP_Facet
 
 
     /**
-     * Output any admin scripts
-     */
-    function admin_scripts() {
-?>
-<script>
-(function($) {
-    wp.hooks.addAction('facetwp/load/fselect', function($this, obj) {
-        $this.find('.facet-source').val(obj.source);
-        $this.find('.facet-multiple').val(obj.multiple);
-        $this.find('.facet-label-any').val(obj.label_any);
-        $this.find('.facet-parent-term').val(obj.parent_term);
-        $this.find('.facet-orderby').val(obj.orderby);
-        $this.find('.facet-hierarchical').val(obj.hierarchical);
-        $this.find('.facet-operator').val(obj.operator);
-        $this.find('.facet-ghosts').val(obj.ghosts);
-        $this.find('.facet-preserve-ghosts').val(obj.preserve_ghosts);
-        $this.find('.facet-count').val(obj.count);
-    });
-
-    wp.hooks.addFilter('facetwp/save/fselect', function(obj, $this) {
-        obj['source'] = $this.find('.facet-source').val();
-        obj['multiple'] = $this.find('.facet-multiple').val();
-        obj['label_any'] = $this.find('.facet-label-any').val();
-        obj['parent_term'] = $this.find('.facet-parent-term').val();
-        obj['orderby'] = $this.find('.facet-orderby').val();
-        obj['hierarchical'] = $this.find('.facet-hierarchical').val();
-        obj['operator'] = $this.find('.facet-operator').val();
-        obj['ghosts'] = $this.find('.facet-ghosts').val();
-        obj['preserve_ghosts'] = $this.find('.facet-preserve-ghosts').val();
-        obj['count'] = $this.find('.facet-count').val();
-        return obj;
-    });
-
-    wp.hooks.addAction('facetwp/change/fselect', function($this) {
-        $this.closest('.facetwp-row').find('.facet-multiple').trigger('change');
-    });
-
-    $(document).on('change', '.facet-multiple', function() {
-        var $facet = $(this).closest('.facetwp-row');
-        var display = ('yes' == $(this).val()) ? 'table-row' : 'none';
-        $facet.find('.facet-operator').closest('tr').css({ 'display' : display });
-    });
-})(jQuery);
-</script>
-<?php
-    }
-
-
-    /**
      * Output any front-end scripts
      */
     function front_scripts() {
@@ -286,17 +216,6 @@ class FacetWP_Facet_fSelect extends FacetWP_Facet
      */
     function settings_html() {
 ?>
-        <tr>
-            <td>
-                <?php _e( 'Multi-select?', 'fwp' ); ?>:
-            </td>
-            <td>
-                <select class="facet-multiple">
-                    <option value="no"><?php _e( 'No', 'fwp' ); ?></option>
-                    <option value="yes"><?php _e( 'Yes', 'fwp' ); ?></option>
-                </select>
-            </td>
-        </tr>
         <tr>
             <td><?php _e( 'Default label', 'fwp' ); ?>:</td>
             <td>
@@ -319,14 +238,14 @@ class FacetWP_Facet_fSelect extends FacetWP_Facet
             </td>
         </tr>
         <tr>
-            <td><?php _e('Sort by', 'fwp'); ?>:</td>
             <td>
-                <select class="facet-orderby">
-                    <option value="count"><?php _e( 'Highest Count', 'fwp' ); ?></option>
-                    <option value="display_value"><?php _e( 'Display Value', 'fwp' ); ?></option>
-                    <option value="raw_value"><?php _e( 'Raw Value', 'fwp' ); ?></option>
-                    <option value="term_order"><?php _e( 'Term Order', 'fwp' ); ?></option>
-                </select>
+                <?php _e( 'Multi-select?', 'fwp' ); ?>:
+            </td>
+            <td>
+                <label class="facetwp-switch">
+                    <input type="checkbox" class="facet-multiple" />
+                    <span class="facetwp-slider"></span>
+                </label>
             </td>
         </tr>
         <tr>
@@ -338,10 +257,40 @@ class FacetWP_Facet_fSelect extends FacetWP_Facet
                 </div>
             </td>
             <td>
-                <select class="facet-hierarchical">
-                    <option value="no"><?php _e( 'No', 'fwp' ); ?></option>
-                    <option value="yes"><?php _e( 'Yes', 'fwp' ); ?></option>
-                </select>
+                <label class="facetwp-switch">
+                    <input type="checkbox" class="facet-hierarchical" />
+                    <span class="facetwp-slider"></span>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php _e('Show ghosts', 'fwp'); ?>:
+                <div class="facetwp-tooltip">
+                    <span class="icon-question">?</span>
+                    <div class="facetwp-tooltip-content"><?php _e( 'Show choices that would return zero results?', 'fwp' ); ?></div>
+                </div>
+            </td>
+            <td>
+                <label class="facetwp-switch">
+                    <input type="checkbox" class="facet-ghosts" />
+                    <span class="facetwp-slider"></span>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php _e('Preserve ghost order', 'fwp'); ?>:
+                <div class="facetwp-tooltip">
+                    <span class="icon-question">?</span>
+                    <div class="facetwp-tooltip-content"><?php _e( 'Keep ghost choices in the same order?', 'fwp' ); ?></div>
+                </div>
+            </td>
+            <td>
+                <label class="facetwp-switch">
+                    <input type="checkbox" class="facet-preserve-ghosts" />
+                    <span class="facetwp-slider"></span>
+                </label>
             </td>
         </tr>
         <tr>
@@ -360,32 +309,13 @@ class FacetWP_Facet_fSelect extends FacetWP_Facet
             </td>
         </tr>
         <tr>
+            <td><?php _e('Sort by', 'fwp'); ?>:</td>
             <td>
-                <?php _e('Show ghosts', 'fwp'); ?>:
-                <div class="facetwp-tooltip">
-                    <span class="icon-question">?</span>
-                    <div class="facetwp-tooltip-content"><?php _e( 'Show choices that would return zero results?', 'fwp' ); ?></div>
-                </div>
-            </td>
-            <td>
-                <select class="facet-ghosts">
-                    <option value="no"><?php _e( 'No', 'fwp' ); ?></option>
-                    <option value="yes"><?php _e( 'Yes', 'fwp' ); ?></option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php _e('Preserve ghost order', 'fwp'); ?>:
-                <div class="facetwp-tooltip">
-                    <span class="icon-question">?</span>
-                    <div class="facetwp-tooltip-content"><?php _e( 'Keep ghost choices in the same order?', 'fwp' ); ?></div>
-                </div>
-            </td>
-            <td>
-                <select class="facet-preserve-ghosts">
-                    <option value="no"><?php _e( 'No', 'fwp' ); ?></option>
-                    <option value="yes"><?php _e( 'Yes', 'fwp' ); ?></option>
+                <select class="facet-orderby">
+                    <option value="count"><?php _e( 'Highest Count', 'fwp' ); ?></option>
+                    <option value="display_value"><?php _e( 'Display Value', 'fwp' ); ?></option>
+                    <option value="raw_value"><?php _e( 'Raw Value', 'fwp' ); ?></option>
+                    <option value="term_order"><?php _e( 'Term Order', 'fwp' ); ?></option>
                 </select>
             </td>
         </tr>

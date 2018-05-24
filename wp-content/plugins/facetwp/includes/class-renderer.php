@@ -12,6 +12,9 @@ class FacetWP_Renderer
     /* (array) WP_Query arguments */
     public $query_args;
 
+    /* (array) Data used to build the pager */
+    public $pager_args;
+
     /* (string) MySQL WHERE clause passed to each facet */
     public $where_clause = '';
 
@@ -194,6 +197,10 @@ class FacetWP_Renderer
         if ( 0 < $pager_args['per_page'] ) {
             $pager_args['total_pages'] = ceil( $pager_args['total_rows'] / $pager_args['per_page'] );
         }
+
+        $pager_args = apply_filters( 'facetwp_pager_args', $pager_args, $this );
+
+        $this->pager_args = $pager_args;
 
         // Stick the pager args into the JSON response
         $output['settings']['pager'] = $pager_args;

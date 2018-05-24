@@ -158,7 +158,7 @@ window.FWP = {
         });
 
 
-        // Conditionals based on facet type
+        // Conditionals
         $(document).on('change', '.facet-type', function() {
             var val = $(this).val();
             var $facet = $(this).closest('.facetwp-row');
@@ -175,19 +175,21 @@ window.FWP = {
             var id = $facet.attr('data-id');
             $('.facetwp-cards li[data-id="'+ id +'"] .card-type').text(val);
 
-            // Trigger .facet-source
+            // Triggers
             $facet.find('.facet-source').trigger('change');
+            $facet.find('.facet-source-other').trigger('change');
+            $facet.find('.facet-multiple').trigger('change');
+            $facet.find('.facet-ghosts').trigger('change');
+            $facet.find('.facet-hierarchical').trigger('change');
         });
 
-
-        // Conditionals based on facet source
         $(document).on('change', '.facet-source', function() {
             var val = $(this).val();
             var $facet = $(this).closest('.facetwp-row');
             var facet_type = $facet.find('.facet-type').val();
             var display = ('string' === typeof val && -1 < val.indexOf('tax/')) ? 'table-row' : 'none';
 
-            if ('checkboxes' === facet_type || 'dropdown' === facet_type) {
+            if ('checkboxes' === facet_type || 'fselect' === facet_type || 'dropdown' === facet_type) {
                 $facet.find('.facet-parent-term').closest('tr').css({ 'display' : display });
                 $facet.find('.facet-hierarchical').closest('tr').css({ 'display' : display });
             }
@@ -196,12 +198,25 @@ window.FWP = {
             }
         });
 
-
-        // Conditionals based on facet source_other
         $(document).on('change', '.facet-source-other', function() {
             var $facet = $(this).closest('.facetwp-row');
             var display = ('' !== $(this).val()) ? 'table-row' : 'none';
             $facet.find('.facet-compare-type').closest('tr').css({ 'display' : display });
+        });
+
+        $(document).on('change', '.facet-ghosts', function() {
+            var $facet = $(this).closest('.facetwp-row');
+            var display = $(this).is(':checked') ? 'table-row' : 'none';
+            $facet.find('.facet-preserve-ghosts').closest('tr').css({ 'display' : display });
+        });
+
+        $(document).on('change', '.facet-hierarchical', function() {
+            var $facet = $(this).closest('.facetwp-row');
+            var hierarchical = $(this).is(':checked');
+            var show_expanded = hierarchical ? 'table-row' : 'none';
+            var soft_limit = hierarchical ? 'none' : 'table-row';
+            $facet.find('.facet-show-expanded').closest('tr').css({ 'display' : show_expanded });
+            $facet.find('.facet-soft-limit').closest('tr').css({ 'display' : soft_limit });
         });
 
 
@@ -425,14 +440,20 @@ window.FWP = {
             // Settings save hook
             data = wp.hooks.applyFilters('facetwp/save_settings', data);
 
-            $.post(ajaxurl, {
-                action: 'facetwp_save',
-                nonce: FWP.nonce,
-                data: JSON.stringify(data)
-            }, function(response) {
+            $.ajax(ajaxurl, {
+                method: 'POST',
+                dataType: 'json',
+                data: {
+                    action: 'facetwp_save',
+                    nonce: FWP.nonce,
+                    data: JSON.stringify(data)
+                }
+            }).done(function(response) {
                 $('.facetwp-response').html(response.message);
                 $('.facetwp-rebuild').toggleClass('flux', response.reindex);
-            }, 'json');
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                $('.facetwp-response').html(jqXHR.status + ' ' + errorThrown);
+            });
         });
 
 

@@ -7,7 +7,13 @@
         <p><a href="/donate/" class="btn btn-lg btn-green">Support Our Work</a></p>
         <h3>Stay Informed</h3>
         <p>Sign up for our free email newsletter. We send out monthly emails with news and updates. We will not share your contact information and do not send spam.</p>
-        [FORM]
+        <!-- START VerticalResponse Opt-In Form -->
+        <form method="post" action="http://oi.vresp.com?fid=67bbc883d1" target="vr_optin_popup" onsubmit="window.open( 'http://www.verticalresponse.com', 'vr_optin_popup', 'scrollbars=yes,width=600,height=450' ); return true;" >
+          <label for="email_address">Email Address:</label><br/>
+          <input id="email_address" name="email_address" type="text" /><br/>
+          <input type="submit" value="Subscribe" /><br/>
+        </form>
+        <!-- END VerticalResponse Opt-In Form -->
       </div>
       <div class="col l7 m8 flex-order-m1 s12">
         <div class="row">

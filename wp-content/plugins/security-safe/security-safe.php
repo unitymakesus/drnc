@@ -7,7 +7,7 @@ if ( ! defined( 'WPINC' ) ) { die; }
 
 /**
  * @package SecuritySafe
- * @version 1.1.5
+ * @version 1.1.6
  */
 
 /*
@@ -16,7 +16,7 @@ if ( ! defined( 'WPINC' ) ) { die; }
  * Description: Security Safe - Security, Hardening, Auditing & Privacy
  * Author: Sovereign Stack, LLC
  * Author URI: https://sovstack.com
- * Version: 1.1.5
+ * Version: 1.1.6
  * Text Domain: security-safe
  * Domain Path:  /languages
  * License: GPLv3 or later
@@ -42,7 +42,7 @@ $plugin = array();
 
 // Base Plugin
 $plugin['name'] = 'Security Safe';
-$plugin['version'] = '1.1.5';
+$plugin['version'] = '1.1.6';
 $plugin['slug'] = 'security-safe';
 $plugin['options'] = 'securitysafe_options';
 $plugin['file'] = __FILE__;

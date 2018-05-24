@@ -153,56 +153,6 @@ class FacetWP_Facet_Proximity_Core extends FacetWP_Facet
 
 
     /**
-     * Output admin scripts
-     */
-    function admin_scripts() {
-?>
-<script>
-(function($) {
-    wp.hooks.addAction('facetwp/load/proximity', function($this, obj) {
-        $this.find('.facet-source').val(obj.source);
-        $this.find('.facet-source-other').val(obj.source_other);
-        $this.find('.facet-unit').val(obj.unit);
-        $this.find('.facet-radius-ui').val(obj.radius_ui);
-        $this.find('.facet-radius-options').val(obj.radius_options);
-        $this.find('.facet-radius-default').val(obj.radius_default);
-        $this.find('.facet-radius-min').val(obj.radius_min);
-        $this.find('.facet-radius-max').val(obj.radius_max);
-    });
-
-    wp.hooks.addFilter('facetwp/save/proximity', function(obj, $this) {
-        obj['source'] = $this.find('.facet-source').val();
-        obj['source_other'] = $this.find('.facet-source-other').val();
-        obj['unit'] = $this.find('.facet-unit').val();
-        obj['radius_ui'] = $this.find('.facet-radius-ui').val();
-        obj['radius_options'] = $this.find('.facet-radius-options').val();
-        obj['radius_default'] = $this.find('.facet-radius-default').val();
-        obj['radius_min'] = $this.find('.facet-radius-min').val();
-        obj['radius_max'] = $this.find('.facet-radius-max').val();
-        return obj;
-    });
-
-    wp.hooks.addAction('facetwp/change/proximity', function($this) {
-        $this.closest('.facetwp-row').find('.facet-radius-ui').trigger('change');
-    });
-
-    $(document).on('change', '.facet-radius-ui', function() {
-        var $facet = $(this).closest('.facetwp-row');
-        var ui = $(this).val();
-
-        var radius_options = ('dropdown' == ui) ? 'table-row' : 'none';
-        var range = ('slider' == ui) ? 'table-row' : 'none';
-
-        $facet.find('.facet-radius-options').closest('tr').css({ 'display' : radius_options });
-        $facet.find('.facet-radius-min').closest('tr').css({ 'display' : range });
-    });
-})(jQuery);
-</script>
-<?php
-    }
-
-
-    /**
      * Output front-end scripts
      */
     function front_scripts() {

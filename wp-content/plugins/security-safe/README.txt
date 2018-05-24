@@ -46,6 +46,11 @@ Features:
 
 == Changelog ==
 
+= 1.1.6 =
+*Release Date - 8 May 2018*
+* Bug Fix: If a child theme is used, only the parent theme files were appearing in the theme files permissions audit list.
+* Improvement: Updated PHP version checks
+
 = 1.1.5 =
 *Release Date - 23 April 2018*
 * Added Feature: Prevent Access to readme.html and license.txt core files.
@@ -63,12 +68,12 @@ Features:
 *Release Date - 25 February 2018*
 * Added Feature: Hide WordPress Version from the RSS feed.
 * Added Feature: Hide Script Versions from enqueued CSS and JS files
-* BUG FIX: Hide WordPress stays on despite the settings value
-* BUG FIX: An error is displayed when saving settings if the settings are the same in the database.
+* Bug Fix: Hide WordPress stays on despite the settings value
+* Bug Fix: An error is displayed when saving settings if the settings are the same in the database.
 
 = 1.1.2 =
 *Release Date - 20 February 2018*
-* BUG FIX: Icon CSS conflict with other icon plugins
+* Bug Fix: Icon CSS conflict with other icon plugins
 
 = 1.1.1 =
 *Release Date - 20 February 2018*

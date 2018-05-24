@@ -40,9 +40,12 @@ $sources = FWP()->helper->get_data_sources();
 <script src="<?php echo FACETWP_URL; ?>/assets/vendor/fSelect/fSelect.js?ver=<?php echo FACETWP_VERSION; ?>"></script>
 <?php
 foreach ( $facet_types as $class ) {
-    $class->admin_scripts();
+    if ( method_exists( $class, 'admin_scripts' ) ) {
+        $class->admin_scripts();
+    }
 }
 ?>
+<script src="<?php echo FACETWP_URL; ?>/assets/js/src/admin-facets.js?ver=<?php echo FACETWP_VERSION; ?>"></script>
 <script src="<?php echo FACETWP_URL; ?>/assets/js/src/admin.js?ver=<?php echo FACETWP_VERSION; ?>"></script>
 <script>
 FWP.i18n = <?php echo json_encode( $i18n ); ?>;

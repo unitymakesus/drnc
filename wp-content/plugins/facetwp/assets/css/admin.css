@@ -592,3 +592,52 @@ body.settings_page_facetwp {
         grid-template-columns: 1fr;
     }
 }
+
+/* Boolean toggle */
+
+.facetwp-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.facetwp-switch input {
+    display: none;
+}
+
+.facetwp-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.facetwp-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.facetwp-switch input:checked + .facetwp-slider {
+    background-color: #2196F3;
+}
+
+.facetwp-switch input:checked + .facetwp-slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+}

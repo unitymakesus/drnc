@@ -109,43 +109,6 @@ class FacetWP_Facet_Slider extends FacetWP_Facet
 
 
     /**
-     * Output any admin scripts
-     */
-    function admin_scripts() {
-?>
-<script>
-(function($) {
-    wp.hooks.addAction('facetwp/load/slider', function($this, obj) {
-        $this.find('.facet-source').val(obj.source);
-        $this.find('.facet-source-other').val(obj.source_other);
-        $this.find('.facet-compare-type').val(obj.compare_type);
-        $this.find('.facet-prefix').val(obj.prefix);
-        $this.find('.facet-suffix').val(obj.suffix);
-        $this.find('.facet-format').val(obj.format);
-        $this.find('.facet-step').val(obj.step);
-    });
-
-    wp.hooks.addFilter('facetwp/save/slider', function(obj, $this) {
-        obj['source'] = $this.find('.facet-source').val();
-        obj['source_other'] = $this.find('.facet-source-other').val();
-        obj['compare_type'] = $this.find('.facet-compare-type').val();
-        obj['prefix'] = $this.find('.facet-prefix').val();
-        obj['suffix'] = $this.find('.facet-suffix').val();
-        obj['format'] = $this.find('.facet-format').val();
-        obj['step'] = $this.find('.facet-step').val();
-        return obj;
-    });
-
-    wp.hooks.addAction('facetwp/change/slider', function($this) {
-        $this.closest('.facetwp-row').find('.facet-source-other').trigger('change');
-    });
-})(jQuery);
-</script>
-<?php
-    }
-
-
-    /**
      * Output any front-end scripts
      */
     function front_scripts() {

@@ -179,31 +179,6 @@ class FacetWP_Facet_Hierarchy extends FacetWP_Facet
 
 
     /**
-     * Output any admin scripts
-     */
-    function admin_scripts() {
-?>
-<script>
-(function($) {
-    wp.hooks.addAction('facetwp/load/hierarchy', function($this, obj) {
-        $this.find('.facet-source').val(obj.source);
-        $this.find('.facet-orderby').val(obj.orderby);
-        $this.find('.facet-count').val(obj.count);
-    });
-
-    wp.hooks.addFilter('facetwp/save/hierarchy', function(obj, $this) {
-        obj['source'] = $this.find('.facet-source').val();
-        obj['orderby'] = $this.find('.facet-orderby').val();
-        obj['count'] = $this.find('.facet-count').val();
-        return obj;
-    });
-})(jQuery);
-</script>
-<?php
-    }
-
-
-    /**
      * Output admin settings HTML
      */
     function settings_html() {

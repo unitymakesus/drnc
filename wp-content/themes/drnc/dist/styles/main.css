@@ -7874,7 +7874,7 @@ html[data-contrast="true"] .a11y-tools {
   width: 50px;
   height: 50px;
   position: relative;
-  background: #EFEFEF;
+  background: #D8D8D8;
   -webkit-transition: background 0.3s ease;
   -o-transition: background 0.3s ease;
   transition: background 0.3s ease;
@@ -7985,8 +7985,35 @@ html[data-contrast="true"] .a11y-tools fieldset input[type="checkbox"]:checked +
   font-size: 27px;
 }
 
-.a11y-tools form {
-  display: none;
+.a11y-tools .search-form {
+  margin-left: 6px;
+  width: auto;
+}
+
+.a11y-tools .search-form .label {
+  float: left;
+  width: 45px;
+  white-space: normal;
+  padding-top: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: normal;
+}
+
+.a11y-tools .search-form .search-field {
+  float: left;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 0;
+  padding: 0;
+}
+
+.a11y-tools .search-form.active .search-field {
+  width: 200px;
+  padding: 0 10px;
 }
 
 html[data-contrast="true"] {
@@ -8240,7 +8267,7 @@ img {
 }
 
 .border-top {
-  border-top: 1px solid #EFEFEF;
+  border-top: 1px solid #D8D8D8;
   padding-top: 1em;
 }
 
@@ -8502,7 +8529,7 @@ html[data-contrast="true"] .main ul li::before {
 }
 
 html[data-contrast="true"] blockquote {
-  border-color: #EFEFEF;
+  border-color: #D8D8D8;
 }
 
 .label {
@@ -10134,7 +10161,7 @@ label[for*="pwbox"] + input[type="submit"]:active,
 .disabled.btn-small,
 label[for*="pwbox"] + input.disabled[type="submit"],
 .page-footer form input.disabled[type="submit"] {
-  background: #EFEFEF;
+  background: #D8D8D8;
   border-color: #858585;
   color: #858585 !important;
   pointer-events: all;
@@ -10225,6 +10252,78 @@ html[data-contrast="true"] .facetwp-checkbox.facetwp-checkbox.checked {
 }
 
 /** Search form */
+
+.search-form {
+  height: auto;
+  clear: both;
+  line-height: 2.2rem;
+  position: relative;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.search-form::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNyIgaGVpZ2h0PSIyNiIgdmlld0JveD0iMCAwIDI3IDI2Ij4KICA8dGV4dCBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yODIgLTMxKSIgZm9udC1mYW1pbHk9Imljb25zIiBmb250LXNpemU9IjI3Ij4KICAgIDx0c3BhbiB4PSIyODIiIHk9IjU3Ij5hPC90c3Bhbj4KICA8L3RleHQ+Cjwvc3ZnPgo=);
+  pointer-events: none;
+}
+
+.search-form label {
+  float: left;
+  width: calc(100% - 50px);
+}
+
+.search-form input.search-field {
+  height: 50px;
+  margin: 0;
+  padding: 0 10px;
+  border: 0 !important;
+  border-radius: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #D8D8D8;
+}
+
+.search-form input.search-field::-webkit-input-placeholder {
+  color: #4A4A4A;
+}
+
+.search-form input.search-field:-ms-input-placeholder {
+  color: #4A4A4A;
+}
+
+.search-form input.search-field::-ms-input-placeholder {
+  color: #4A4A4A;
+}
+
+.search-form input.search-field::placeholder {
+  color: #4A4A4A;
+}
+
+.search-form input.search-submit {
+  display: block;
+  height: 50px;
+  width: 50px;
+  color: #D8D8D8;
+  text-indent: -100em;
+  overflow: hidden;
+  border: none;
+  background: #D8D8D8;
+  cursor: pointer;
+}
 
 select {
   display: block;
@@ -11240,7 +11339,7 @@ nav ul a {
   .sidebar-primary .wrap .sidebar .menu li a:hover,
   .sidebar-primary .wrap .sidebar .menu li a:active,
   .sidebar-primary .wrap .sidebar .menu li a:focus {
-    background: #EFEFEF;
+    background: #D8D8D8;
   }
 
   .sidebar-primary .wrap .sidebar .menu li a::before,
@@ -11264,7 +11363,7 @@ nav ul a {
   .sidebar-primary .wrap .sidebar .menu li.current-menu-item a,
   .sidebar-primary .wrap .sidebar .menu li.active a,
   .sidebar-primary .wrap .sidebar .menu li.current-page-ancestor:not(:first-child) a {
-    background: #EFEFEF;
+    background: #D8D8D8;
   }
 
   .sidebar-primary .wrap .sidebar .menu li.current-menu-item a::before,

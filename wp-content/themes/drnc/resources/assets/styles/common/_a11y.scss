@@ -247,9 +247,35 @@
     }
   }
 
-  // TEMP: Hide form; TODO: Style form;
-  form {
-    display: none;
+  .search-form {
+    margin-left: 6px;
+    width: auto;
+
+    .label {
+      float: left;
+      width: 45px;
+      white-space: normal;
+      padding-top: 8px;
+      font-size: 12px;
+      line-height: 1.5;
+      font-family: $font-sans;
+      font-weight: normal;
+    }
+
+    .search-field {
+      float: left;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      width: 0;
+      padding: 0;
+    }
+
+    &.active {
+      .search-field {
+        width: 200px;
+        padding: 0 10px;
+      }
+    }
   }
 }
 

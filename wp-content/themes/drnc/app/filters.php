@@ -90,3 +90,20 @@ add_filter('sage/display_sidebar', function ($display) {
 
   return $display;
 });
+
+/**
+ * Generate custom search form
+ *
+ * @param string $form Form HTML.
+ * @return string Modified form HTML.
+ */
+add_filter( 'get_search_form', function( $form ) {
+    $form = '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '" >
+			<label>
+				<span class="label">Search Site:</span>
+				<input type="search" class="search-field" placeholder="Keyword …" value="' . get_search_query() . '" name="s">
+			</label>
+			<input type="submit" class="search-submit disabled" value="Search">
+		</form>';
+    return $form;
+} );

@@ -1,8 +1,59 @@
 /** Search form */
-// TODO: .search-form {}
-// TODO: .search-form label {}
-// TODO: .search-form .search-field {}
-// TODO: .search-form .search-submit {}
+.search-form {
+  height: auto;
+  clear: both;
+  line-height: 2.2rem;
+  position: relative;
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url('../images/icon-search.svg');
+    pointer-events: none;
+  }
+
+  label {
+    float: left;
+    width: calc(100% - 50px);
+  }
+
+  input.search-field {
+    height: 50px;
+    margin: 0;
+    padding: 0 10px;
+    border: 0 !important;
+    border-radius: 0;
+    box-sizing: border-box;
+    background: $color-gray-light;
+
+    &::placeholder {
+      color: $color-gray-dark;
+    }
+  }
+
+  input.search-submit {
+    display: block;
+    height: 50px;
+    width: 50px;
+    color: $color-gray-light;
+    text-indent: -100em;
+    overflow: hidden;
+    border: none;
+    background: $color-gray-light;
+    cursor: pointer;
+  }
+}
+
 select {
   display: block;
   border: 1px solid lighten($color-gray-medium, 20%);

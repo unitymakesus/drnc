@@ -37,7 +37,7 @@
         @while ($resources->have_posts())
           @php
             $resources->the_post();
-            $link = (get_field('uploaded_file') == 1) ? wp_get_attachment_url(get_field('file')) : get_field('link');
+            $link = (get_field('uploaded_file') == 1) ? get_the_permalink() : get_field('link');
             $topic_list = wp_get_post_terms(get_the_id(), 'resource-topic', array('fields' => 'names'));
             $type_list = wp_get_post_terms(get_the_id(), 'resource-type', array('fields' => 'names'));
             $source_list = wp_get_post_terms(get_the_id(), 'resource-source', array('fields' => 'names'));

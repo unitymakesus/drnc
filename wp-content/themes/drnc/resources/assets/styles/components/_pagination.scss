@@ -3,11 +3,37 @@
 
   @extend .z-depth-0;
 
+  .facetwp-pager-label {
+    color: $color-black;
+    margin: 0;
+  }
+
   ul li {
     padding: 0;
+    height: auto;
 
     &::before {
       display: none;
+    }
+
+    &.gap {
+      &.before::before {
+        display: inline-block;
+        position: relative;
+        content: '\2026';
+        color: $color-black;
+        margin-right: 6px;
+        left: 0;
+      }
+
+      &.after::after {
+        display: inline-block;
+        position: relative;
+        content: '\2026';
+        color: $color-black;
+        margin-right: 6px;
+        left: 0;
+      }
     }
   }
 

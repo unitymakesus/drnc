@@ -85,20 +85,56 @@ add_filter( 'facetwp_result_count', function( $output, $params ) {
  */
 add_filter( 'facetwp_pager_html', function( $output, $params ) {
   $output = '';
+  $page = (int) $params['page'];
+  $per_page = (int) $params['per_page'];
+  $total_rows = (int) $params['total_rows'];
+  $total_pages = (int) $params['total_pages'];
 
-  if ( 1 < $params['total_pages'] ) {
-    $output = '<ul>';
-    for ( $i = 1; $i <= $params['total_pages']; $i++ ) {
-      $output .= '<li>';
-      if ( $i === $params['page'] ) {
-        $output .= '<a class="facetwp-page active" data-page="' . $i . '" aria-current="true" aria-label="Current Page, Page ' . $i . '">' . $i . '</a>';
-      } else {
-        $output .= '<a class="facetwp-page" data-page="' . $i . '" aria-label="Go To Page ' . $i . '">' . $i . '</a>';
-      }
-      $output .= '</li>';
+  if ( 1 < $total_pages ) {
+    $text_page      = __( 'Page', 'fwp' );
+    $text_of        = __( 'of', 'fwp' );
+    $output = '<p class="facetwp-pager-label">' . "$text_page $page $text_of $total_pages</p>";
+    $output .= '<ul>';
+    $gap_before = '';
+    $gap_after = '';
+
+    if ( 3 < $page ) {
+        $gap_after = ' class="gap after"';
+        $output .= '<li' . $gap_after . '><a class="facetwp-page first-page" data-page="1" aria-label="Go To First Page">&lt;&lt;</a></li>';
     }
+    if ( 1 < ( $page - 10 ) ) {
+        $gap_after = ' class="gap after"';
+        $output .= '<li' . $gap_after . '><a class="facetwp-page" data-page="' . ($page - 10) . '" aria-label="Go To Page ' . ($page - 10) . '">' . ($page - 10) . '</a></li>';
+    }
+    for ( $i = 2; $i > 0; $i-- ) {
+        if ( 0 < ( $page - $i ) ) {
+            $output .= '<li><a class="facetwp-page" data-page="' . ($page - $i) . '" aria-label="Go To Page ' . ($page - $i) . '">' . ($page - $i) . '</a></li>';
+        }
+    }
+
+    // Current page
+    $output .= '<li><a class="facetwp-page active" data-page="' . $page . '" aria-label="Go To Page ' . $page . '">' . $page . '</a></li>';
+
+    for ( $i = 1; $i <= 2; $i++ ) {
+        if ( $total_pages >= ( $page + $i ) ) {
+            $output .= '<li><a class="facetwp-page" data-page="' . ($page + $i) . '" aria-label="Go To Page ' . ($page + $i) . '">' . ($page + $i) . '</a></li>';
+        }
+    }
+    if ( $total_pages > ( $page + 9 ) ) {
+        $gap_before = ' class="gap before"';
+        $output .= '<li' . $gap_before . '><a class="facetwp-page" data-page="' . ($page + 9) . '" aria-label="Go To Page ' . ($page + 9) . '">' . ($page + 9) . '</a></li>';
+    }
+    if ( $total_pages > ( $page + 19 ) ) {
+        $gap_before = ' class="gap before"';
+        $output .= '<li' . $gap_before . '><a class="facetwp-page" data-page="' . ($page + 19) . '" aria-label="Go To Page ' . ($page + 19) . '">' . ($page + 19) . '</a></li>';
+    }
+    if ( $total_pages > ( $page + 2 ) ) {
+        $output .= '<li class="gap before"><a class="facetwp-page last-page" data-page="' . $total_pages . '" aria-label="Go To Last Page">&gt;&gt;</a></li>';
+    }
+
     $output .= '</ul>';
   }
 
   return $output;
+
 }, 10, 2 );

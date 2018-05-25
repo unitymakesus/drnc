@@ -10797,12 +10797,36 @@ html[data-contrast="true"] .line {
   background: none;
 }
 
+.pagination .facetwp-pager-label {
+  color: #000;
+  margin: 0;
+}
+
 .pagination ul li {
   padding: 0;
+  height: auto;
 }
 
 .pagination ul li::before {
   display: none;
+}
+
+.pagination ul li.gap.before::before {
+  display: inline-block;
+  position: relative;
+  content: '\2026';
+  color: #000;
+  margin-right: 6px;
+  left: 0;
+}
+
+.pagination ul li.gap.after::after {
+  display: inline-block;
+  position: relative;
+  content: '\2026';
+  color: #000;
+  margin-right: 6px;
+  left: 0;
 }
 
 .pagination a,

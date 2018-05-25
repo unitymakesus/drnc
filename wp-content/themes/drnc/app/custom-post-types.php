@@ -77,3 +77,14 @@ add_action( 'init', function() {
 	));
 
 });
+
+// Redirect all resources single templates to their actual resource
+add_action( 'template_redirect', function() {
+  if ( is_singular('drnc-resource') ) {
+    $id = get_the_id();
+    $link = (get_field('uploaded_file', $id) == 1) ? wp_get_attachment_url(get_field('file', $id)) : get_field('link', $id);
+
+    wp_redirect( $link, 301 );
+    exit;
+  }
+});

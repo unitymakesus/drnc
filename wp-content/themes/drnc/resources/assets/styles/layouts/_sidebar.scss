@@ -239,6 +239,21 @@
         input {
           background: $color-white;
         }
+
+        html[data-contrast="true"] & {
+          background: $color-black;
+          border: 1px solid $color-white;
+          border-bottom: none;
+
+          input {
+            background: $color-black;
+            border: 1px solid $color-white !important;
+
+            &::placeholder {
+              color: $color-gray-light;
+            }
+          }
+        }
       }
 
       .widget_text {
@@ -253,6 +268,16 @@
 
         .facetwp-facet {
           margin-bottom: 0;
+        }
+
+        html[data-contrast="true"] & {
+          background: $color-black;
+          border: 1px solid $color-white;
+          border-top: none;
+
+          .textwidget {
+            border: none;
+          }
         }
       }
     }

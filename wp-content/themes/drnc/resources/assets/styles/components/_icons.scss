@@ -53,17 +53,29 @@
       background-image: url('../images/icon-twitter.svg');
     }
 
-    html[data-contrast="true"] &:hover, &:active, &:focus {
-      &.icon-facebook a::before {
-        background-image: url('../images/icon-facebook-black.svg');
+    html[data-contrast="true"] & {
+      &.icon-facebook a {
+        &:hover, &:focus {
+          &::before {
+            background-image: url('../images/icon-facebook-black.svg');
+          }
+        }
       }
 
-      &.icon-linkedin a::before {
-        background-image: url('../images/icon-linkedin-black.svg');
+      &.icon-linkedin a {
+        &:hover, &:focus {
+          &::before {
+            background-image: url('../images/icon-linkedin-black.svg');
+          }
+        }
       }
 
-      &.icon-twitter a::before {
-        background-image: url('../images/icon-twitter-black.svg');
+      &.icon-twitter a {
+        &:hover, &:focus {
+          &::before {
+            background-image: url('../images/icon-twitter-black.svg');
+          }
+        }
       }
     }
   }

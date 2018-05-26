@@ -1,21 +1,23 @@
 .events-list.events-list, .single-mc-events {
-  li {
-    padding: 0;
-    clear: both;
+  .upcoming-events {
+    li {
+      padding: 0;
+      clear: both;
 
-    &::before {
-      display: none;
+      &::before {
+        display: none;
+      }
     }
-  }
 
-  h3 {
-    margin: 0;
-    line-height: 1.3em;
-  }
+    h3 {
+      margin: 0;
+      line-height: 1.3em;
+    }
 
-  p {
-    margin-bottom: 0;
-    font-size: rem-calc(20px);
+    p {
+      margin-bottom: 0;
+      font-size: rem-calc(20px);
+    }
   }
 
   .featured-event {

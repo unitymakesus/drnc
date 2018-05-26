@@ -47,6 +47,10 @@
 
 .facetwp-overlay.facetwp-overlay {
   background-color: rgba($color-green, 0.7);
+
+  html[data-contrast="true"] & {
+    background-color: rgba($color-black, 0.7);
+  }
 }
 
 .facetwp-counts {

@@ -20,6 +20,10 @@
     background-position: center;
     background-image: url('../images/icon-search.svg');
     pointer-events: none;
+
+    html[data-contrast="true"] & {
+      background-image: url('../images/icon-search-white.svg');
+    }
   }
 
   label {
@@ -39,6 +43,12 @@
     &::placeholder {
       color: $color-gray-dark;
     }
+
+    html[data-contrast="true"] & {
+      color: $color-white;
+      background: $color-gray-dark;
+      border: 1px solid $color-white;
+    }
   }
 
   input.search-submit {
@@ -51,6 +61,12 @@
     border: none;
     background: $color-gray-light;
     cursor: pointer;
+
+    html[data-contrast="true"] & {
+      background: $color-black;
+      color: $color-white;
+      border: 1px solid $color-white;
+    }
   }
 }
 

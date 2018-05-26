@@ -154,6 +154,25 @@ ul.social-names {
     &.icon-twitter::before {
       background-image: url('../images/icon-twitter.svg');
     }
+
+    html[data-contrast="true"] & {
+      &::before {
+        background-color: $color-white;
+        border-color: $color-white;
+      }
+
+      &.icon-facebook::before {
+        background-image: url('../images/icon-facebook-black.svg');
+      }
+
+      &.icon-linkedin::before {
+        background-image: url('../images/icon-linkedin-black.svg');
+      }
+
+      &.icon-twitter::before {
+        background-image: url('../images/icon-twitter-black.svg');
+      }
+    }
   }
 
   a {
@@ -165,6 +184,10 @@ ul.social-names {
 
     &:hover, &:focus, &:active {
       color: $color-green;
+    }
+
+    html[data-contrast="true"] & {
+      color: $color-white;
     }
   }
 }

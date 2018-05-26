@@ -73,6 +73,19 @@ add_filter( 'facetwp_sort_html', function( $output ) {
 }, 10, 1 );
 
 /**
+ * Remove 'posts' from post type facet on search page
+ */
+ add_filter( 'facetwp_index_row', function( $params, $class ) {
+  if ( 'filter_content_type' == $params['facet_name'] ) {
+    $excluded_terms = array( 'Posts', 'post' );
+    if ( in_array( $params['facet_display_value'], $excluded_terms ) ) {
+      return false;
+    }
+  }
+  return $params;
+}, 10, 2 );
+
+/**
  * Change output of results count
  */
 add_filter( 'facetwp_result_count', function( $output, $params ) {

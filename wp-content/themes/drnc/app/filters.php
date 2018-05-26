@@ -77,11 +77,11 @@ add_filter('sage/display_sidebar', function ($display) {
 
   isset($display) || $display = in_array(true, [
     // The sidebar will be displayed if any of the following return true
-    is_singular('post'),
+    is_singular(['post', 'mc-events']),
     is_page(),
     is_home(),
     is_date(),
-    is_category()
+    is_category(),
   ]);
 
   $display = in_array(false, [
@@ -101,9 +101,26 @@ add_filter( 'get_search_form', function( $form ) {
     $form = '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '" >
 			<label>
 				<span class="label">Search Site:</span>
-				<input type="search" class="search-field" placeholder="Keyword …" value="' . get_search_query() . '" name="s">
+				<input type="search" class="search-field" placeholder="Keyword …" value="" name="s">
 			</label>
 			<input type="submit" class="search-submit disabled" value="Search">
 		</form>';
     return $form;
 } );
+
+/**
+ * Filter search results to show highlighted terms
+ */
+
+function searchwp_term_highlight_auto_excerpt( $excerpt ) {
+ 	global $post;
+ 	if ( ! is_search() ) {
+ 		return $excerpt;
+ 	}
+ 	// prevent recursion
+ 	remove_filter( 'get_the_excerpt', __NAMESPACE__ . '\\searchwp_term_highlight_auto_excerpt' );
+ 	$global_excerpt = searchwp_term_highlight_get_the_excerpt_global( $post->ID, null, get_search_query() );
+ 	add_filter( 'get_the_excerpt', __NAMESPACE__ . '\\searchwp_term_highlight_auto_excerpt' );
+ 	return wp_kses_post( $global_excerpt );
+}
+add_filter( 'get_the_excerpt', __NAMESPACE__ . '\\searchwp_term_highlight_auto_excerpt' );

@@ -10,9 +10,22 @@
     {!! get_search_form(false) !!}
   @endif
 
-  @while(have_posts()) @php(the_post())
-    @include('partials.content-search')
-  @endwhile
+  <div class="facetwp-template">
+    @while (have_posts()) @php(the_post())
+      @php ($post_type = get_post_type())
+      @if ($post_type == 'drnc-resource')
+        @include('partials.content-single-resource')
+      @elseif ($post_type == 'mc-events')
+        @include('partials.content-search-mc-events')
+      @else
+        @include('partials.content-search')
+      @endif
+    @endwhile
 
-  {!! get_the_posts_navigation() !!}
+    @php(wp_reset_postdata())
+
+    <nav class="pagination" role="navigation" aria-label="Results Pagination">
+      {!! do_shortcode('[facetwp pager="true"]') !!}
+    </nav>
+  </div>
 @endsection

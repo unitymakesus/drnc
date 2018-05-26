@@ -10980,6 +10980,19 @@ html[data-contrast="true"] .pagination span.current {
   color: #FFF !important;
 }
 
+.searchwp-highlight {
+  background: #D8D8D8;
+}
+
+.search-results .main {
+  margin-bottom: 2rem;
+}
+
+.search-results .entry-summary p {
+  display: inline;
+  margin: 0;
+}
+
 .main table th[scope="row"] {
   white-space: nowrap;
   vertical-align: top;
@@ -11517,6 +11530,41 @@ html[data-contrast="true"] .sidebar-primary .wrap .sidebar .textwidget,
 html[data-contrast="true"] .sidebar-primary .wrap .sidebar .widget_categories {
   background: #000;
   border: 1px solid #FFF;
+}
+
+.sidebar-primary.search-results .wrap .sidebar {
+  padding-top: 2.8rem;
+}
+
+.sidebar-primary.search-results .wrap .sidebar .widget_search {
+  background: #6E773D;
+  padding: 20px;
+}
+
+.sidebar-primary.search-results .wrap .sidebar .widget_search .label {
+  font-size: 1.3333rem;
+  color: #FFF;
+  letter-spacing: 1px;
+}
+
+.sidebar-primary.search-results .wrap .sidebar .widget_search input {
+  background: #FFF;
+}
+
+.sidebar-primary.search-results .wrap .sidebar .widget_text {
+  background: #6E773D;
+  padding-bottom: 40px;
+}
+
+.sidebar-primary.search-results .wrap .sidebar .widget_text h3,
+.sidebar-primary.search-results .wrap .sidebar .widget_text .facet-label {
+  margin: 0;
+  padding: 1.94667rem 20px 0;
+  color: #FFF;
+}
+
+.sidebar-primary.search-results .wrap .sidebar .widget_text .facetwp-facet {
+  margin-bottom: 0;
 }
 
 .sidebar-primary.mobile-aside-nav-active .wrap .sidebar .menu {

@@ -158,3 +158,72 @@ add_action('after_setup_theme', function () {
       return \BladeSvgSage\get_dist_path('images');
     });
 });
+
+/**
+ * If my-calendar plugin is enabled, re-register the CPT so we can include in search results
+ */
+
+add_action('after_setup_theme', function() {
+  remove_action('init', 'mc_posttypes');
+  add_action('init', __NAMESPACE__ . '\\drnc_mc_posttypes');
+});
+function drnc_mc_posttypes() {
+ 	$arguments = array(
+ 		'public'              => apply_filters( 'mc_event_posts_public', true ),
+ 		'publicly_queryable'  => true,
+ 		'exclude_from_search' => false,
+ 		'show_ui'             => true,
+ 		'show_in_menu'        => apply_filters( 'mc_show_custom_posts_in_menu', false ),
+ 		'menu_icon'           => null,
+ 		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields' )
+ 	);
+
+ 	$types   = array(
+ 		'mc-events' => array(
+ 			__( 'event', 'my-calendar' ),
+ 			__( 'events', 'my-calendar' ),
+ 			__( 'Event', 'my-calendar' ),
+ 			__( 'Events', 'my-calendar' ),
+ 			$arguments
+ 		),
+ 	);
+ 	$enabled = array( 'mc-events' );
+ 	$slug = ( get_option( 'mc_cpt_base' ) != '' ) ? get_option( 'mc_cpt_base' ) : 'mc-events';
+ 	if ( is_array( $enabled ) ) {
+ 		foreach ( $enabled as $key ) {
+ 			$value  =& $types[ $key ];
+ 			$labels = array(
+ 				'name'               => _x( $value[3], 'post type general name' ),
+ 				'singular_name'      => _x( $value[2], 'post type singular name' ),
+ 				'add_new'            => _x( 'Add New', $key, 'my-calendar' ),
+ 				'add_new_item'       => sprintf( __( 'Create New %s', 'my-calendar' ), $value[2] ),
+ 				'edit_item'          => sprintf( __( 'Modify %s', 'my-calendar' ), $value[2] ),
+ 				'new_item'           => sprintf( __( 'New %s', 'my-calendar' ), $value[2] ),
+ 				'view_item'          => sprintf( __( 'View %s', 'my-calendar' ), $value[2] ),
+ 				'search_items'       => sprintf( __( 'Search %s', 'my-calendar' ), $value[3] ),
+ 				'not_found'          => sprintf( __( 'No %s found', 'my-calendar' ), $value[1] ),
+ 				'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'my-calendar' ), $value[1] ),
+ 				'parent_item_colon'  => ''
+ 			);
+ 			$raw    = $value[4];
+ 			$args   = array(
+ 				'labels'              => $labels,
+ 				'public'              => $raw['public'],
+ 				'publicly_queryable'  => $raw['publicly_queryable'],
+ 				'exclude_from_search' => $raw['exclude_from_search'],
+ 				'show_ui'             => $raw['show_ui'],
+ 				'show_in_menu'        => $raw['show_in_menu'],
+ 				'menu_icon'           => ( $raw['menu_icon'] == null ) ? plugins_url( 'images', __FILE__ ) . "/icon.png" : $raw['menu_icon'],
+ 				'query_var'           => true,
+ 				'rewrite'             => array(
+ 					'with_front' => false,
+ 					'slug'       => apply_filters( 'mc_event_slug', $slug )
+ 				),
+ 				'hierarchical'        => false,
+ 				'menu_position'       => 9,
+ 				'supports'            => $raw['supports']
+ 			);
+ 			register_post_type( $key, $args );
+ 		}
+ 	}
+ }

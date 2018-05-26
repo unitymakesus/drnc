@@ -222,6 +222,42 @@
     }
   }
 
+  &.search-results {
+    .wrap .sidebar {
+      padding-top: 2.8rem;
+
+      .widget_search {
+        background: $color-green;
+        padding: 20px;
+
+        .label {
+          font-size: 1.3333rem;
+          color: $color-white;
+          letter-spacing: 1px;
+        }
+
+        input {
+          background: $color-white;
+        }
+      }
+
+      .widget_text {
+        background: $color-green;
+        padding-bottom: 40px;
+
+        h3 {
+          margin: 0;
+          padding: ($h3-fontsize / 1.5) 20px 0;
+          color: $color-white;
+        }
+
+        .facetwp-facet {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
   &.mobile-aside-nav-active .wrap .sidebar .menu {
     max-height: 30em;
   }

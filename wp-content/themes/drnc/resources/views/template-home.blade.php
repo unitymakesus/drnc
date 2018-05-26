@@ -23,7 +23,7 @@
       </div>
     </section>
 
-    <section class="sa-tools" role="region" aria-labelled-by="sa-tools-title">
+    <section class="sa-tools" role="region" aria-labelledby="sa-tools-title">
       <div class="container">
         <div class="row">
           <div class="col l8 m10 s12 push-l2 push-m1 center-align">
@@ -45,7 +45,7 @@
       </div>
     </section>
 
-    <section class="background-green background-point-right" role="region" aria-labelled-by="work-title">
+    <section class="background-green background-point-right" role="region" aria-labelledby="work-title">
       <div class="line left-1 vertical green-light length-80"></div>
       <div class="line top-2 horizontal green-light length-20"></div>
       <div class="row">
@@ -62,7 +62,7 @@
 
     <div class="container">
       <div class="row">
-        <section class="col m6 s12" role="region" aria-labelled-by="news-title">
+        <section class="col m6 s12" role="region" aria-labelledby="news-title">
           <h2 id="news-title">Latest News &amp; Announcements</h2>
           @php ($news = new WP_Query(['posts_per_page' => '3']))
           @if ($news->have_posts()) @while ($news->have_posts()) @php($news->the_post())
@@ -70,7 +70,7 @@
           @endwhile @endif @php(wp_reset_postdata())
         </section>
 
-        <section class="col m6 s12" role="region" aria-labelled-by="social-title">
+        <section class="col m6 s12" role="region" aria-labelledby="social-title">
           <h2 id="social-title">Social Media &amp; Events</h2>
           <p>For our most recent updates, <a href="https://www.facebook.com/DisabilityRightsNC">follow us on Facebook</a>.</p>
           <div class="fb-page" data-href="https://www.facebook.com/DisabilityRightsNC" data-width="500px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/DisabilityRightsNC" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DisabilityRightsNC">Disability Rights North Carolina on Facebook</a></blockquote></div>

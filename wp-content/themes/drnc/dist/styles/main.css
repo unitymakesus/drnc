@@ -11667,7 +11667,8 @@ html[data-contrast="true"] .sidebar-primary .wrap .sidebar .widget_categories {
   font-weight: bold;
 }
 
-.page-footer form input[type="text"] {
+.page-footer form input[type="text"],
+.page-footer form input[type="email"] {
   background: #FFF;
   border: 1px solid #b8b8b8;
   font-size: 1rem;

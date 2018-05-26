@@ -11190,6 +11190,10 @@ html[data-contrast="true"] .pagination span.current {
 
 /** Captions */
 
+.banner {
+  position: relative;
+}
+
 .banner nav {
   background: none;
   color: #000;

@@ -1,3 +1,12 @@
+// Web Font Loader
+var WebFont = require('webfontloader');
+
+WebFont.load({
+ google: {
+   families: ['Noto+Sans:400,400i,700,700i', 'Playfair+Display:700', 'Material+Icons'],
+ },
+});
+
 // import external dependencies
 import 'jquery';
 
@@ -11,17 +20,6 @@ import home from './routes/home';
 import aboutUs from './routes/about';
 import templateTools from './routes/tools';
 import form from './routes/form';
-
-/**
- * Web Font Loader
- */
-var WebFont = require('webfontloader');
-
-WebFont.load({
- google: {
-   families: ['Noto+Sans:400,400i,700,700i', 'Playfair+Display:700', 'Material+Icons'],
- },
-});
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({

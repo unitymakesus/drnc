@@ -9,6 +9,9 @@ export default {
     document.addEventListener( 'wpcf7mailsent', function() {
       console.log('success');
       $('form.wpcf7-form').hide();
+      $('html, body').animate({
+        scrollTop: ($('#main').offset().top),
+      }, 500);
     }, false);
   },
   finalize() {
@@ -93,10 +96,6 @@ export default {
           .next().removeAttr('data-step-incomplete').attr('data-step-current', '');
 
         $(this).next('.loading-spinner').remove();
-
-      // Submit button handler
-      // } else if ($(this).attr('type') == "submit") {
-      //   $('form').submit();
       }
     });
 

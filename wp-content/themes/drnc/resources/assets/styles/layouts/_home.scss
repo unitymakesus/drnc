@@ -48,6 +48,10 @@
     margin-bottom: -50px;
 
     @extend .z-depth-2;
+
+    @media #{$xsmall-and-down} {
+      padding: 1.5em;
+    }
   }
 
   select, input {
@@ -116,6 +120,13 @@
 
   &:hover, &:focus, &:active {
     @extend .z-depth-3;
+  }
+}
+
+.section-news.section-news {
+  @media #{$small-and-down} {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

@@ -4,7 +4,8 @@
   font-family: $font-serif;
   font-weight: normal;
   text-transform: none;
-  line-height: 1.8em;
+  line-height: 2.15rem;
+  height: rem-calc(50px);
   text-decoration: none;
 
   &:hover, &:focus, &:active {
@@ -22,7 +23,7 @@
   }
 }
 
-.btn-lg {
+.btn-lg.btn {
   display: block;
   padding: 1rem;
   height: auto;

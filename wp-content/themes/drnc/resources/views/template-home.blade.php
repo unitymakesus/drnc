@@ -62,7 +62,7 @@
 
     <div class="container">
       <div class="row">
-        <section class="col m6 s12" role="region" aria-labelledby="news-title">
+        <section class="col m6 s12 section-news" role="region" aria-labelledby="news-title">
           <h2 id="news-title">Latest News &amp; Announcements</h2>
           @php ($news = new WP_Query(['posts_per_page' => '3']))
           @if ($news->have_posts()) @while ($news->have_posts()) @php($news->the_post())
@@ -70,7 +70,7 @@
           @endwhile @endif @php(wp_reset_postdata())
         </section>
 
-        <section class="col m6 s12" role="region" aria-labelledby="social-title">
+        <section class="col m6 s12 section-news" role="region" aria-labelledby="social-title">
           <h2 id="social-title">Social Media &amp; Events</h2>
           <p>For our most recent updates, <a href="https://www.facebook.com/DisabilityRightsNC">follow us on Facebook</a>.</p>
           <div class="fb-page" data-href="https://www.facebook.com/DisabilityRightsNC" data-width="500px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/DisabilityRightsNC" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DisabilityRightsNC">Disability Rights North Carolina on Facebook</a></blockquote></div>

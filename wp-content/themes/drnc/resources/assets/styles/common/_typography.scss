@@ -21,6 +21,17 @@ h1, .h1 {
       font-size: rem-calc(55px);
       text-align: center;
     }
+    @media #{$xsmall-and-down} {
+      font-size: rem-calc(40px);
+
+      html[data-text-size="large"] & {
+        font-size: rem-calc(40px);
+      }
+
+      html[data-text-size="medium"] & {
+        font-size: rem-calc(36px);
+      }
+    }
   }
 }
 
@@ -33,8 +44,18 @@ h2, .h2 {
   .home & {
     font-size: rem-calc(40px);
 
-    @media #{$medium-only} {
+    &[id="news-title"] {
+      word-wrap: break-word;
+      hyphens: auto;
+    }
+
+    @media #{$medium-and-down} {
       font-size: rem-calc(36px);
+    }
+    @media #{$xsmall-and-down} {
+      html[data-text-size="large"] & {
+        font-size: rem-calc(30px);
+      }
     }
   }
 }
@@ -85,6 +106,11 @@ a {
 
   dd {
     margin-bottom: 1em;
+    margin-left: 2em;
+
+    @media #{$xsmall-and-down} {
+      margin-left: 1em;
+    }
   }
 
   ul {

@@ -32,14 +32,12 @@ export default {
 
     // Activate search box
     function activateSearch() {
-      console.log('activate');
       $('.a11y-tools .search-form').addClass('active');
       $('.a11y-tools .search-form .search-submit').removeClass('disabled');
     }
 
     // Deactivate search box
     function deactivateSearch() {
-      console.log('deactivate');
       $('.a11y-tools .search-form').removeClass('active');
       $('.a11y-tools .search-form .search-submit').addClass('disabled');
     }
@@ -210,7 +208,6 @@ export default {
 
     // Make a11y toolbar keyboard accessible
     $('.a11y-tools').on('focusout', 'input', function() {
-      console.log('focusout');
       setTimeout(function () {
         if (smDown.matches) {
           if ($(':focus').closest('.a11y-tools').length == 0) {

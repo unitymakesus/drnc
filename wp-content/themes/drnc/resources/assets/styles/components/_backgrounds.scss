@@ -7,10 +7,11 @@
         content: '';
         position: absolute;
         display: block;
+        pointer-events: none;
       }
 
       @media #{$small-and-down} {
-        padding: 4em 3rem calc(20vw + 2em) 3rem;
+        padding: 3em 1rem calc(20vw + 2em) 1rem;
 
         &::before, &::after {
           bottom: 0;
@@ -94,6 +95,7 @@
         content: '';
         position: absolute;
         display: block;
+        pointer-events: none;
       }
 
       @media #{$small-and-down} {
@@ -147,7 +149,9 @@ $cdark: $color-purple-dark, $color-green-dark, $color-teal-dark;
     position: relative;
 
     & > .row {
+      position: relative;
       display: flex;
+      z-index: 2;
 
       @media #{$small-and-down} {
         flex-direction: column;

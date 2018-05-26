@@ -5,6 +5,10 @@
     .line {
       display: none;
     }
+
+    .flex-order-m2 {
+      text-align: center;
+    }
   }
 
   .background-point-left > .row {
@@ -36,6 +40,10 @@
       text-decoration-style: double;
       color: lighten($color-teal, 50%);
     }
+
+    &[href^="mailto:"] {
+      word-wrap: break-word;
+    }
   }
 
   h3 {
@@ -66,6 +74,10 @@
 
   form {
     max-width: 300px;
+
+    @media #{$small-and-down} {
+      margin: 0 auto 60px;
+    }
 
     label {
       color: $color-white;

@@ -61,5 +61,13 @@
       padding-bottom: 0.3em;
       letter-spacing: 0;
     }
+
+    @media #{$xsmall-and-down} {
+      html[data-text-size="large"] & {
+        & + h3 {
+          clear: both;
+        }
+      }
+    }
   }
 }

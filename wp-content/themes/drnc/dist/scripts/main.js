@@ -256,14 +256,12 @@ Router.prototype.loadEvents = function loadEvents () {
 
     // Activate search box
     function activateSearch() {
-      console.log('activate');
       $('.a11y-tools .search-form').addClass('active');
       $('.a11y-tools .search-form .search-submit').removeClass('disabled');
     }
 
     // Deactivate search box
     function deactivateSearch() {
-      console.log('deactivate');
       $('.a11y-tools .search-form').removeClass('active');
       $('.a11y-tools .search-form .search-submit').addClass('disabled');
     }
@@ -434,7 +432,6 @@ Router.prototype.loadEvents = function loadEvents () {
 
     // Make a11y toolbar keyboard accessible
     $('.a11y-tools').on('focusout', 'input', function() {
-      console.log('focusout');
       setTimeout(function () {
         if (smDown.matches) {
           if ($(':focus').closest('.a11y-tools').length == 0) {
@@ -563,6 +560,9 @@ Router.prototype.loadEvents = function loadEvents () {
     document.addEventListener( 'wpcf7mailsent', function() {
       console.log('success');
       $('form.wpcf7-form').hide();
+      $('html, body').animate({
+        scrollTop: ($('#main').offset().top),
+      }, 500);
     }, false);
   },
   finalize: function finalize() {
@@ -647,10 +647,6 @@ Router.prototype.loadEvents = function loadEvents () {
           .next().removeAttr('data-step-incomplete').attr('data-step-current', '');
 
         $(this).next('.loading-spinner').remove();
-
-      // Submit button handler
-      // } else if ($(this).attr('type') == "submit") {
-      //   $('form').submit();
       }
     });
 

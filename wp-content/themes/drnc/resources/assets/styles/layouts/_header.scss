@@ -28,6 +28,13 @@
 
     @media #{$medium-and-down} {
       padding-left: 0;
+      min-height: 120px;
+      display: flex;
+
+      img {
+        align-self: center;
+        flex: 0 0 auto;
+      }
     }
   }
 

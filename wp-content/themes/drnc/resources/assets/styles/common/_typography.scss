@@ -11,7 +11,7 @@ h1, .h1 {
     $i: 0;
 
     @while $i <= $intervals {
-      @media only screen and (min-width: 620 + ($i * $interval-size)) {
+      @media only screen and (min-width: 670 + ($i * $interval-size)) {
         font-size: 2.5rem * (1 + (0.02 * $i));
       }
       $i: $i + 1;

@@ -23,8 +23,8 @@
       &::before {
         content: '';
         position: absolute;
-        top: 12px;
-        left: 12px;
+        top: 11px;
+        left: 11px;
         width: 26px;
         height: 26px;
         background-repeat: no-repeat;
@@ -53,6 +53,10 @@
       background-image: url('../images/icon-twitter.svg');
     }
 
+    &.icon-youtube a::before {
+      background-image: url('../images/icon-youtube.svg');
+    }
+
     html[data-contrast="true"] & {
       &.icon-facebook a {
         &:hover, &:focus {
@@ -74,6 +78,14 @@
         &:hover, &:focus {
           &::before {
             background-image: url('../images/icon-twitter-black.svg');
+          }
+        }
+      }
+
+      &.icon-youtube a {
+        &:hover, &:focus {
+          &::before {
+            background-image: url('../images/icon-youtube-black.svg');
           }
         }
       }

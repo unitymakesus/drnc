@@ -319,6 +319,7 @@ class FacetWP_Indexer
 
         // Indexing complete
         if ( $this->index_all ) {
+            update_option( 'facetwp_last_indexed', time() );
             update_option( 'facetwp_transients', '' );
             update_option( 'facetwp_indexing', '' );
         }

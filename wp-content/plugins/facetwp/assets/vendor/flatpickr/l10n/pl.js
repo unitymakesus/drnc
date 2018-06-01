@@ -1,4 +1,4 @@
-/* flatpickr v4.4.3, @license MIT */
+/* flatpickr v4.5.0, @license MIT */
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -17,6 +17,10 @@
         shorthand: ["Sty", "Lut", "Mar", "Kwi", "Maj", "Cze", "Lip", "Sie", "Wrz", "Paź", "Lis", "Gru"],
         longhand: ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"]
       },
+      rangeSeparator: " do ",
+      weekAbbreviation: "tydz.",
+      scrollTitle: "Przwiń aby zwiększyć",
+      toggleTitle: "Kliknij aby przełączyć",
       firstDayOfWeek: 1,
       ordinal: function ordinal() {
         return ".";

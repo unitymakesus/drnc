@@ -517,10 +517,6 @@
     /* ======== Search ======== */
 
     FWP.logic.search = {
-        set_button: function($facet) {
-            var val = $facet.find('.facetwp-search').val();
-            $facet.find('.facetwp-btn').toggleClass('f-reset', ('' !== val));
-        },
         delay_refresh: FWP.helper.debounce(function(facet_name) {
             FWP.frozen_facets[facet_name] = 'soft';
             FWP.autoload();
@@ -532,45 +528,22 @@
         FWP.facets[facet_name] = val;
     });
 
-    $(document).on('facetwp-loaded', function() {
-        $('.facetwp-type-search .facetwp-search').each(function() {
-            var $facet = $(this).closest('.facetwp-facet');
-            FWP.logic.search['set_button']($facet);
-        });
-    });
-
     $(document).on('keyup', '.facetwp-type-search .facetwp-search', function(e) {
         var $facet = $(this).closest('.facetwp-facet');
         var facet_name = $facet.attr('data-name');
-
-        FWP.logic.search['set_button']($facet);
 
         if ('undefined' !== typeof FWP.settings[facet_name]) {
             if ('yes' === FWP.settings[facet_name]['auto_refresh']) {
                 FWP.logic.search['delay_refresh'](facet_name);
             }
             else if (13 === e.keyCode) {
-                if ('' === $facet.find('.facetwp-search').val()) {
-                    $facet.find('.facetwp-btn').click();
-                }
-                else {
-                    FWP.autoload();
-                }
+                FWP.autoload();
             }
         }
     });
 
-    $(document).on('click', '.facetwp-type-search .facetwp-btn', function(e) {
-        var $this = $(this);
-        var $facet = $this.closest('.facetwp-facet');
-        var facet_name = $facet.attr('data-name');
-
-        if ($this.hasClass('f-reset') || '' === $facet.find('.facetwp-search').val()) {
-            $facet.find('.facetwp-search').val('');
-            FWP.facets[facet_name] = [];
-            FWP.set_hash();
-            FWP.fetch_data();
-        }
+    $(document).on('click', '.facetwp-type-search .facetwp-btn', function() {
+        FWP.autoload();
     });
 
     /* ======== Slider ======== */

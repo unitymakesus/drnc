@@ -183,27 +183,27 @@ class FacetWP_Facet_Hierarchy extends FacetWP_Facet
      */
     function settings_html() {
 ?>
-        <tr>
-            <td><?php _e( 'Sort by', 'fwp' ); ?>:</td>
-            <td>
+        <div class="facetwp-row">
+            <div><?php _e( 'Sort by', 'fwp' ); ?>:</div>
+            <div>
                 <select class="facet-orderby">
                     <option value="count"><?php _e( 'Highest Count', 'fwp' ); ?></option>
                     <option value="display_value"><?php _e( 'Display Value', 'fwp' ); ?></option>
                     <option value="raw_value"><?php _e( 'Raw Value', 'fwp' ); ?></option>
                     <option value="term_order"><?php _e( 'Term Order', 'fwp' ); ?></option>
                 </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="facetwp-row">
+            <div>
                 <?php _e( 'Count', 'fwp' ); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
                     <div class="facetwp-tooltip-content"><?php _e( 'The maximum number of facet choices to show', 'fwp' ); ?></div>
                 </div>
-            </td>
-            <td><input type="text" class="facet-count" value="10" /></td>
-        </tr>
+            </div>
+            <div><input type="text" class="facet-count" value="10" /></div>
+        </div>
 <?php
     }
 }

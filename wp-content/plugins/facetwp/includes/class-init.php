@@ -24,12 +24,6 @@ class FacetWP_Init
         include( FACETWP_DIR . '/includes/api/fetch.php' );
         include( FACETWP_DIR . '/includes/api/refresh.php' );
 
-        // update checks
-        if ( is_admin() ) {
-            include( FACETWP_DIR . '/includes/class-updater.php' );
-            include( FACETWP_DIR . '/includes/libraries/github-updater.php' );
-        }
-
         // core
         include( FACETWP_DIR . '/includes/class-helper.php' );
         include( FACETWP_DIR . '/includes/class-ajax.php' );
@@ -37,6 +31,7 @@ class FacetWP_Init
         include( FACETWP_DIR . '/includes/class-diff.php' );
         include( FACETWP_DIR . '/includes/class-indexer.php' );
         include( FACETWP_DIR . '/includes/class-display.php' );
+        include( FACETWP_DIR . '/includes/class-builder.php' );
         include( FACETWP_DIR . '/includes/class-overrides.php' );
         include( FACETWP_DIR . '/includes/class-settings-admin.php' );
         include( FACETWP_DIR . '/includes/class-upgrade.php' );
@@ -51,6 +46,7 @@ class FacetWP_Init
         FWP()->diff         = new FacetWP_Diff();
         FWP()->indexer      = new FacetWP_Indexer();
         FWP()->display      = new FacetWP_Display();
+        FWP()->builder      = new FacetWP_Builder();
         FWP()->ajax         = new FacetWP_Ajax();
 
         // integrations
@@ -58,6 +54,10 @@ class FacetWP_Init
         include( FACETWP_DIR . '/includes/integrations/woocommerce/woocommerce.php' );
         include( FACETWP_DIR . '/includes/integrations/edd/edd.php' );
         include( FACETWP_DIR . '/includes/integrations/acf/acf.php' );
+
+        // update checks
+        include( FACETWP_DIR . '/includes/class-updater.php' );
+        include( FACETWP_DIR . '/includes/libraries/github-updater.php' );
 
         // hooks
         add_action( 'admin_menu', array( $this, 'admin_menu' ) );
@@ -106,7 +106,6 @@ class FacetWP_Init
     function admin_scripts( $hook ) {
         if ( 'settings_page_facetwp' == $hook ) {
             wp_enqueue_style( 'media-views' );
-            wp_enqueue_script( 'jquery-ui-sortable' );
             wp_enqueue_script( 'jquery-powertip', FACETWP_URL . '/assets/vendor/jquery-powertip/jquery.powertip.min.js', array( 'jquery' ), '1.2.0' );
         }
     }

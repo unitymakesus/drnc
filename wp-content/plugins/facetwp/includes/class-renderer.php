@@ -350,9 +350,16 @@ class FacetWP_Renderer
             }
         }
 
-        // remove UTF-8 non-breaking spaces
-        $query_args = preg_replace( "/\xC2\xA0/", ' ', $this->template['query'] );
-        $query_args = (array) eval( '?>' . $query_args );
+        // Use the query builder
+        if ( isset( $this->template['modes'] ) && 'visual' == $this->template['modes']['query'] ) {
+            $query_args = FWP()->builder->parse_query_obj( $this->template['query_obj'] );
+        }
+        else {
+
+            // remove UTF-8 non-breaking spaces
+            $query_args = preg_replace( "/\xC2\xA0/", ' ', $this->template['query'] );
+            $query_args = (array) eval( '?>' . $query_args );
+        }
 
         // Merge the two arrays
         return array_merge( $defaults, $query_args );
@@ -476,11 +483,16 @@ class FacetWP_Renderer
             $query = $this->query;
             $wp_query = $query; // Make $query->blah() optional
 
-            // Remove UTF-8 non-breaking spaces
-            $display_code = $this->template['template'];
-            $display_code = preg_replace( "/\xC2\xA0/", ' ', $display_code );
+            if ( isset( $this->template['modes'] ) && 'visual' == $this->template['modes']['display'] ) {
+                echo FWP()->builder->render_layout( $this->template['layout'] );
+            }
+            else {
 
-            eval( '?>' . $display_code );
+                // Remove UTF-8 non-breaking spaces
+                $display_code = $this->template['template'];
+                $display_code = preg_replace( "/\xC2\xA0/", ' ', $display_code );
+                eval( '?>' . $display_code );
+            }
 
             // Reset globals
             $post = $temp_post;

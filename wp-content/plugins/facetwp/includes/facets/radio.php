@@ -141,8 +141,8 @@ class FacetWP_Facet_Radio_Core extends FacetWP_Facet
      */
     function settings_html() {
 ?>
-        <tr>
-            <td>
+        <div class="facetwp-row" v-show="facet.source.substr(0, 3) == 'tax'">
+            <div>
                 <?php _e('Parent term', 'fwp'); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
@@ -151,62 +151,65 @@ class FacetWP_Facet_Radio_Core extends FacetWP_Facet
                         Otherwise, leave blank.
                     </div>
                 </div>
-            </td>
-            <td>
-                <input type="text" class="facet-parent-term" value="" />
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+            <div>
+                <input type="text" class="facet-parent-term" />
+            </div>
+        </div>
+        <div class="facetwp-row">
+            <div>
                 <?php _e('Show ghosts', 'fwp'); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
                     <div class="facetwp-tooltip-content"><?php _e( 'Show choices that would return zero results?', 'fwp' ); ?></div>
                 </div>
-            </td>
-            <td>
+            </div>
+            <div>
                 <label class="facetwp-switch">
-                    <input type="checkbox" class="facet-ghosts" />
+                    <input type="checkbox" class="facet-ghosts" true-value="yes" false-value="no" />
                     <span class="facetwp-slider"></span>
                 </label>
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="facetwp-row" v-show="facet.ghosts == 'yes'">
+            <div>
                 <?php _e('Preserve ghost order', 'fwp'); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
                     <div class="facetwp-tooltip-content"><?php _e( 'Keep ghost choices in the same order?', 'fwp' ); ?></div>
                 </div>
-            </td>
-            <td>
+            </div>
+            <div>
                 <label class="facetwp-switch">
-                    <input type="checkbox" class="facet-preserve-ghosts" />
+                    <input type="checkbox" class="facet-preserve-ghosts" true-value="yes" false-value="no" />
                     <span class="facetwp-slider"></span>
                 </label>
-            </td>
-        </tr>
-        <tr>
-            <td><?php _e('Sort by', 'fwp'); ?>:</td>
-            <td>
+            </div>
+        </div>
+        <div class="facetwp-row">
+            <div><?php _e('Sort by', 'fwp'); ?>:</div>
+            <div>
                 <select class="facet-orderby">
                     <option value="count"><?php _e( 'Highest Count', 'fwp' ); ?></option>
                     <option value="display_value"><?php _e( 'Display Value', 'fwp' ); ?></option>
                     <option value="raw_value"><?php _e( 'Raw Value', 'fwp' ); ?></option>
                     <option value="term_order"><?php _e( 'Term Order', 'fwp' ); ?></option>
                 </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="facetwp-row">
+            <div>
                 <?php _e('Count', 'fwp'); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
                     <div class="facetwp-tooltip-content"><?php _e( 'The maximum number of facet choices to show', 'fwp' ); ?></div>
                 </div>
-            </td>
-            <td><input type="text" class="facet-count" value="20" /></td>
-        </tr>
+            </div>
+            <div>
+                <input type="text" class="facet-count" value="20" />
+                <input type="hidden" class="facet-operator" value="or" />
+            </div>
+        </div>
 <?php
     }
 }

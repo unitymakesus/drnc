@@ -69,7 +69,10 @@ class FacetWP_Display
                 $output = '<div class="facetwp-template" data-name="' . $atts['template'] . '">';
                 $output .= $preload_data['template'];
                 $output .= '</div>';
-                $output .= $this->get_pager_seo();
+
+                if ( apply_filters( 'facetwp_use_pager_seo', true ) ) {
+                    $output .= $this->get_pager_seo();
+                }
 
                 $this->load_assets = true;
             }

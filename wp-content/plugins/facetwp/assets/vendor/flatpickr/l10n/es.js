@@ -1,4 +1,4 @@
-/* flatpickr v4.4.3, @license MIT */
+/* flatpickr v4.5.0, @license MIT */
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -20,7 +20,8 @@
       ordinal: function ordinal() {
         return "º";
       },
-      firstDayOfWeek: 1
+      firstDayOfWeek: 1,
+      rangeSeparator: " a "
     };
     fp.l10ns.es = Spanish;
     var es = fp.l10ns;

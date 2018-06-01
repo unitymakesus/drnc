@@ -60,36 +60,36 @@ class FacetWP_Facet_Search extends FacetWP_Facet
     function settings_html() {
         $engines = apply_filters( 'facetwp_facet_search_engines', array() );
 ?>
-        <tr>
-            <td><?php _e('Search engine', 'fwp'); ?>:</td>
-            <td>
+        <div class="facetwp-row">
+            <div><?php _e('Search engine', 'fwp'); ?>:</div>
+            <div>
                 <select class="facet-search-engine">
                     <option value=""><?php _e( 'WP Default', 'fwp' ); ?></option>
                     <?php foreach ( $engines as $key => $label ) : ?>
                     <option value="<?php echo $key; ?>"><?php echo $label; ?></option>
                     <?php endforeach; ?>
                 </select>
-            </td>
-        </tr>
-        <tr>
-            <td><?php _e( 'Placeholder text', 'fwp' ); ?>:</td>
-            <td><input type="text" class="facet-placeholder" value="" /></td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="facetwp-row">
+            <div><?php _e( 'Placeholder text', 'fwp' ); ?>:</div>
+            <div><input type="text" class="facet-placeholder" /></div>
+        </div>
+        <div class="facetwp-row">
+            <div>
                 <?php _e('Auto refresh', 'fwp'); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
                     <div class="facetwp-tooltip-content"><?php _e( 'Automatically refresh the results while typing?', 'fwp' ); ?></div>
                 </div>
-            </td>
-            <td>
+            </div>
+            <div>
                 <label class="facetwp-switch">
-                    <input type="checkbox" class="facet-auto-refresh" />
+                    <input type="checkbox" class="facet-auto-refresh" true-value="yes" false-value="no" />
                     <span class="facetwp-slider"></span>
                 </label>
-            </td>
-        </tr>
+            </div>
+        </div>
 <?php
     }
 

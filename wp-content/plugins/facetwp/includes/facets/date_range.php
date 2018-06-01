@@ -123,60 +123,55 @@ class FacetWP_Facet_Date_Range extends FacetWP_Facet
      * Output admin settings HTML
      */
     function settings_html() {
-        $sources = FWP()->helper->get_data_sources();
 ?>
-        <tr>
-            <td>
+        <div class="facetwp-row">
+            <div>
                 <?php _e('Other data source', 'fwp'); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
                     <div class="facetwp-tooltip-content"><?php _e( 'Use a separate value for the upper limit?', 'fwp' ); ?></div>
                 </div>
-            </td>
-            <td>
-                <select class="facet-source-other">
-                    <option value=""><?php _e( 'None', 'fwp' ); ?></option>
-                    <?php foreach ( $sources as $group ) : ?>
-                    <optgroup label="<?php echo $group['label']; ?>">
-                        <?php foreach ( $group['choices'] as $val => $label ) : ?>
-                        <option value="<?php echo esc_attr( $val ); ?>"><?php echo esc_html( $label ); ?></option>
-                        <?php endforeach; ?>
-                    </optgroup>
-                    <?php endforeach; ?>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><?php _e('Compare type', 'fwp'); ?>:</td>
-            <td>
+            </div>
+            <div>
+                <data-sources
+                    :facet="facet"
+                    :selected="facet.source_other"
+                    :sources="$root.data_sources"
+                    settingName="source_other">
+                </data-sources>
+            </div>
+        </div>
+        <div class="facetwp-row">
+            <div><?php _e('Compare type', 'fwp'); ?>:</div>
+            <div>
                 <select class="facet-compare-type">
                     <option value=""><?php _e( 'Basic', 'fwp' ); ?></option>
                     <option value="enclose"><?php _e( 'Enclose', 'fwp' ); ?></option>
                     <option value="intersect"><?php _e( 'Intersect', 'fwp' ); ?></option>
                 </select>
-            </td>
-        </tr>
-        <tr>
-            <td><?php _e('Fields to show', 'fwp'); ?>:</td>
-            <td>
+            </div>
+        </div>
+        <div class="facetwp-row">
+            <div><?php _e('Fields to show', 'fwp'); ?>:</div>
+            <div>
                 <select class="facet-date-fields">
                     <option value="both"><?php _e( 'Start + End Dates', 'fwp' ); ?></option>
                     <option value="exact"><?php _e( 'Exact Date', 'fwp' ); ?></option>
                     <option value="start_date"><?php _e( 'Start Date', 'fwp' ); ?></option>
                     <option value="end_date"><?php _e( 'End Date', 'fwp' ); ?></option>
                 </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="facetwp-row">
+            <div>
                 <?php _e('Display format', 'fwp'); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
                     <div class="facetwp-tooltip-content">See available <a href="https://chmln.github.io/flatpickr/formatting/" target="_blank">formatting tokens</a></div>
                 </div>
-            </td>
-            <td><input type="text" class="facet-format" value="" placeholder="Y-m-d" /></td>
-        </tr>
+            </div>
+            <div><input type="text" class="facet-format" placeholder="Y-m-d" /></div>
+        </div>
 <?php
     }
 

@@ -108,8 +108,8 @@ class FacetWP_Facet_Dropdown extends FacetWP_Facet
      */
     function settings_html() {
 ?>
-        <tr>
-            <td>
+        <div class="facetwp-row">
+            <div>
                 <?php _e( 'Default label', 'fwp' ); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
@@ -117,13 +117,13 @@ class FacetWP_Facet_Dropdown extends FacetWP_Facet
                         Customize the first option label (default: "Any")
                     </div>
                 </div>
-            </td>
-            <td>
+            </div>
+            <div>
                 <input type="text" class="facet-label-any" value="<?php _e( 'Any', 'fwp' ); ?>" />
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="facetwp-row" v-show="facet.source.substr(0, 3) == 'tax'">
+            <div>
                 <?php _e('Parent term', 'fwp'); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
@@ -132,47 +132,47 @@ class FacetWP_Facet_Dropdown extends FacetWP_Facet
                         Otherwise, leave blank.
                     </div>
                 </div>
-            </td>
-            <td>
-                <input type="text" class="facet-parent-term" value="" />
-            </td>
-        </tr>
-        <tr>
-            <td><?php _e('Sort by', 'fwp'); ?>:</td>
-            <td>
+            </div>
+            <div>
+                <input type="text" class="facet-parent-term" />
+            </div>
+        </div>
+        <div class="facetwp-row">
+            <div><?php _e('Sort by', 'fwp'); ?>:</div>
+            <div>
                 <select class="facet-orderby">
                     <option value="count"><?php _e( 'Highest Count', 'fwp' ); ?></option>
                     <option value="display_value"><?php _e( 'Display Value', 'fwp' ); ?></option>
                     <option value="raw_value"><?php _e( 'Raw Value', 'fwp' ); ?></option>
                     <option value="term_order"><?php _e( 'Term Order', 'fwp' ); ?></option>
                 </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+        </div>
+        <div class="facetwp-row">
+            <div>
                 <?php _e('Hierarchical', 'fwp'); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
                     <div class="facetwp-tooltip-content"><?php _e( 'Is this a hierarchical taxonomy?', 'fwp' ); ?></div>
                 </div>
-            </td>
-            <td>
-                <select class="facet-hierarchical">
-                    <option value="no"><?php _e( 'No', 'fwp' ); ?></option>
-                    <option value="yes"><?php _e( 'Yes', 'fwp' ); ?></option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
+            </div>
+            <div>
+                <label class="facetwp-switch">
+                    <input type="checkbox" class="facet-hierarchical" true-value="yes" false-value="no" />
+                    <span class="facetwp-slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="facetwp-row">
+            <div>
                 <?php _e('Count', 'fwp'); ?>:
                 <div class="facetwp-tooltip">
                     <span class="icon-question">?</span>
                     <div class="facetwp-tooltip-content"><?php _e( 'The maximum number of facet choices to show', 'fwp' ); ?></div>
                 </div>
-            </td>
-            <td><input type="text" class="facet-count" value="20" /></td>
-        </tr>
+            </div>
+            <div><input type="text" class="facet-count" value="20" /></div>
+        </div>
 <?php
     }
 }

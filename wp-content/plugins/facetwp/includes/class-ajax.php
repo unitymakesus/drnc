@@ -23,6 +23,7 @@ class FacetWP_Ajax
             if ( check_ajax_referer( 'fwp_admin_nonce', 'nonce', false ) ) {
                 add_action( 'wp_ajax_facetwp_save', array( $this, 'save_settings' ) );
                 add_action( 'wp_ajax_facetwp_rebuild_index', array( $this, 'rebuild_index' ) );
+                add_action( 'wp_ajax_facetwp_get_info', array( $this, 'get_info' ) );
                 add_action( 'wp_ajax_facetwp_heartbeat', array( $this, 'heartbeat' ) );
                 add_action( 'wp_ajax_facetwp_license', array( $this, 'license' ) );
                 add_action( 'wp_ajax_facetwp_backup', array( $this, 'backup' ) );
@@ -282,6 +283,56 @@ class FacetWP_Ajax
             FWP()->indexer->index();
         }
         exit;
+    }
+
+
+    function get_info() {
+        $type = $_POST['type'];
+
+        if ( 'post_types' == $type ) {
+            $post_types = get_post_types( array( 'exclude_from_search' => false, '_builtin' => false ) );
+            $post_types = array( 'post', 'page' ) + $post_types;
+            sort( $post_types );
+
+            $response = array(
+                'code' => 'success',
+                'message' => implode( ', ', $post_types )
+            );
+        }
+        elseif ( 'indexer_stats' == $type ) {
+            global $wpdb;
+
+            $row_count = $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}facetwp_index" );
+            $facet_count = $wpdb->get_var( "SELECT COUNT(DISTINCT facet_name) FROM {$wpdb->prefix}facetwp_index" );
+            $last_indexed = get_option( 'facetwp_last_indexed' );
+            $last_indexed = $last_indexed ? human_time_diff( $last_indexed ) . ' ago' : 'N/A';
+
+            $response = array(
+                'code' => 'success',
+                'message' => "rows: $row_count, facets: $facet_count, last re-index: $last_indexed"
+            );
+        }
+        elseif ( 'cancel_reindex' == $type ) {
+            update_option( 'facetwp_indexing', '' );
+
+            $response = array(
+                'code' => 'success',
+                'message' => 'Indexing cancelled'
+            );
+        }
+        elseif ( 'purge_index_table' == $type ) {
+            global $wpdb;
+
+            $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}facetwp_index" );
+            delete_option( 'facetwp_version' );
+
+            $response = array(
+                'code' => 'success',
+                'message' => __( 'Done, please re-index', 'fwp' )
+            );
+        }
+
+        wp_send_json( $response );
     }
 
 

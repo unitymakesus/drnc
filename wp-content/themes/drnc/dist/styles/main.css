@@ -8670,6 +8670,13 @@ html[data-contrast="true"] .able-wrapper .able-controller button {
   padding-bottom: 0;
 }
 
+.able-prefs-form input[type="radio"],
+.able-prefs-form input[type="checkbox"] {
+  position: static;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .background-point-left > .row > .col:nth-child(1),
 .sidebar-primary .background-point-left > .wrap > .col:nth-child(1),
 .sidebar-primary .wrap .background-point-left > .row > .main:nth-child(1),

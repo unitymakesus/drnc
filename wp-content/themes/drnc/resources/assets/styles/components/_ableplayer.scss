@@ -54,3 +54,11 @@
     padding-bottom: 0;
   }
 }
+
+.able-prefs-form {
+  input[type="radio"], input[type="checkbox"] {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

@@ -12280,6 +12280,19 @@ html[data-contrast="true"] ul.social-names a {
   margin: 1em 0;
 }
 
+.single-post figure.post-thumbnail {
+  background: #D8D8D8;
+  padding: 10px;
+  margin: 0 1em 1em 0;
+  float: left;
+}
+
+.single-post .thumb-caption {
+  font-size: 0.9em;
+  background: #D8D8D8;
+  padding-top: 10px;
+}
+
 body#tinymce {
   margin: 12px !important;
 }

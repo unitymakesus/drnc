@@ -8,8 +8,14 @@
       @php
         $thumbnail_id = get_post_thumbnail_id( get_the_ID() );
         $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+        $thumb_caption = get_the_post_thumbnail_caption(get_the_ID());
       @endphp
-      {!! get_the_post_thumbnail( get_the_ID(), 'large', ['alt' => $alt] ) !!}
+      <figure class="post-thumbnail">
+        {!! get_the_post_thumbnail( get_the_ID(), 'large', ['alt' => $alt] ) !!}
+        @if (!empty($thumb_caption))
+          <figcaption class="thumb-caption">{!! $thumb_caption !!}</figcaption>
+        @endif
+      </figure>
     @endif
     @php(the_content())
   </div>

@@ -7,24 +7,7 @@
         <p><a href="/donate/" class="btn btn-lg btn-green">Support Our Work</a></p>
         <h3>Stay Informed</h3>
         <p>Sign up for our free email newsletter. We send out monthly emails with news and updates. We will not share your contact information and do not send spam.</p>
-        <!-- Begin VR Signup Form -->
-        <form class="vr-signup-form" id="vr-signup-form-42880953483397">
-          <div class="vr-field">
-            <label for="email_address">Email Address <span class="vr-required" aria-label="Required">*</span></label>
-            <input id="email_address" type="email" name="email_address" required>
-          </div>
-          <div class="vr-submit">
-            <div class="vr-notice"></div>
-            <input type="submit" value="Subscribe">
-          </div>
-        </form>
-        <script type="text/javascript" src="https://marketingsuite.verticalresponse.com/signup_forms/signup_forms.embedded-2.js"></script>
-        <script type="text/javascript">
-          if (typeof VR !== "undefined" && typeof VR.SignupForm !== "undefined") {
-            new VR.SignupForm({ id: "42880953483397", element: "vr-signup-form-42880953483397", endpoint: "https://marketingsuite.verticalresponse.com/se/", submitLabel: "Submitting...", invalidEmailMessage: "Invalid email address", generalErrorMessage: "An error occurred", notFoundMessage: "Signup form not found", successMessage: "Success!", nonMailableMessage: "Nonmailable address"});
-          }
-        </script>
-        <!-- End VR Signup Form -->
+        {!! do_shortcode('[newsletter-form]') !!}
       </div>
       <div class="col l7 m8 flex-order-m1 s12">
         <div class="row">

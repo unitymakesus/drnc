@@ -72,38 +72,9 @@
     }
   }
 
-  form {
-    max-width: 300px;
-
-    @media #{$small-and-down} {
-      margin: 0 auto 60px;
-    }
-
+  .vr-signup-form {
     label {
       color: $color-white;
-      font-weight: bold;
-    }
-
-    input[type="text"], input[type="email"] {
-      background: $color-white;
-      border: 1px solid lighten($color-gray-medium, 20%);
-      font-size: 1rem;
-      margin: 10px 0 20px;
-      padding: 0 30px 0 5px;
-      box-sizing: border-box;
-      width: 100%;
-
-      html[data-contrast="true"] & {
-        background: $color-black;
-        border: 1px solid $color-white;
-        color: $color-white;
-      }
-    }
-
-    input[type="submit"] {
-      @extend .btn;
-
-      width: 100%;
     }
   }
 

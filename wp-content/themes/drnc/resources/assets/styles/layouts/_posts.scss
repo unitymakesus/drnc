@@ -27,10 +27,19 @@
     padding: 10px;
     margin: 0 1em 1em 0;
     float: left;
+    max-width: 50%;
+
+    img {
+      width: 100%;
+    }
+
+    @media #{$xsmall-and-down} {
+      max-width: 100%;
+    }
   }
 
   .thumb-caption {
-    font-size: 0.9em;
+    font-size: 0.85em;
     background: $color-gray-light;
     padding-top: 10px;
   }

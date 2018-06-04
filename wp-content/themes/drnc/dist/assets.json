@@ -8,8 +8,8 @@
   "images/icon-facebook.svg": "images/icon-facebook_71878036.svg",
   "images/icon-linkedin-black.svg": "images/icon-linkedin-black_c4139b69.svg",
   "images/icon-linkedin.svg": "images/icon-linkedin_2b2f8e1d.svg",
-  "images/icon-search-white.svg": "images/icon-search-white_19d4ce89.svg",
-  "images/icon-search.svg": "images/icon-search_3ac803e4.svg",
+  "images/icon-search-white.svg": "images/icon-search-white_bea31f83.svg",
+  "images/icon-search.svg": "images/icon-search_366987c5.svg",
   "images/icon-twitter-black.svg": "images/icon-twitter-black_b1b59401.svg",
   "images/icon-twitter.svg": "images/icon-twitter_1e545c65.svg",
   "images/icon-youtube-black.svg": "images/icon-youtube-black_5fdfc36f.svg",
@@ -17,7 +17,7 @@
   "images/made-with-unity.svg": "images/made-with-unity_1cad108d.svg",
   "images/powered-by-unity.svg": "images/powered-by-unity_d9acda16.svg",
   "images/unchecked.png": "images/unchecked_6af136d5.png",
-  "scripts/customizer.js": "scripts/customizer_ace46c0b.js",
-  "styles/main.css": "styles/main_ace46c0b.css",
-  "scripts/main.js": "scripts/main_ace46c0b.js"
+  "scripts/customizer.js": "scripts/customizer_d5ba3954.js",
+  "styles/main.css": "styles/main_d5ba3954.css",
+  "scripts/main.js": "scripts/main_d5ba3954.js"
 }

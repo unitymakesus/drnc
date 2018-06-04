@@ -7,7 +7,7 @@
         <p><a href="/donate/" class="btn btn-lg btn-green">Support Our Work</a></p>
         <h3>Stay Informed</h3>
         <p>Sign up for our free email newsletter. We send out monthly emails with news and updates. We will not share your contact information and do not send spam.</p>
-        {!! do_shortcode('[newsletter-form]') !!}
+        <p><a href="/newsletter-signup" class="btn btn-wide">Subscribe</a></p>
       </div>
       <div class="col l7 m8 flex-order-m1 s12">
         <div class="row">

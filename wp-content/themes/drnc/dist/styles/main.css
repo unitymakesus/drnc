@@ -8191,6 +8191,11 @@ body {
   }
 }
 
+.content {
+  position: relative;
+  z-index: 3;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10265,6 +10270,11 @@ label[for*="pwbox"] + input.btn-lg[type="submit"],
   display: block;
   padding: 1rem;
   height: auto;
+}
+
+.btn-wide {
+  padding-left: 3em;
+  padding-right: 3em;
 }
 
 .btn-teal.btn-teal {

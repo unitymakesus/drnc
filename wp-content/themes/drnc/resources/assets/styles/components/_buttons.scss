@@ -5,7 +5,8 @@
   font-weight: normal;
   text-transform: none;
   line-height: 2.15rem;
-  height: rem-calc(50px);
+  min-height: rem-calc(50px);
+  height: auto;
   text-decoration: none;
 
   &:hover, &:focus, &:active {

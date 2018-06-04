@@ -11927,10 +11927,18 @@ html[data-contrast="true"] .page-footer form input[type="email"] {
   line-height: 1.3em;
 }
 
+.events-list.events-list .upcoming-events h3 + p,
+.events-list.events-list .upcoming-events .facet-label + p,
+.single-mc-events .upcoming-events h3 + p,
+.single-mc-events .upcoming-events .facet-label + p {
+  margin-top: 0.5em;
+}
+
 .events-list.events-list .upcoming-events p,
 .single-mc-events .upcoming-events p {
   margin-bottom: 0;
-  font-size: 1.11111rem;
+  font-size: 1rem;
+  line-height: 1.5em;
 }
 
 .events-list.events-list .featured-event,

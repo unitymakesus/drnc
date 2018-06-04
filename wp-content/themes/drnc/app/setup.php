@@ -18,6 +18,19 @@ add_action('wp_enqueue_scripts', function () {
 }, 100);
 
 /**
+ * Remove duplicate canonical tags
+ */
+add_action('init', function() {
+  // Remove Soil canonical link tag
+  remove_action('wp_head', 'Roots\\Soil\\CleanUp\\rel_canonical');
+}, 20);
+
+add_filter( 'the_seo_framework_rel_canonical_output', function($canonical) {
+  // Remove canonical link from SEO Framework plugin, so it only gets added by the calendar plugin
+  return '';
+});
+
+/**
  * Theme setup
  */
 add_action('after_setup_theme', function () {

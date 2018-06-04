@@ -7,7 +7,6 @@ export default {
 
     //Hide form after successful submission
     document.addEventListener( 'wpcf7mailsent', function() {
-      console.log('success');
       $('form.wpcf7-form').hide();
       $('html, body').animate({
         scrollTop: ($('#main').offset().top),

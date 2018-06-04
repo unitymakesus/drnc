@@ -147,7 +147,6 @@ export default {
       // Only allow default action (submit) if the search field has content
       // If not, switch focus to search field instead
       if ($(this).hasClass('search-submit')) {
-        console.info('length', $('.a11y-tools .search-field').val().length);
         if ($('.a11y-tools .search-field').val().length > 0) {
           $('.a11y-tools .search-form').submit();
         } else {

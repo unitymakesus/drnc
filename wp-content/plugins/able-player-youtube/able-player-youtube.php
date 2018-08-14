@@ -30,6 +30,16 @@ function ytay_init(){
   wp_add_inline_script( 'ytay_google_api', 'var youTubeDataAPIKey = "' . get_option('ytay_setting_youtube') . '";', 'before');
   wp_add_inline_script( 'ytay_google_api', 'var googleApiReady = false;', 'before');
   wp_add_inline_script( 'ytay_google_api', 'function initGoogleClientApi() { googleApiReady = true; }', 'before');
+
+  if(is_page('self-advocacy-tools')){
+    wp_enqueue_style('ytay_css');
+    wp_enqueue_style('ytay_ableplayer_css');
+    wp_enqueue_script('ytay_modernizr');
+    wp_enqueue_script('ytay_cookies');
+    wp_enqueue_script('ytay_google_api');
+    wp_enqueue_script('ytay_ableplayer_js');
+  }
+
 }
 add_action( 'init', 'ytay_init' );
 
@@ -51,7 +61,7 @@ function ytay_shortcode_player($atts){
     wp_enqueue_script('ytay_google_api');
     wp_enqueue_script('ytay_ableplayer_js');
 
-    $ableplayer = '<video data-able-player id="video-' . $atts['id'] . '" debug="true" autoplay="false" data-youtube-id="' . $atts['id'] . '" data-unlisted-fix="'. $atts['unlisted'] . '" playsinline></video>';
+    $ableplayer = '<video class="ajax-video" preload="auto" data-able-player id="video-' . $atts['id'] . '" debug="true" autoplay="false" data-youtube-id="' . $atts['id'] . '" data-unlisted-fix="'. $atts['unlisted'] . '" playsinline></video>';
 
     return $ableplayer;
   }

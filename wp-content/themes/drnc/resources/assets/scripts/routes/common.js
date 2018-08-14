@@ -230,15 +230,5 @@ export default {
       $('html').attr('data-contrast', contrast);
       document.cookie = 'data_contrast=' + contrast + ';max-age=31536000;path=/';
     });
-
-    // Change Self-Advocacy Tools text to Spanish while parameter is activate
-    if (window.location.search.indexOf('?_resource_type=en-espanol') > -1) {
-      var espanol1 = '<p>Nuestras hojas informativas, guías, y videos proporcionan información sobre los derechos de personas con discapacidades bajo la ley federal y estatal. Ellos también ofrecen consejos sobre cómo navegar por varios sistemas públicos, como solicitar adaptaciones o modificaciones, y que hacer si se violan sus derechos o si sufre una discriminación. También contamos con recursos proporcionados por el gobierno federal, el gobierno estatal y otras organizaciones.</p>'
-
-      var espanol2 = '<p>Use los filtros o la caja de búsqueda en la columna de la izquierda para encontrar los recursos que necesita. Por favor tenga en cuenta que muchos de nuestros recursos se aplican a una amplia gama de discapacidades, por lo que no clasificamos nuestros recursos por discapacidad individual.</p>'
-
-      $('.self-advocacy-tools .content-container').html(espanol1 + espanol2);
-    }
-
   },
 };

@@ -157,3 +157,11 @@ nav {
     }
   }
 }
+
+.support-btn a {
+  background-color: #732467;
+
+  &:hover {
+    background: $color-purple-dark !important;
+  }
+}

@@ -62,7 +62,7 @@ function ytay_shortcode_player($atts){
     wp_enqueue_script('ytay_ableplayer_js');
 
     $ableplayer = '<video class="ajax-video" preload="auto" data-able-player id="video-' . $atts['id'] . '" debug="true" autoplay="false" data-youtube-id="' . $atts['id'] . '" data-unlisted-fix="'. $atts['unlisted'] . '" playsinline></video>';
-
+    
     return $ableplayer;
   }
 }

@@ -1,11 +1,10 @@
 export default {
   finalize() {
     $(document).on('facetwp-loaded', function() {
-      // $('.ajax-video').each(function() {
-      //   var videoid = $(this).attr('id');
-      //   console.log(videoid);
-      //   eslint-disable-next-line no-undef
-      // });
+      $('.ajax-video').each(function() {
+        // eslint-disable-next-line no-undef
+        new AblePlayer($(this));
+      });
 
       // eslint-disable-next-line no-undef
       if (FWP.loaded) {

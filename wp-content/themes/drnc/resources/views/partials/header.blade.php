@@ -81,7 +81,7 @@
             @if (has_nav_menu('social_links'))
               {!! wp_nav_menu(['theme_location' => 'social_links', 'menu_class' => 'social-icons right-align', 'menu_id' => 'header-social']) !!}
             @endif
-            <div class="right-align"><a href="/donate/" class="btn">Support Our Work</a></div>
+            <div class="right-align support-btn"><a href="/donate/" class="btn">Support Our Work</a></div>
           </div>
         </div>
       </div>

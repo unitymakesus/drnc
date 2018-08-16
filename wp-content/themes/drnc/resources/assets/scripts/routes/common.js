@@ -230,6 +230,5 @@ export default {
       $('html').attr('data-contrast', contrast);
       document.cookie = 'data_contrast=' + contrast + ';max-age=31536000;path=/';
     });
-
   },
 };

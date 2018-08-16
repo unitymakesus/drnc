@@ -11,5 +11,23 @@ export default {
         $(this).addClass('default');
       }
     });
+
+    $('#hometoolsform').submit(function() {
+      event.preventDefault();
+      var url = '/getting-help/self-advocacy-tools';
+      var topic = $("select", this).val();
+      var keyword = $(".facetwp-search", this).val();
+
+      $.ajax({
+        type: "POST",
+        success: function() {
+          if(!topic) {
+            window.location.replace(url + "?_search=" + keyword);
+          } else {
+            window.location.replace(url + "?_resource_topic=" + topic + "&_search=" + keyword);
+          }
+        },
+      })
+    });
   },
 };

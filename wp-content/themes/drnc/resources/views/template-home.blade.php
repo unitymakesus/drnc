@@ -29,7 +29,7 @@
           <div class="col l8 m10 s12 push-l2 push-m1 center-align">
             <h2 id="sa-tools-title">Self-Advocacy Tools</h2>
             <p>Search our extensive database by topic or keyword.<br />Please note that we do not tag our resources by disability. It is best to enter a keyword related to the issue you want information about.</p>
-            <form action="/getting-help/self-advocacy-tools/" method="GET">
+            <form id="hometoolsform" method="GET">
               <select name="_resource_topic" aria-label="Topic" class="default">
                 <option value="" selected>Topic</option>
                 @php ($topics = get_terms(['taxonomy' => 'resource-topic', 'hide_empty' => TRUE]))

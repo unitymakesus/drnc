@@ -90,7 +90,6 @@ export default {
         // Change progress step
         $('.form-progress').attr('aria-valuenow', nextStepN);
         $('.form-progress').attr('aria-valuetext', 'Step ' + nextStepN + ' of 3: ' + nextStepT);
-        $('.form-progress').attr('aria-valuetext', 'Step ' + nextStepN + ' of 3: ' + nextStepT);
         $('.form-progress .progress-step[data-step-current]').removeAttr('data-step-current').attr('data-step-complete', '')
           .next().removeAttr('data-step-incomplete').attr('data-step-current', '');
 

@@ -9,3 +9,14 @@ add_shortcode('newsletter-form', function($atts) {
   <?php
   return ob_get_clean();
 });
+
+add_shortcode('drnc-login', function($atts) {
+  if ( is_user_logged_in() )
+    return '';
+
+  $login = wp_login_form( array( 'echo' => false, 'label_username' => 'Email Address' ) );
+
+  $login .= '<a href="' . wp_lostpassword_url( get_permalink() ) . '" title="Lost Password">Forgot password?</a>';
+
+  return $login;
+});

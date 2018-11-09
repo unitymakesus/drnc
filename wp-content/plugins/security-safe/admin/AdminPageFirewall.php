@@ -3,7 +3,7 @@
 namespace SecuritySafe;
 
 // Prevent Direct Access
-if ( ! defined( 'WPINC' ) ) { die; }
+if ( ! defined( 'ABSPATH' ) ) { die; }
 
 /**
  * Class AdminPageFirewall

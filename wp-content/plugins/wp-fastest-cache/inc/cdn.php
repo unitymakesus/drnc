@@ -143,8 +143,11 @@
 											"Content-Type" => "application/json"
 											),
 							);
-
-			$response = wp_remote_request('https://api.cloudflare.com/client/v4/zones?name='.$hostname, $header);
+			
+			/*
+			status=active has been removed because status may be "pending"
+			*/
+			$response = wp_remote_request('https://api.cloudflare.com/client/v4/zones/?page=1&per_page=1000', $header);
 
 			if(!$response || is_wp_error($response)){
 				$res = array("success" => false, "error_message" => $response->get_error_message());
@@ -155,9 +158,17 @@
 					$res = array("success" => false, "error_message" => $zone->errors[0]->message);
 				}else{
 					if(isset($zone->result) && isset($zone->result[0])){
-						$res = array("success" => true, "zoneid" => $zone->result[0]->id);
+						foreach ($zone->result as $zone_key => $zone_value) {
+							if(preg_match("/".$zone_value->name."/", $hostname)){
+								$res = array("success" => true, "zoneid" => $zone_value->id);
+							}
+						}
+
+						if(!$res["success"]){
+							$res = array("success" => false, "error_message" => "No zone name ".$hostname);
+						}
 					}else{
-						$res = array("success" => false, "error_message" => "No zone name ".$hostname);
+						$res = array("success" => false, "error_message" => "There is no zone");
 					}
 				}
 			}
@@ -361,6 +372,12 @@
 
 		public static function save_cdn_integration(){
 			if(current_user_can('manage_options')){
+				if(isset($_POST) && isset($_POST["values"])){
+					foreach ($_POST["values"] as $val_key => &$val_value) {
+						$val_value = sanitize_text_field($val_value);
+					}
+				}
+				
 				if($data = get_option("WpFastestCacheCDN")){
 					$cdn_exist = false;
 					$arr = json_decode($data);

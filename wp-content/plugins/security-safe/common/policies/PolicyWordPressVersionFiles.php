@@ -3,7 +3,7 @@
 namespace SecuritySafe;
 
 // Prevent Direct Access
-if ( ! defined( 'WPINC' ) ) { die; }
+if ( ! defined( 'ABSPATH' ) ) { die; }
 
 
 /**
@@ -33,16 +33,8 @@ class PolicyWordPressVersionFiles {
             
             //echo 'Checking WordPress core permissions.<br />';
 
-            // Define the list of files w/ relative paths
-            $paths = array();
-            $paths[] = ABSPATH . 'readme.html';
-            $paths[] = ABSPATH . 'license.txt';
-
-            foreach( $paths as $path ) {
-
-                $this->set_permissions( $path );
-
-            } // foreach()
+            $this->set_permissions( ABSPATH . 'readme.html' );
+            $this->set_permissions( ABSPATH . 'license.txt' );
 
         } // $options['action']
         

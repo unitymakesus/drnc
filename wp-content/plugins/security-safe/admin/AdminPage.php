@@ -3,7 +3,7 @@
 namespace SecuritySafe;
 
 // Prevent Direct Access
-if ( ! defined( 'WPINC' ) ) { die; }
+if ( ! defined( 'ABSPATH' ) ) { die; }
 
 /**
  * Class AdminPage
@@ -222,9 +222,9 @@ class AdminPage {
      * @param string $short_desc The text that is displayed to the right on the checkbox.
      * @param string $long_desc The description text displayed below the title.
      */
-    protected function form_checkbox( $page_options, $name, $slug, $short_desc, $long_desc, $disabled = false ) {
+    protected function form_checkbox( $page_options, $name, $slug, $short_desc, $long_desc, $classes = '', $disabled = false ) {
 
-        $html = '<tr class="checkbox">';
+        $html = '<tr class="form-checkbox '. $classes .'">';
 
         if ( is_array( $page_options ) && $slug && $short_desc ) {
             
@@ -266,16 +266,58 @@ class AdminPage {
     } //form_checkbox()
 
 
-    protected function form_text() {
+    protected function form_text( $message, $class = '', $classes = '' ) {
 
-        // Placeholder for now
+        $html = '<tr class="form-text '. $classes .'">';
+
+        $html .= '<td colspan="2"><p class="' . $class . '">' . $message . '</p></td>';
+
+        $html .= '</tr>';
+
+        return $html;
         
     } // form_text();
 
 
-    protected function form_select( $page_options, $name, $slug, $options, $long_desc ) {
+    protected function form_input( $page_options, $name, $slug, $placeholder, $long_desc, $styles = '', $classes = '', $required = false ) {
+    
+        $html = '<tr class="form-input '. $classes .'">';
 
-        $html = '<tr class="select">';
+        if ( is_array( $page_options ) && $slug ) {
+
+            $value = ( isset( $page_options[ $slug ] ) ) ? $page_options[ $slug ] : '';
+
+            $html .= $this->row_label( $name );
+            
+            $html .= '<td><input type="text" name="' . $slug . '" placeholder="' . $placeholder . '" value="' . $value . '" style="' . $styles . '">';
+
+            if ( $long_desc ) {
+
+                $html .= '<p class="desc">' . $long_desc . '</p>';
+
+            } // $long_desc
+
+            $html .= '</td>';
+
+        } else {
+
+            $html .= '<td>There is an issue.</td>';
+
+        } // is_array( $options )
+
+        $html .= '</tr>';
+
+        // Memory Cleanup
+        unset( $page_options, $name, $slug, $placeholder, $long_desc, $required, $value );
+
+        return $html;
+
+    } // form_input()
+
+
+    protected function form_select( $page_options, $name, $slug, $options, $long_desc, $classes = '' ) {
+
+        $html = '<tr class="form-select '. $classes .'">';
 
         if ( is_array( $page_options ) && $slug && $options ) {
             
@@ -314,7 +356,7 @@ class AdminPage {
 
         } else {
 
-            $html .= 'There is an issue.';
+            $html .= '<td colspan="2">There is an issue.</td>';
 
         } // is_array( $options ) && $slug ...
 
@@ -345,18 +387,35 @@ class AdminPage {
 
     } //row_label()
 
+    /** 
+     * Creates a File Upload Field
+     */
+    protected function form_file_upload( $text, $name, $long_desc = '', $classes = '' ) {
+
+        $html = '<tr class="form-file-upload '. $classes .'">';
+        $html .= '<div class="file-upload-wrap cf"><label>' . $text . '</label><input name="' . $name . '" id="' . $name . '" type="file">';
+        $html .= '</div></tr>';
+
+        return $html;
+
+    } // form_file_upload()
+
     /**
      * Creates Table Row For A Button
      * @since  0.3.0
      */ 
-    protected function form_button( $text, $type, $value, $long_desc = false ) {
+    protected function form_button( $text, $type, $value, $long_desc = false, $classes = '', $label = true, $name = false ) {
 
-        $html = '<tr class="select">';
+        $html = '<tr class="form-button '. $classes .'">';
+        
+        if ( $label ) {
+
+            $html .= $this->row_label( $text );
             
-        $html .= $this->row_label( $text );
-            
+        }
+
         $html .= '<td>';
-        $html .= $this->button( $text, $type, $value );
+        $html .= $this->button( $text, $type, $value, $name );
 
         if ( $long_desc ) {
 
@@ -379,11 +438,12 @@ class AdminPage {
      * Return HTML for Submit Button
      * @since  0.3.0
      */ 
-    protected function button( $text = 'Save Changes', $type = 'submit', $value = false ) {
+    protected function button( $text = 'Save Changes', $type = 'submit', $value = false, $name = false ) {
 
         // Default Values
         $text = __( $text, 'security-safe' );
         $value = ( $value ) ? __( $value, 'security-safe' ) : $text;
+        $name = ( $name ) ? __( $name, 'security-safe' ) : $type;
 
         $html = '<p class="' . $type . '">';
         $classes = 'button ';
@@ -391,7 +451,7 @@ class AdminPage {
         if ( $type == 'submit' ) {
 
             $classes .= 'button-primary';
-            $html .= '<input type="' . $type . '" name="' . $type . '" id="' . $type . '" class="' . $classes . '" value="' . $value . '" />';
+            $html .= '<input type="' . $type . '" name="' . $name . '" id="' . $type . '" class="' . $classes . '" value="' . $value . '" />';
         
         } elseif ( $type == 'link' ) {
 
@@ -444,18 +504,6 @@ class AdminPage {
         } // ! empty()
 
     } // display_messages()
-
-    /**
-     * Wrapper for the main object is_pro() function
-     * @return boolean
-     */
-    protected function is_pro() {
-
-        global $SecuritySafe;
-
-        return $SecuritySafe->is_pro();
-
-    } // is_pro()
     
 
 } // Admin()

@@ -3,7 +3,7 @@
 namespace SecuritySafe;
 
 // Prevent Direct Access
-if ( ! defined( 'WPINC' ) ) { die; }
+if ( ! defined( 'ABSPATH' ) ) { die; }
 
 
 /**
@@ -31,18 +31,8 @@ class PolicyLoginPasswordReset {
      * Replaces reset password text with nothing
      */ 
     public function remove( $text ){
-        
-        $replace = array( 
-            'Lost your password?', 
-            'Lost your password',
-            );
 
-        $text = str_replace( $replace, '', trim( $text, '?' ) ); 
-
-        // Memory Cleanup
-        unset( $replace );
-        
-        return $text;
+        return str_replace( array( 'Lost your password?', 'Lost your password' ), '', trim( $text, '?' ) ); 
 
     } // remove()
 

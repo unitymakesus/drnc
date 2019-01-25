@@ -77,7 +77,7 @@
             </div>
           </div>
 
-          <div class="hide-on-small-only">
+          <div class="social-donate">
             @if (has_nav_menu('social_links'))
               {!! wp_nav_menu(['theme_location' => 'social_links', 'menu_class' => 'social-icons right-align', 'menu_id' => 'header-social']) !!}
             @endif
